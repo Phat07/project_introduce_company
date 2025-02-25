@@ -3,7 +3,7 @@ import { Layout, Menu, Button, Drawer, Space } from 'antd';
 import { MenuOutlined, GlobalOutlined, SearchOutlined } from '@ant-design/icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import viettelLogo from '../../assets/react.svg';
+import viettelLogo from '../../assets/logo.png';
 import LanguageSwitcher from '../ui/language-switcher';
 import './Header.css';
 
