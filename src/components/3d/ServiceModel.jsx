@@ -8,42 +8,44 @@ export function ServiceModel({ modelPath, scale = 1, position = [0, 0, 0], rotat
   const { scene } = useGLTF(modelPath);
 
   useEffect(() => {
-    // Optimize model
-    scene.traverse((child) => {
-      if (child.isMesh) {
-        // Optimize geometries
-        child.geometry.attributes.position.needsUpdate = false;
-        child.geometry.attributes.normal.needsUpdate = false;
-        child.geometry.attributes.uv.needsUpdate = false;
-
-        // Optimize materials
-        child.material.side = THREE.FrontSide;
-        child.material.needsUpdate = false;
-        
-        // Disable shadows if not needed
-        child.castShadow = false;
-        child.receiveShadow = false;
-      }
-    });
-  }, [scene]);
-
-  useEffect(() => {
     if (scene && onLoad) {
       onLoad();
     }
   }, [scene, onLoad]);
 
+  useEffect(() => {
+    if (scene) {
+      scene.traverse((child) => {
+        if (child.isMesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+          if (child.material) {
+            child.material.envMapIntensity = 1;
+          }
+        }
+      });
+    }
+  }, [scene]);
+
   useFrame((state, delta) => {
     if (modelRef.current) {
-      modelRef.current.rotation.y += delta * 0.5; // Adjust speed by changing the multiplier
+      modelRef.current.rotation.y += delta * 0.5;
     }
   });
 
   return (
-    <group ref={modelRef} dispose={null} scale={scale} position={position} rotation={rotation}>
-      <primitive object={scene} />
-    </group>
+    <primitive 
+      ref={modelRef}
+      object={scene}
+      scale={scale}
+      position={position}
+      rotation={rotation}
+    />
   );
 }
 
-useGLTF.preload('/models/procedurally_made_cyberpunk_building.glb');
+// Preload the model
+const modelPath = process.env.NODE_ENV === 'production' 
+  ? 'https://project-introduce-company.vercel.app/models/procedurally_made_cyberpunk_building.glb'
+  : '/models/procedurally_made_cyberpunk_building.glb';
+useGLTF.preload(modelPath);

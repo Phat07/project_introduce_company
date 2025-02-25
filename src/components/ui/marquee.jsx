@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { cn } from "../../lib/utils";
 
 /**
@@ -24,27 +24,96 @@ export function Marquee({
   repeat = 4,
   ...props
 }) {
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
   const containerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragInfo = useRef({
+    startX: 0,
+    scrollLeft: 0,
+    lastX: 0,
+    velocity: 0,
+    timestamp: 0
+  });
+  const animationFrameRef = useRef(null);
 
-  const handleMouseDown = (e) => {
+  const startDragging = (clientX) => {
     setIsDragging(true);
-    setStartX(e.pageX - containerRef.current.offsetLeft);
-    setScrollLeft(containerRef.current.scrollLeft);
+    const { offsetLeft, scrollLeft } = containerRef.current;
+    dragInfo.current = {
+      startX: clientX - offsetLeft,
+      scrollLeft,
+      lastX: clientX,
+      velocity: 0,
+      timestamp: Date.now()
+    };
   };
 
-  const handleMouseUp = () => {
+  const onDrag = (clientX) => {
+    if (!isDragging) return;
+    
+    const now = Date.now();
+    const dt = now - dragInfo.current.timestamp;
+    const dx = clientX - dragInfo.current.lastX;
+    
+    dragInfo.current.velocity = dx / dt;
+    dragInfo.current.lastX = clientX;
+    dragInfo.current.timestamp = now;
+
+    const walk = (clientX - dragInfo.current.startX) * 2;
+    containerRef.current.scrollLeft = dragInfo.current.scrollLeft - walk;
+  };
+
+  const stopDragging = () => {
+    if (!isDragging) return;
+    
     setIsDragging(false);
+    const startVelocity = dragInfo.current.velocity * 100;
+    let lastTimestamp = Date.now();
+
+    const animate = () => {
+      const now = Date.now();
+      const dt = now - lastTimestamp;
+      lastTimestamp = now;
+
+      if (Math.abs(dragInfo.current.velocity) > 0.01) {
+        containerRef.current.scrollLeft -= dragInfo.current.velocity * dt;
+        dragInfo.current.velocity *= 0.95; // Deceleration factor
+        animationFrameRef.current = requestAnimationFrame(animate);
+      }
+    };
+
+    if (Math.abs(startVelocity) > 0.1) {
+      dragInfo.current.velocity = startVelocity;
+      animate();
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, []);
+
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    startDragging(e.pageX);
+  };
+
+  const handleTouchStart = (e) => {
+    startDragging(e.touches[0].clientX);
   };
 
   const handleMouseMove = (e) => {
-    if (!isDragging) return;
     e.preventDefault();
-    const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    containerRef.current.scrollLeft = scrollLeft - walk;
+    onDrag(e.pageX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (isDragging) {
+      e.preventDefault();
+      onDrag(e.touches[0].clientX);
+    }
   };
 
   return (
@@ -52,21 +121,27 @@ export function Marquee({
       {...props}
       ref={containerRef}
       className={cn(
-        "group flex overflow-x-auto overflow-y-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] cursor-grab select-none",
+        "group flex overflow-x-auto overflow-y-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] select-none",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
           "cursor-grabbing": isDragging,
+          "cursor-grab": !isDragging,
         },
         className
       )}
       onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
+      onTouchStart={handleTouchStart}
       onMouseMove={handleMouseMove}
+      onTouchMove={handleTouchMove}
+      onMouseUp={stopDragging}
+      onTouchEnd={stopDragging}
+      onMouseLeave={stopDragging}
       style={{
+        scrollBehavior: isDragging ? 'auto' : 'smooth',
         scrollbarWidth: 'none',
         msOverflowStyle: 'none',
+        WebkitOverflowScrolling: 'touch',
       }}
     >
       {Array(repeat)

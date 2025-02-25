@@ -104,6 +104,9 @@ const ScrollAnimation = () => {
 
 const ServiceModelCanvas = ({ isMain = false }) => {
   const [isModelLoading, setIsModelLoading] = useState(true);
+  const modelPath = process.env.NODE_ENV === 'production' 
+    ? 'https://project-introduce-company.vercel.app/models/procedurally_made_cyberpunk_building.glb'
+    : '/models/procedurally_made_cyberpunk_building.glb';
 
   return (
     <div 
@@ -132,7 +135,7 @@ const ServiceModelCanvas = ({ isMain = false }) => {
         <directionalLight position={[10, 10, 5]} intensity={1.5} />
         <Suspense fallback={null}>
           <ServiceModel 
-            modelPath="/models/procedurally_made_cyberpunk_building.glb"
+            modelPath={modelPath}
             onLoad={() => setIsModelLoading(false)}
             scale={isMain ? 0.09 : 0.015}
             position={[0, isMain ? -0.2 : -1, 0]}
