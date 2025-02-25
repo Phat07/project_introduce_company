@@ -26,19 +26,29 @@
   "services": {
     "title": "我们的服务",
     "description": "为您的企业提供全面的数字化转型解决方案",
-    "items": {
-      "consulting": {
-        "title": "数字化咨询",
-        "description": "为您的数字化转型提供战略指导"
-      },
-      "implementation": {
-        "title": "解决方案实施",
-        "description": "端到端的数字化解决方案实施"
-      },
-      "support": {
-        "title": "技术支持",
-        "description": "全天候技术支持和维护服务"
-      }
+    "digitalTransformation": {
+      "title": "数字化转型",
+      "description": "全面的数字化转型解决方案，帮助企业实现现代化和优化运营"
+    },
+    "softwareDevelopment": {
+      "title": "软件开发",
+      "description": "使用前沿技术定制的软件解决方案，满足您的业务需求"
+    },
+    "security": {
+      "title": "网络安全",
+      "description": "先进的安全解决方案，保护您的数字资产并确保业务连续性"
+    },
+    "consulting": {
+      "title": "数字化咨询",
+      "description": "为您的数字化转型提供战略指导"
+    },
+    "implementation": {
+      "title": "解决方案实施",
+      "description": "端到端的数字化解决方案实施"
+    },
+    "support": {
+      "title": "技术支持",
+      "description": "全天候技术支持和维护服务"
     }
   },
   "about": {

@@ -169,7 +169,7 @@ const Header = () => {
                 icon={<SearchOutlined style={{ fontSize: '18px' }} />}
                 aria-label={t('header.search')}
               />
-              <LanguageSwitcher />
+              <LanguageSwitcher onClose={onClose} />
             </div>
           </Drawer>
         </div>

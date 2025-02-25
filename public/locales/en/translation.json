@@ -26,6 +26,18 @@
   "services": {
     "title": "Our Services",
     "description": "Comprehensive digital transformation solutions for your business",
+    "digitalTransformation": {
+      "title": "Digital Transformation",
+      "description": "Comprehensive digital transformation solutions to help businesses modernize and optimize their operations"
+    },
+    "softwareDevelopment": {
+      "title": "Software Development",
+      "description": "Custom software solutions tailored to your business needs with cutting-edge technology"
+    },
+    "security": {
+      "title": "Cybersecurity",
+      "description": "Advanced security solutions to protect your digital assets and ensure business continuity"
+    },
     "items": {
       "consulting": {
         "title": "Digital Consulting",

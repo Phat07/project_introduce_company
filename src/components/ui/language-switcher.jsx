@@ -3,8 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { Select } from 'antd';
 import { GlobalOutlined } from '@ant-design/icons';
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ onClose }) => {
   const { i18n } = useTranslation();
+
+  const handleChange = (value) => {
+    i18n.changeLanguage(value);
+    if (onClose) {
+      onClose();
+    }
+  };
 
   const languages = [
     { value: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
@@ -12,15 +19,13 @@ const LanguageSwitcher = () => {
     { value: 'cn', label: '中文', flag: '🇨🇳' },
   ];
 
-  const handleLanguageChange = (value) => {
-    i18n.changeLanguage(value);
-  };
-
   return (
     <Select
       defaultValue={i18n.language}
-      style={{ width: 120 }}
-      onChange={handleLanguageChange}
+      style={{ width: 100 }}
+      onChange={handleChange}
+      bordered={false}
+      suffixIcon={<GlobalOutlined />}
       options={languages.map(({ value, label, flag }) => ({
         value,
         label: (
@@ -29,9 +34,7 @@ const LanguageSwitcher = () => {
           </span>
         ),
       }))}
-      suffixIcon={<GlobalOutlined />}
       className="language-selector"
-      bordered={false}
       dropdownStyle={{ minWidth: '150px' }}
     />
   );
