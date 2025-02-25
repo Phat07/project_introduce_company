@@ -1,8 +1,34 @@
-# React + Vite
+# Company Introduction Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern company introduction website built with React + Vite, featuring:
 
-Currently, two official plugins are available:
+- Multi-language support (Vietnamese, English, Chinese)
+- Responsive design
+- Modern UI with smooth animations
+- Component-based architecture
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+
+- React + Vite
+- Tailwind CSS
+- i18next for internationalization
+- Ant Design components
+- React Router for navigation
+
+## Development
+
+To get started:
+
+```bash
+npm install
+npm run dev
+```
+
+## Features
+
+- Responsive header with language switcher
+- Hero section with morphing text
+- About us section
+- Services showcase
+- Contact form
+- Multi-language support
