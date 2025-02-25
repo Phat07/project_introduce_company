@@ -548,3 +548,28 @@ canvas {
   z-index: 0;
   overflow: hidden !important;
 }
+
+/* Model Loader Styles */
+.model-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.model-loader p {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+}

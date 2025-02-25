@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
 import MorphingText from '../../components/ui/morphing-text';
 import LoadingScreen from '../../components/ui/loading-screen';
+import { ModelLoader } from '../../components/ui/model-loader'; 
 import { Marquee } from '../../components/ui/marquee';
 import { ServiceModel } from '../../components/3d/ServiceModel';
 import './HomePage.css';
@@ -102,15 +103,10 @@ const ScrollAnimation = () => {
 };
 
 const ServiceModelCanvas = ({ isMain = false }) => {
-  const [ref, inView] = useInView({
-    threshold: 0,
-    triggerOnce: false,
-    rootMargin: '100px'
-  });
+  const [isModelLoading, setIsModelLoading] = useState(true);
 
   return (
     <div 
-      ref={ref}
       style={{ 
         width: '100%', 
         height: '100%', 
@@ -119,40 +115,40 @@ const ServiceModelCanvas = ({ isMain = false }) => {
         maxHeight: isMain ? '600px' : '300px'
       }}
     >
-      {inView && (
-        <Canvas
-          camera={{ 
-            position: isMain ? [0, 1.5, 3] : [0, 2, 5], 
-            fov: isMain ? 60 : 45,
-            near: 0.1,
-            far: 1000
-          }}
-          style={{ width: '100%', height: '100%' }}
-          dpr={[1, 2]}
-          performance={{ min: 0.5 }}
-          frameloop={isMain ? "always" : "demand"}
-        >
-          <ambientLight intensity={0.7} />
-          <directionalLight position={[10, 10, 5]} intensity={1.5} />
-          <Suspense fallback={null}>
-            <ServiceModel 
-              modelPath="/models/procedurally_made_cyberpunk_building.glb"
-              scale={isMain ? 0.09 : 0.015}
-              position={[0, isMain ? -0.2 : -1, 0]}
-              rotation={[0, Math.PI / 4, 0]}
-            />
-            <Environment preset="city" />
-            <OrbitControls 
-              enableZoom={false}
-              enablePan={false}
-              minPolarAngle={Math.PI / 2.5}
-              maxPolarAngle={Math.PI / 2.5}
-              autoRotate={false}
-              autoRotateSpeed={0.5}
-            />
-          </Suspense>
-        </Canvas>
-      )}
+      {isModelLoading && <ModelLoader />}
+      <Canvas
+        camera={{ 
+          position: isMain ? [0, 1.5, 3] : [0, 2, 5], 
+          fov: isMain ? 60 : 45,
+          near: 0.1,
+          far: 1000
+        }}
+        style={{ width: '100%', height: '100%' }}
+        dpr={[1, 2]}
+        performance={{ min: 0.5 }}
+        frameloop={isMain ? "always" : "demand"}
+      >
+        <ambientLight intensity={0.7} />
+        <directionalLight position={[10, 10, 5]} intensity={1.5} />
+        <Suspense fallback={null}>
+          <ServiceModel 
+            modelPath="/models/procedurally_made_cyberpunk_building.glb"
+            onLoad={() => setIsModelLoading(false)}
+            scale={isMain ? 0.09 : 0.015}
+            position={[0, isMain ? -0.2 : -1, 0]}
+            rotation={[0, Math.PI / 4, 0]}
+          />
+          <Environment preset="city" />
+          <OrbitControls 
+            enableZoom={false}
+            enablePan={false}
+            minPolarAngle={Math.PI / 2.5}
+            maxPolarAngle={Math.PI / 2.5}
+            autoRotate={false}
+            autoRotateSpeed={0.5}
+          />
+        </Suspense>
+      </Canvas>
     </div>
   );
 };

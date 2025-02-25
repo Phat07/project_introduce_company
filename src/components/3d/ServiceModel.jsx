@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-export function ServiceModel({ modelPath, scale = 1, position = [0, 0, 0], rotation = [0, 0, 0] }) {
+export function ServiceModel({ modelPath, scale = 1, position = [0, 0, 0], rotation = [0, 0, 0], onLoad }) {
   const modelRef = useRef();
   const { scene } = useGLTF(modelPath);
 
@@ -26,6 +26,12 @@ export function ServiceModel({ modelPath, scale = 1, position = [0, 0, 0], rotat
       }
     });
   }, [scene]);
+
+  useEffect(() => {
+    if (scene && onLoad) {
+      onLoad();
+    }
+  }, [scene, onLoad]);
 
   useFrame((state, delta) => {
     if (modelRef.current) {
