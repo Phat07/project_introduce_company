@@ -1,25 +1,34 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 export function useScrollHeader() {
-  const [scrollDirection, setScrollDirection] = useState('up')
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+    let lastKnownScrollPosition = 0;
+    const scrollThreshold = 10;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      
-      if (currentScrollY < lastScrollY) {
-        setScrollDirection('up')
-      } else if (currentScrollY > 10) {
-        setScrollDirection('down')
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (Math.abs(lastKnownScrollPosition - (isScrolled ? 0 : scrollThreshold)) >= scrollThreshold) {
+            setIsScrolled(lastKnownScrollPosition > scrollThreshold);
+          }
+          ticking = false;
+        });
+
+        ticking = true;
       }
-      
-      setLastScrollY(currentScrollY)
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-  return scrollDirection
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isScrolled]);
+
+  return isScrolled;
 }
