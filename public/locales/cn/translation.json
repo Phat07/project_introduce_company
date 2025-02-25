@@ -1,0 +1,75 @@
+{
+  "header": {
+    "intro": "关于我们",
+    "about": "公司简介",
+    "vision": "愿景与使命",
+    "digitalTransformation": "数字化转型",
+    "consulting": "数字化转型咨询",
+    "solutions": "解决方案",
+    "digitalSpace": "数字空间",
+    "news": "新闻动态",
+    "recruitment": "人才招聘",
+    "support": "技术支持",
+    "search": "搜索",
+    "menu": "菜单",
+    "logoAlt": "Viettel Solutions 标志",
+    "home": "首页",
+    "services": "服务",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "VIETTEL SOLUTIONS",
+    "subtitle": "您值得信赖的数字化转型伙伴",
+    "description": "助力企业数字化转型之旅",
+    "cta": "立即探索"
+  },
+  "services": {
+    "title": "我们的服务",
+    "description": "为您的企业提供全面的数字化转型解决方案",
+    "items": {
+      "consulting": {
+        "title": "数字化咨询",
+        "description": "为您的数字化转型提供战略指导"
+      },
+      "implementation": {
+        "title": "解决方案实施",
+        "description": "端到端的数字化解决方案实施"
+      },
+      "support": {
+        "title": "技术支持",
+        "description": "全天候技术支持和维护服务"
+      }
+    }
+  },
+  "about": {
+    "title": "关于我们",
+    "content": "Viettel Solutions 是越南数字化转型领域的先驱",
+    "description": "我们是您值得信赖的数字化转型伙伴，为企业提供创新和高效的解决方案。",
+    "stats": {
+      "projects": {
+        "number": "500+",
+        "label": "完成项目"
+      },
+      "clients": {
+        "number": "200+",
+        "label": "满意客户"
+      },
+      "experts": {
+        "number": "15+",
+        "label": "行业经验"
+      }
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "address": "地址",
+    "phone": "电话",
+    "email": "电子邮件",
+    "form": {
+      "name": "姓名",
+      "email": "电子邮件",
+      "message": "留言",
+      "submit": "发送消息"
+    }
+  }
+}

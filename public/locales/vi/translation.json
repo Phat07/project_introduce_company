@@ -1,0 +1,74 @@
+{
+  "header": {
+    "intro": "GIỚI THIỆU",
+    "about": "Về chúng tôi",
+    "vision": "Tầm nhìn & Sứ mệnh",
+    "digitalTransformation": "CHUYỂN ĐỔI SỐ",
+    "consulting": "Tư vấn chuyển đổi số",
+    "solutions": "Giải pháp",
+    "digitalSpace": "KHÔNG GIAN SỐ",
+    "news": "TIN TỨC",
+    "recruitment": "TUYỂN DỤNG",
+    "support": "HỖ TRỢ",
+    "search": "Tìm kiếm",
+    "menu": "Menu",
+    "logoAlt": "Viettel Solutions Logo",
+    "home": "Trang chủ",
+    "services": "Dịch vụ",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "title": "VIETTEL SOLUTIONS",
+    "subtitle": "Đối tác tin cậy trong hành trình chuyển đổi số",
+    "description": "Đồng hành cùng doanh nghiệp trong hành trình số hóa",
+    "cta": "Khám phá ngay"
+  },
+  "services": {
+    "title": "Dịch vụ của chúng tôi",
+    "digitalTransformation": {
+      "title": "Tư vấn chuyển đổi số",
+      "description": "Giải pháp toàn diện cho doanh nghiệp của bạn"
+    },
+    "softwareDevelopment": {
+      "title": "Phát triển phần mềm",
+      "description": "Ứng dụng công nghệ tiên tiến"
+    },
+    "security": {
+      "title": "Bảo mật thông tin",
+      "description": "An toàn và bảo mật dữ liệu"
+    }
+  },
+  "about": {
+    "title": "Về chúng tôi",
+    "content": "Viettel Solutions là đơn vị tiên phong trong lĩnh vực chuyển đổi số tại Việt Nam",
+    "description": "Chúng tôi là đối tác tin cậy trong lĩnh vực chuyển đổi số, mang đến những giải pháp sáng tạo và hiệu quả cho doanh nghiệp.",
+    "stats": {
+      "projects": {
+        "number": "500+",
+        "label": "Dự án thành công"
+      },
+      "clients": {
+        "number": "200+",
+        "label": "Khách hàng"
+      },
+      "experts": {
+        "number": "50+",
+        "label": "Chuyên gia"
+      }
+    }
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "address": "Địa chỉ",
+    "phone": "Điện thoại",
+    "email": "Email",
+    "form": {
+      "name": "Họ và tên",
+      "email": "Email",
+      "message": "Tin nhắn",
+      "submit": "Gửi tin nhắn"
+    }
+  },
+  "welcome": "Xin chào",
+  "language": "Ngôn ngữ"
+}

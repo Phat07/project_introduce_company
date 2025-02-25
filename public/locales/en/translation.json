@@ -1,0 +1,77 @@
+{
+  "header": {
+    "intro": "ABOUT",
+    "about": "About Us",
+    "vision": "Vision & Mission",
+    "digitalTransformation": "DIGITAL TRANSFORMATION",
+    "consulting": "Digital Transformation Consulting",
+    "solutions": "Solutions",
+    "digitalSpace": "DIGITAL SPACE",
+    "news": "NEWS",
+    "recruitment": "CAREERS",
+    "support": "SUPPORT",
+    "search": "Search",
+    "menu": "Menu",
+    "logoAlt": "Viettel Solutions Logo",
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "VIETTEL SOLUTIONS",
+    "subtitle": "Your trusted partner in digital transformation",
+    "description": "Empowering businesses in their digital journey",
+    "cta": "Explore Now"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Comprehensive digital transformation solutions for your business",
+    "items": {
+      "consulting": {
+        "title": "Digital Consulting",
+        "description": "Strategic guidance for your digital transformation"
+      },
+      "implementation": {
+        "title": "Implementation",
+        "description": "End-to-end digital solution implementation"
+      },
+      "support": {
+        "title": "Support",
+        "description": "24/7 technical support and maintenance"
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "content": "Viettel Solutions is a pioneer in digital transformation in Vietnam",
+    "description": "We are your trusted partner in digital transformation, delivering innovative and effective solutions for businesses.",
+    "stats": {
+      "projects": {
+        "number": "500+",
+        "label": "Projects Completed"
+      },
+      "clients": {
+        "number": "200+",
+        "label": "Happy Clients"
+      },
+      "experts": {
+        "number": "15+",
+        "label": "Years Experience"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "welcome": "Welcome",
+  "language": "Language"
+}
