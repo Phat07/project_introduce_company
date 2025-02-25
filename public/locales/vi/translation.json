@@ -69,6 +69,12 @@
       "submit": "Gửi tin nhắn"
     }
   },
+  "partners": {
+    "title": "Đối tác tiêu biểu"
+  },
+  "clients": {
+    "title": "Khách hàng tiêu biểu"
+  },
   "welcome": "Xin chào",
   "language": "Ngôn ngữ"
 }

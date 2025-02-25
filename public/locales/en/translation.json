@@ -84,6 +84,12 @@
       "submit": "Send Message"
     }
   },
+  "partners": {
+    "title": "Featured Partners"
+  },
+  "clients": {
+    "title": "Featured Clients"
+  },
   "welcome": "Welcome",
   "language": "Language"
 }
