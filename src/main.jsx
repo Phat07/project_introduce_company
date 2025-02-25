@@ -4,8 +4,12 @@ import App from './App.jsx'
 import './index.css'
 import 'antd/dist/reset.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// Create root only once
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+// Initial render
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 )

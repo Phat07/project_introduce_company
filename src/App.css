@@ -204,3 +204,25 @@
 .header *:after {
   transition: all 0.3s ease;
 }
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
