@@ -81,5 +81,42 @@
       "message": "留言",
       "submit": "发送消息"
     }
+  },
+  "footer": {
+    "sections": {
+      "company_info": "公司信息",
+      "office_system": "办公系统",
+      "bank_info": "银行账户信息"
+    },
+    "company": {
+      "name": "成功解决方案贸易服务有限公司",
+      "international_name": "Thanh Cong Solutions Trading Service Company Limited",
+      "address": "越南胡志明市平正郡荣禄坊B区武文文路B8/26B号"
+    },
+    "contact": {
+      "hotline": "服务热线",
+      "tel": "电话",
+      "email": "电子邮件",
+      "website": "网站"
+    },
+    "locations": {
+      "headquarters": "总部",
+      "headquarters_address": "胡志明市平正郡荣禄坊B区武文文路B8/26B号",
+      "binh_tan": "平新办事处",
+      "binh_tan_address": "胡志明市平新郡平兴和B坊2A街73号",
+      "long_an": "隆安办事处",
+      "long_an_address": "隆安省德和县安宁西社安宁西居民区8街529号",
+      "data_center": "TCS数据中心",
+      "data_center_address": "胡志明市新平郡第12坊黄花添Viettel IDC N6大楼4楼A8室"
+    },
+    "bank": {
+      "account_name": "成功解决方案贸易服务有限公司",
+      "account_name_label": "账户名称",
+      "tax_code": "税号",
+      "account_number": "账号",
+      "bank_label": "开户银行",
+      "bank_name": "亚洲商业银行 (ACB) - 高美分行"
+    },
+    "copyright": "© {{year}} 成功解决方案. 版权所有."
   }
 }

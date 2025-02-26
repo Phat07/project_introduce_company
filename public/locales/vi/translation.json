@@ -76,5 +76,42 @@
     "title": "Khách hàng tiêu biểu"
   },
   "welcome": "Xin chào",
-  "language": "Ngôn ngữ"
+  "language": "Ngôn ngữ",
+  "footer": {
+    "sections": {
+      "company_info": "Thông tin công ty",
+      "office_system": "Hệ thống văn phòng",
+      "bank_info": "Thông tin tài khoản"
+    },
+    "company": {
+      "name": "Công ty TNHH TM DV Thành Công Solutions",
+      "international_name": "Thanh Cong Solutions Trading Service Company Limited",
+      "address": "B8/26B Võ Văn Vân, Xã Vĩnh Lộc B, Huyện Bình Chánh, Thành Phố Hồ Chí Minh, Việt Nam"
+    },
+    "contact": {
+      "hotline": "Hotline",
+      "tel": "Điện thoại",
+      "email": "Email",
+      "website": "Website"
+    },
+    "locations": {
+      "headquarters": "Trụ sở chính",
+      "headquarters_address": "B8/26B Võ Văn Vân, X. Vĩnh Lộc B, H.Bình Chánh, Tp. Hồ Chí Minh",
+      "binh_tan": "Văn Phòng giao dịch Bình Tân",
+      "binh_tan_address": "Số 73, Đường Số 2A, Phường Bình Hưng Hòa B, Quận Bình Tân, Tp. Hồ Chí Minh",
+      "long_an": "Văn Phòng giao dịch Long An",
+      "long_an_address": "Số 529 Đường số 8, KDC An Ninh Tây, Xã An Ninh Tây, Huyện Đức Hòa, Tỉnh Long An",
+      "data_center": "Data Center TCS",
+      "data_center_address": "A8 Tầng 4 tòa N6 Viettel IDC Hoàng Hoa Thám, Phường 12, Tân Bình, Thành phố Hồ Chí Minh"
+    },
+    "bank": {
+      "account_name": "Công Ty TNHH TM DV Thành Công Solutions",
+      "account_name_label": "Tên TK",
+      "tax_code": "MST",
+      "account_number": "Số TK",
+      "bank_label": "Ngân hàng",
+      "bank_name": "Ngân hàng Á Châu ACB - CN Gò Mây"
+    },
+    "copyright": " {{year}} Thanh Cong Solutions. All rights reserved."
+  }
 }

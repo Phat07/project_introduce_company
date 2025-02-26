@@ -1,17 +1,14 @@
-import React, { useEffect, useRef, useState, useCallback, Suspense } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useScroll, ScrollControls, Scroll, Environment, OrbitControls } from '@react-three/drei';
+import React, { useState, useEffect, Suspense, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useInView } from 'react-intersection-observer';
-import gsap from 'gsap';
-import * as THREE from 'three';
-import MorphingText from '../../components/ui/morphing-text';
-import LoadingScreen from '../../components/ui/loading-screen';
-import { ModelLoader } from '../../components/ui/model-loader';
-import { Marquee } from '../../components/ui/marquee';
+import { Canvas } from '@react-three/fiber';
+import { Environment, OrbitControls } from '@react-three/drei';
 import { ServiceModel } from '../../components/3d/ServiceModel';
 import StarField from '../../components/3d/StarField';
 import { motion, AnimatePresence } from 'framer-motion';
+import LoadingScreen from '../../components/ui/loading-screen';
+import { ModelLoader } from '../../components/ui/model-loader';
+import { Marquee } from '../../components/ui/marquee';
+import MorphingText from '../../components/ui/morphing-text';
 import './HomePage.css';
 
 // Client Logos
@@ -105,99 +102,6 @@ const ScrollAnimation = () => {
   return null;
 };
 
-const ServiceModelCanvas = ({ isMain = false }) => {
-  const [isModelLoading, setIsModelLoading] = useState(true);
-  const modelPath = process.env.NODE_ENV === 'production'
-    ? 'https://project-introduce-company.vercel.app/models/procedurally_made_cyberpunk_building.glb'
-    : '/models/procedurally_made_cyberpunk_building.glb';
-
-  return (
-    <div
-      style={{
-        width: '100%',
-        height: '100%',
-        position: 'relative',
-        zIndex: 1,
-        maxHeight: isMain ? '600px' : '300px'
-      }}
-    >
-      {isModelLoading && <ModelLoader />}
-      <Canvas
-        camera={{
-          position: isMain ? [0, 1.5, 3] : [0, 2, 5],
-          fov: isMain ? 60 : 45,
-          near: 0.1,
-          far: 1000
-        }}
-        style={{ width: '100%', height: '100%' }}
-        dpr={[1, 2]}
-        performance={{ min: 0.5 }}
-        frameloop={isMain ? "always" : "demand"}
-        gl={{
-          alpha: false,
-          antialias: true,
-          powerPreference: "high-performance",
-        }}
-      >
-        <color attach="background" args={['#000B1A']} /> {/* Deeper tech blue */}
-        <fog attach="fog" args={['#000B1A', 5, 20]} />
-
-        {/* Ambient and main lighting */}
-        <ambientLight intensity={0.2} />
-        <directionalLight
-          position={[10, 10, 5]}
-          intensity={0.8}
-          color="#4cc9ff"
-        />
-
-        {/* Accent lighting */}
-        <pointLight
-          position={[-5, 2, -5]}
-          intensity={0.6}
-          color="#00ffff"
-          distance={15}
-          decay={2}
-        />
-        <pointLight
-          position={[5, -2, 5]}
-          intensity={0.4}
-          color="#0066cc"
-          distance={15}
-          decay={2}
-        />
-        <spotLight
-          position={[0, 5, 0]}
-          angle={0.5}
-          penumbra={1}
-          intensity={0.3}
-          color="#4cc9ff"
-          distance={20}
-        />
-
-        <Suspense fallback={null}>
-          <StarField count={2000} />
-          <ServiceModel
-            modelPath={modelPath}
-            onLoad={() => setIsModelLoading(false)}
-            scale={isMain ? 0.09 : 0.015}
-            position={[0, isMain ? -0.2 : -1, 0]}
-            rotation={[0, Math.PI / 4, 0]}
-          />
-          <Environment preset="night" />
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            minPolarAngle={Math.PI / 2.5}
-            maxPolarAngle={Math.PI / 2.5}
-            autoRotate={false}
-            autoRotateSpeed={0.5}
-          />
-        </Suspense>
-      </Canvas>
-    </div>
-  );
-};
-
 const ClientsSection = () => {
   const { t } = useTranslation();
   const clients = [
@@ -267,6 +171,139 @@ const PartnersSection = () => {
   );
 };
 
+const ServiceModelCanvas = ({ isMain = false }) => {
+  const [isModelLoading, setIsModelLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isModelReady, setIsModelReady] = useState(false);
+  const containerRef = useRef(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Khi component sắp vào viewport, bắt đầu load model
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          // Khi scroll ra khỏi viewport một khoảng xa mới unmount
+          if (Math.abs(entry.intersectionRatio) < 0.1) {
+            setIsVisible(false);
+          }
+        }
+      },
+      {
+        rootMargin: '100px',
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5]
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const modelPath = process.env.NODE_ENV === 'production'
+    ? 'https://project-introduce-company.vercel.app/models/procedurally_made_cyberpunk_building.glb'
+    : '/models/procedurally_made_cyberpunk_building.glb';
+
+  const handleModelLoad = () => {
+    setIsModelLoading(false);
+    setIsModelReady(true);
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        zIndex: 1,
+        maxHeight: isMain ? '600px' : '300px',
+        willChange: 'transform',
+        background: '#000B1A',
+        transition: 'opacity 0.3s ease-in-out',
+        opacity: isModelReady ? 1 : 0
+      }}
+    >
+      {isModelLoading && <ModelLoader />}
+      <Canvas
+        camera={{
+          position: isMain ? [0, 1.5, 3] : [0, 2, 5],
+          fov: isMain ? 60 : 45,
+          near: 0.1,
+          far: 1000
+        }}
+        style={{ 
+          width: '100%', 
+          height: '100%',
+          willChange: 'transform',
+          visibility: isVisible ? 'visible' : 'hidden'
+        }}
+        dpr={[1, 2]}
+        performance={{ 
+          min: 0.8,
+          max: 1
+        }}
+        frameloop={isVisible ? "always" : "never"}
+        gl={{
+          alpha: false,
+          antialias: true,
+          powerPreference: "high-performance",
+          failIfMajorPerformanceCaveat: true,
+          preserveDrawingBuffer: true
+        }}
+      >
+        <color attach="background" args={['#000B1A']} />
+        <fog attach="fog" args={['#000B1A', 5, 20]} />
+
+        <ambientLight intensity={0.2} />
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={0.8}
+          color="#4cc9ff"
+        />
+
+        <pointLight
+          position={[-5, 2, -5]}
+          intensity={0.6}
+          color="#00ffff"
+          distance={15}
+          decay={2}
+        />
+        <pointLight
+          position={[5, -2, 5]}
+          intensity={0.4}
+          color="#0066cc"
+          distance={15}
+          decay={2}
+        />
+
+        <Suspense fallback={null}>
+          <StarField count={isMain ? 1500 : 800} />
+          <ServiceModel
+            modelPath={modelPath}
+            onLoad={handleModelLoad}
+            scale={isMain ? 0.09 : 0.015}
+            position={[0, isMain ? -0.2 : -1, 0]}
+            rotation={[0, Math.PI / 4, 0]}
+          />
+          <Environment preset="night" />
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            minPolarAngle={Math.PI / 2.5}
+            maxPolarAngle={Math.PI / 2.5}
+            autoRotate={isMain}
+            autoRotateSpeed={0.5}
+          />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+};
+
 const HomePage = () => {
   const { t } = useTranslation();
   const isMobile = window.innerWidth <= 768;
@@ -320,7 +357,7 @@ const HomePage = () => {
   const newsItems = [
     {
       image: '/images/news/smart-city.jpg',
-      title: 'Viettel Solutions tổ chức hội thảo "Giao thông thông minh: Tương lai của thành phố hiện đại"',
+      title: 'ThanhCong Solutions tổ chức hội thảo "Giao thông thông minh: Tương lai của thành phố hiện đại"',
       description: 'Hội thảo tập trung vào các giải pháp công nghệ tiên tiến cho hệ thống giao thông thông minh...',
       date: '26/02/2025'
     },
@@ -492,7 +529,7 @@ const HomePage = () => {
                 <div className="model-container main-model">
                   <ServiceModelCanvas isMain={true} />
                 </div>
-                <h2 className="section-title">{t('services.title')}</h2>
+                {/* <h2 className="section-title">{t('services.title')}</h2> */}
               </div>
               <div className="services-grid">
                 <div className="service-card">

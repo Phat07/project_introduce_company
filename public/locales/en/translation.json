@@ -91,5 +91,42 @@
     "title": "Featured Clients"
   },
   "welcome": "Welcome",
-  "language": "Language"
+  "language": "Language",
+  "footer": {
+    "sections": {
+      "company_info": "Company Information",
+      "office_system": "Office System",
+      "bank_info": "Bank Account Information"
+    },
+    "company": {
+      "name": "Thanh Cong Solutions Trading Service Company Limited",
+      "international_name": "Thanh Cong Solutions Trading Service Company Limited",
+      "address": "B8/26B Vo Van Van Street, Vinh Loc B Ward, Binh Chanh District, Ho Chi Minh City, Vietnam"
+    },
+    "contact": {
+      "hotline": "Hotline",
+      "tel": "Tel",
+      "email": "Email",
+      "website": "Website"
+    },
+    "locations": {
+      "headquarters": "Headquarters",
+      "headquarters_address": "B8/26B Vo Van Van Street, Vinh Loc B Ward, Binh Chanh District, Ho Chi Minh City",
+      "binh_tan": "Binh Tan Transaction Office",
+      "binh_tan_address": "No. 73, Street 2A, Binh Hung Hoa B Ward, Binh Tan District, Ho Chi Minh City",
+      "long_an": "Long An Transaction Office",
+      "long_an_address": "No. 529 Street 8, An Ninh Tay Residential Area, An Ninh Tay Commune, Duc Hoa District, Long An Province",
+      "data_center": "TCS Data Center",
+      "data_center_address": "A8 4th Floor, N6 Building Viettel IDC Hoang Hoa Tham, Ward 12, Tan Binh District, Ho Chi Minh City"
+    },
+    "bank": {
+      "account_name": "Thanh Cong Solutions Trading Service Company Limited",
+      "account_name_label": "Account Name",
+      "tax_code": "Tax Code",
+      "account_number": "Account No.",
+      "bank_label": "Bank",
+      "bank_name": "Asia Commercial Bank (ACB) - Go May Branch"
+    },
+    "copyright": "  Thanh Cong Solutions. All rights reserved."
+  }
 }
