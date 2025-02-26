@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Layout, Menu, Button, Drawer, Space } from 'antd';
-import { MenuOutlined, GlobalOutlined, SearchOutlined } from '@ant-design/icons';
+import { Layout, Menu, Button, Drawer, Space, Input } from 'antd';
+import { MenuOutlined, GlobalOutlined, SearchOutlined, CloseOutlined } from '@ant-design/icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import viettelLogo from '../../assets/logo.png';
@@ -13,6 +13,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [visible, setVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+  const [showSearch, setShowSearch] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
@@ -93,6 +94,10 @@ const Header = () => {
     return path || 'home';
   };
 
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
+  };
+
   return (
     <div className={`w-full flex justify-center fixed z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <AntHeader className="header w-full max-w-7xl h-14">
@@ -128,6 +133,7 @@ const Header = () => {
                 icon={<SearchOutlined style={{ fontSize: '18px' }} />}
                 className={`hover:text-red-500 ${isScrolled ? 'text-black' : 'text-black'}`}
                 aria-label={t('header.search')}
+                onClick={toggleSearch}
               />
               <LanguageSwitcher />
             </div>
@@ -135,14 +141,44 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           {isMobile && (
-            <Button
-              type="text"
-              icon={<MenuOutlined style={{ fontSize: '20px' }} />}
-              onClick={showDrawer}
-              className={isScrolled ? 'text-black' : 'text-black'}
-              aria-label={t('header.menu')}
-            />
+            <div className="flex items-center gap-4">
+              <Button
+                type="text"
+                icon={<SearchOutlined style={{ fontSize: '18px' }} />}
+                className={`hover:text-red-500 ${isScrolled ? 'text-black' : 'text-black'}`}
+                aria-label={t('header.search')}
+                onClick={toggleSearch}
+              />
+              <Button
+                type="text"
+                icon={<MenuOutlined style={{ fontSize: '20px' }} />}
+                onClick={showDrawer}
+                className={isScrolled ? 'text-black' : 'text-black'}
+                aria-label={t('header.menu')}
+              />
+            </div>
           )}
+
+          {/* Search Bar */}
+          <div className={`search-overlay ${showSearch ? 'active' : ''} ${isMobile ? 'mobile' : ''}`}>
+            <div className="search-container">
+              <Input
+                placeholder={t('header.search')}
+                prefix={<SearchOutlined className="search-icon" />}
+                suffix={
+                  <CloseOutlined
+                    className="search-close"
+                    onClick={toggleSearch}
+                  />
+                }
+                className="search-input"
+                onPressEnter={(e) => {
+                  console.log('Search:', e.target.value);
+                  toggleSearch();
+                }}
+              />
+            </div>
+          </div>
 
           {/* Mobile Drawer */}
           <Drawer
@@ -164,11 +200,6 @@ const Header = () => {
               className="border-none"
             />
             <div className="p-4 border-t flex items-center gap-4">
-              <Button
-                type="text"
-                icon={<SearchOutlined style={{ fontSize: '18px' }} />}
-                aria-label={t('header.search')}
-              />
               <LanguageSwitcher onClose={onClose} />
             </div>
           </Drawer>

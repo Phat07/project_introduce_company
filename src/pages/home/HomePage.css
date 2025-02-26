@@ -26,8 +26,23 @@ main {
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  background: white;
   position: relative;
+  /* background-image: url('../../assets/networking.jpg'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  z-index: 1;
 }
 
 .hero-content {
@@ -35,6 +50,8 @@ main {
   margin: 0 auto;
   text-align: center;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
@@ -101,7 +118,7 @@ main {
 /* Services Section */
 .services-section {
   width: 100%;
-  padding: 80px 0;
+  padding: 10px 0;
   background: white;
   position: relative;
   overflow: hidden;
@@ -130,7 +147,7 @@ main {
 .section-title {
   font-size: 3rem;
   font-weight: 700;
-  margin: 1rem 0 3rem;
+  margin: 0.2rem 0 2rem;
   text-align: center;
   position: relative;
   z-index: 2;
@@ -142,7 +159,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 0 20px;
+  padding: 0 10px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -551,6 +568,244 @@ main {
   will-change: transform;
 }
 
+/* Featured Section */
+.featured-section {
+  width: 100%;
+  padding: 60px 0;
+  background: linear-gradient(180deg, #000B1A 0%, #001a2c 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.featured-header .section-title {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(120deg, #4cc9ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.featured-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.featured-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(76, 201, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4cc9ff, transparent);
+  animation: shimmer 2s infinite;
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(76, 201, 255, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),
+              0 0 15px rgba(76, 201, 255, 0.1);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 992px) {
+  .featured-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .featured-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .featured-header .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* News Highlight Section */
+.news-highlight-section {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.news-highlight-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.news-title {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+}
+
+.news-title h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.news-content {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  min-height: 200px;
+}
+
+.news-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.news-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.news-text h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.news-description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.news-date {
+  color: #666;
+  font-size: 14px;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #1877F2;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  color: #0A66C2;
+  text-decoration: underline;
+}
+
+.news-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.news-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.news-dot.active {
+  background: #1877F2;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .news-text h3 {
+    font-size: 18px;
+  }
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -623,4 +878,39 @@ canvas {
   font-size: 0.875rem;
   color: #666;
   font-weight: 500;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(76, 201, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.icon-container:hover {
+  transform: translateY(-2px);
+  border-color: rgba(76, 201, 255, 0.3);
+  box-shadow: 0 0 15px rgba(76, 201, 255, 0.2);
+}
+
+.icon-container svg {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.icon-container:hover svg {
+  opacity: 1;
 }

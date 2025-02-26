@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
+import { FloatingIconsGroup } from './FloatingIcons';
 
 export function ServiceModel({ modelPath, scale = 1, position = [0, 0, 0], rotation = [0, 0, 0], onLoad }) {
   const modelRef = useRef();
@@ -21,6 +22,13 @@ export function ServiceModel({ modelPath, scale = 1, position = [0, 0, 0], rotat
           child.receiveShadow = true;
           if (child.material) {
             child.material.envMapIntensity = 1;
+            // Add some metallic and emissive properties to make it more cyberpunk
+            child.material.metalness = 0.8;
+            child.material.roughness = 0.2;
+            if (child.material.color) {
+              child.material.emissive = child.material.color.clone();
+              child.material.emissiveIntensity = 0.2;
+            }
           }
         }
       });
@@ -34,13 +42,16 @@ export function ServiceModel({ modelPath, scale = 1, position = [0, 0, 0], rotat
   });
 
   return (
-    <primitive 
-      ref={modelRef}
-      object={scene}
-      scale={scale}
-      position={position}
-      rotation={rotation}
-    />
+    <group>
+      <primitive 
+        ref={modelRef}
+        object={scene}
+        scale={scale}
+        position={position}
+        rotation={rotation}
+      />
+      <FloatingIconsGroup />
+    </group>
   );
 }
 

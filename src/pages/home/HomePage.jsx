@@ -4,11 +4,14 @@ import { useScroll, ScrollControls, Scroll, Environment, OrbitControls } from '@
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
+import * as THREE from 'three';
 import MorphingText from '../../components/ui/morphing-text';
 import LoadingScreen from '../../components/ui/loading-screen';
-import { ModelLoader } from '../../components/ui/model-loader'; 
+import { ModelLoader } from '../../components/ui/model-loader';
 import { Marquee } from '../../components/ui/marquee';
 import { ServiceModel } from '../../components/3d/ServiceModel';
+import StarField from '../../components/3d/StarField';
+import { motion, AnimatePresence } from 'framer-motion';
 import './HomePage.css';
 
 // Client Logos
@@ -62,14 +65,14 @@ const ScrollAnimation = () => {
   const cameraRef = useRef();
   const lastScrollY = useRef(0);
   const rafId = useRef();
-  
+
   // Throttle scroll updates
   const updateCamera = useCallback(() => {
     if (!cameraRef.current) return;
-    
+
     const currentScrollY = scrollYProgress.get();
     const scrollDiff = Math.abs(currentScrollY - lastScrollY.current);
-    
+
     // Only update if scroll difference is significant
     if (scrollDiff > 0.001) {
       gsap.to(camera.position, {
@@ -80,7 +83,7 @@ const ScrollAnimation = () => {
       });
       lastScrollY.current = currentScrollY;
     }
-    
+
     rafId.current = requestAnimationFrame(updateCamera);
   }, [camera.position, scrollYProgress]);
 
@@ -104,24 +107,24 @@ const ScrollAnimation = () => {
 
 const ServiceModelCanvas = ({ isMain = false }) => {
   const [isModelLoading, setIsModelLoading] = useState(true);
-  const modelPath = process.env.NODE_ENV === 'production' 
+  const modelPath = process.env.NODE_ENV === 'production'
     ? 'https://project-introduce-company.vercel.app/models/procedurally_made_cyberpunk_building.glb'
     : '/models/procedurally_made_cyberpunk_building.glb';
 
   return (
-    <div 
-      style={{ 
-        width: '100%', 
-        height: '100%', 
-        position: 'relative', 
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        position: 'relative',
         zIndex: 1,
         maxHeight: isMain ? '600px' : '300px'
       }}
     >
       {isModelLoading && <ModelLoader />}
       <Canvas
-        camera={{ 
-          position: isMain ? [0, 1.5, 3] : [0, 2, 5], 
+        camera={{
+          position: isMain ? [0, 1.5, 3] : [0, 2, 5],
           fov: isMain ? 60 : 45,
           near: 0.1,
           far: 1000
@@ -130,19 +133,58 @@ const ServiceModelCanvas = ({ isMain = false }) => {
         dpr={[1, 2]}
         performance={{ min: 0.5 }}
         frameloop={isMain ? "always" : "demand"}
+        gl={{
+          alpha: false,
+          antialias: true,
+          powerPreference: "high-performance",
+        }}
       >
-        <ambientLight intensity={0.7} />
-        <directionalLight position={[10, 10, 5]} intensity={1.5} />
+        <color attach="background" args={['#000B1A']} /> {/* Deeper tech blue */}
+        <fog attach="fog" args={['#000B1A', 5, 20]} />
+
+        {/* Ambient and main lighting */}
+        <ambientLight intensity={0.2} />
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={0.8}
+          color="#4cc9ff"
+        />
+
+        {/* Accent lighting */}
+        <pointLight
+          position={[-5, 2, -5]}
+          intensity={0.6}
+          color="#00ffff"
+          distance={15}
+          decay={2}
+        />
+        <pointLight
+          position={[5, -2, 5]}
+          intensity={0.4}
+          color="#0066cc"
+          distance={15}
+          decay={2}
+        />
+        <spotLight
+          position={[0, 5, 0]}
+          angle={0.5}
+          penumbra={1}
+          intensity={0.3}
+          color="#4cc9ff"
+          distance={20}
+        />
+
         <Suspense fallback={null}>
-          <ServiceModel 
+          <StarField count={2000} />
+          <ServiceModel
             modelPath={modelPath}
             onLoad={() => setIsModelLoading(false)}
             scale={isMain ? 0.09 : 0.015}
             position={[0, isMain ? -0.2 : -1, 0]}
             rotation={[0, Math.PI / 4, 0]}
           />
-          <Environment preset="city" />
-          <OrbitControls 
+          <Environment preset="night" />
+          <OrbitControls
             enableZoom={false}
             enablePan={false}
             minPolarAngle={Math.PI / 2.5}
@@ -273,22 +315,173 @@ const HomePage = () => {
     console.log('Form submitted:', e.target);
   };
 
+  const [activeNewsIndex, setActiveNewsIndex] = useState(0);
+
+  const newsItems = [
+    {
+      image: '/images/news/smart-city.jpg',
+      title: 'Viettel Solutions tổ chức hội thảo "Giao thông thông minh: Tương lai của thành phố hiện đại"',
+      description: 'Hội thảo tập trung vào các giải pháp công nghệ tiên tiến cho hệ thống giao thông thông minh...',
+      date: '26/02/2025'
+    },
+    {
+      image: '/images/news/digital-transformation.jpg',
+      title: 'Chuyển đổi số toàn diện: Giải pháp cho doanh nghiệp thời đại 4.0',
+      description: 'Viettel Solutions giới thiệu các giải pháp chuyển đổi số toàn diện cho doanh nghiệp...',
+      date: '25/02/2025'
+    },
+    {
+      image: '/images/news/cybersecurity.jpg',
+      title: 'Bảo mật thông tin: Thách thức và giải pháp trong kỷ nguyên số',
+      description: 'Các chuyên gia hàng đầu thảo luận về các giải pháp bảo mật trong thời đại số...',
+      date: '24/02/2025'
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveNewsIndex((current) => (current + 1) % newsItems.length);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="home-page-container" ref={mainRef}>
       {isLoading && <LoadingScreen />}
-      <main>
-        <div className="content-wrapper">
+      <motion.div 
+        className="content-wrapper"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoading ? 0 : 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <main>
           {/* Hero Section */}
           <Section className="hero-section">
-            <div className="hero-content">
-              <div className="hero-title">
+            <motion.div 
+              className="hero-content"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 50 : 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <motion.div 
+                className="hero-title"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+              >
                 <MorphingText texts={mainTitleTexts} className="main-title" />
                 <MorphingText texts={subTitleTexts} className="highlight" />
-              </div>
-              <p className="hero-subtitle">
+              </motion.div>
+              <motion.p 
+                className="hero-subtitle text-black"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+              >
                 {t('hero.description')}
-              </p>
-              <button className="cta-button">{t('hero.cta')}</button>
+              </motion.p>
+              <motion.button 
+                className="cta-button"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: isLoading ? 0 : 1, scale: isLoading ? 0.9 : 1 }}
+                transition={{ delay: 1, duration: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {t('hero.cta')}
+              </motion.button>
+              <motion.div 
+                className="tech-icons"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
+              >
+                {[
+                  { fill: "#1877F2", path: "M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" },
+                  { fill: "#FF0000", path: "M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" },
+                  { fill: "#0A66C2", path: "M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.68 1.68 0 0 0-1.68 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" }
+                ].map((icon, index) => (
+                  <motion.div 
+                    key={index}
+                    className="icon-container"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: isLoading ? 0 : 1, scale: isLoading ? 0 : 1 }}
+                    transition={{ delay: 1.4 + index * 0.2, duration: 0.4 }}
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                      <path fill={icon.fill} d={icon.path} />
+                    </svg>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </Section>
+          <Section className="news-highlight-section">
+            <div className="news-highlight-container">
+              <div className="news-title">
+                <h2>TIN NỔI BẬT</h2>
+              </div>
+              <motion.div className="news-content">
+                <AnimatePresence mode="wait">
+                  <motion.div 
+                    key={activeNewsIndex}
+                    className="news-item"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 50 : 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <motion.img 
+                      src={newsItems[activeNewsIndex].image} 
+                      alt={newsItems[activeNewsIndex].title} 
+                      className="news-image"
+                      initial={{ scale: 0.9 }}
+                      animate={{ scale: isLoading ? 0.9 : 1 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                    <div className="news-text">
+                      <motion.h3
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: isLoading ? 0 : 1, x: isLoading ? -20 : 0 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        {newsItems[activeNewsIndex].title}
+                      </motion.h3>
+                      <motion.p 
+                        className="news-description"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: isLoading ? 0 : 1, x: isLoading ? -20 : 0 }}
+                        transition={{ delay: 0.3 }}
+                      >
+                        {newsItems[activeNewsIndex].description}
+                      </motion.p>
+                      <motion.div 
+                        className="news-meta"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: isLoading ? 0 : 1 }}
+                        transition={{ delay: 0.4 }}
+                      >
+                        <span className="news-date">{newsItems[activeNewsIndex].date}</span>
+                        {/* <button className="read-more-btn">Xem thêm</button> */}
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+                <div className="news-dots">
+                  {newsItems.map((_, index) => (
+                    <motion.div
+                      key={index}
+                      className={`news-dot ${index === activeNewsIndex ? 'active' : ''}`}
+                      onClick={() => setActiveNewsIndex(index)}
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                    />
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </Section>
 
@@ -317,6 +510,8 @@ const HomePage = () => {
               </div>
             </div>
           </Section>
+
+          {/* News Highlight Section */}
 
           {/* Clients Section */}
           <ClientsSection />
@@ -349,7 +544,7 @@ const HomePage = () => {
           </Section>
 
           {/* Contact Section */}
-          <Section className="contact-section" id="contact">
+          {/* <Section className="contact-section" id="contact">
             <div className="contact-content">
               <h2 className="contact-title">{t('contact.title')}</h2>
               <form className="contact-form" onSubmit={handleSubmit}>
@@ -387,9 +582,9 @@ const HomePage = () => {
                 </button>
               </form>
             </div>
-          </Section>
-        </div>
-      </main>
+          </Section> */}
+        </main>
+      </motion.div>
     </div>
   );
 };
