@@ -227,7 +227,22 @@ const ServiceModelCanvas = ({ isMain = false }) => {
         opacity: isModelReady ? 1 : 0
       }}
     >
-      {isModelLoading && <ModelLoader />}
+      {isModelLoading && (
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: 'rgba(0, 11, 26, 0.8)',
+          zIndex: 10
+        }}>
+          <ModelLoader />
+        </div>
+      )}
       <Canvas
         camera={{
           position: isMain ? [0, 1.5, 3] : [0, 2, 5],
