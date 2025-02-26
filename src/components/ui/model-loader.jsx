@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { quantum } from 'ldrs';
+import './model-loader.css';
 
 export function ModelLoader() {
   useEffect(() => {
@@ -7,13 +8,13 @@ export function ModelLoader() {
   }, []);
 
   return (
-      <div className="model-loader">
+    <div className="model-loader">
       <l-quantum
         size="45"
         speed="1.75"
         color="#f5222d"
       ></l-quantum>
-      <p>Loading 3D Model...</p>
+      <p className="loading-text">Loading 3D Model...</p>
     </div>
   );
 }

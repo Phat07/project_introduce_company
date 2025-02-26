@@ -1,89 +1,68 @@
-import { useCallback, useEffect, useRef } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { cn } from "../../lib/utils"
 
-const morphTime = 1.5
-const cooldownTime = 0.5
+const morphTime = 4
+const cooldownTime = 4.5
 
 const useMorphingText = (texts) => {
-  const textIndexRef = useRef(0)
-  const morphRef = useRef(0)
-  const cooldownRef = useRef(0)
-  const timeRef = useRef(new Date())
-
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const intervalRef = useRef(null)
   const text1Ref = useRef(null)
   const text2Ref = useRef(null)
 
-  const setStyles = useCallback(
-    (fraction) => {
-      const [current1, current2] = [text1Ref.current, text2Ref.current]
-      if (!current1 || !current2) return
-
-      current2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`
-      current2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`
-
-      const invertedFraction = 1 - fraction
-      current1.style.filter = `blur(${Math.min(8 / invertedFraction - 8, 100)}px)`
-      current1.style.opacity = `${Math.pow(invertedFraction, 0.4) * 100}%`
-
-      current1.textContent = texts[textIndexRef.current % texts?.length]
-      current2.textContent = texts[(textIndexRef.current + 1) % texts?.length]
-    },
-    [texts],
-  )
-
-  const doMorph = useCallback(() => {
-    morphRef.current -= cooldownRef.current
-    cooldownRef.current = 0
-
-    let fraction = morphRef.current / morphTime
-
-    if (fraction > 1) {
-      cooldownRef.current = cooldownTime
-      fraction = 1
+  const updateText = useCallback(() => {
+    if (!texts?.length || !text1Ref.current || !text2Ref.current) {
+      // console.log('Missing required refs or texts');
+      return;
     }
 
-    setStyles(fraction)
+    const nextIndex = (currentIndex + 1) % texts.length
+    // console.log(`Current text: "${texts[currentIndex]}", Next text: "${texts[nextIndex]}", Total texts: ${texts.length}`);
 
-    if (fraction === 1) {
-      textIndexRef.current++
-    }
-  }, [setStyles])
+    // Update text content
+    text1Ref.current.textContent = texts[currentIndex]
+    text2Ref.current.textContent = texts[nextIndex]
 
-  const doCooldown = useCallback(() => {
-    morphRef.current = 0
-    const [current1, current2] = [text1Ref.current, text2Ref.current]
-    if (current1 && current2) {
-      current2.style.filter = "none"
-      current2.style.opacity = "100%"
-      current1.style.filter = "none"
-      current1.style.opacity = "0%"
-    }
-  }, [])
+    // Reset classes and force reflow
+    text1Ref.current.classList.remove('fade-in', 'fade-out', 'active', 'inactive')
+    text2Ref.current.classList.remove('fade-in', 'fade-out', 'active', 'inactive')
+    
+    void text1Ref.current.offsetWidth
+    void text2Ref.current.offsetWidth
+    
+    // Set initial states
+    text1Ref.current.classList.add('active')
+    text2Ref.current.classList.add('inactive')
+    
+    // Start transition after a brief delay
+    requestAnimationFrame(() => {
+      text1Ref.current.classList.add('fade-out')
+      text2Ref.current.classList.add('fade-in')
+    })
+
+    // Schedule next update
+    setTimeout(() => {
+      setCurrentIndex(nextIndex)
+    }, morphTime * 1000)
+  }, [currentIndex, texts])
 
   useEffect(() => {
-    // Reset index when texts change (e.g. language changes)
-    textIndexRef.current = 0
+    updateText()
     
-    let animationFrameId
+    intervalRef.current = setInterval(() => {
+      updateText()
+    }, (morphTime + cooldownTime) * 1000)
 
-    const animate = () => {
-      animationFrameId = requestAnimationFrame(animate)
-
-      const newTime = new Date()
-      const dt = (newTime.getTime() - timeRef.current.getTime()) / 1000
-      timeRef.current = newTime
-
-      cooldownRef.current -= dt
-
-      if (cooldownRef.current <= 0) doMorph()
-      else doCooldown()
-    }
-
-    animate()
     return () => {
-      cancelAnimationFrame(animationFrameId)
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
     }
-  }, [doMorph, doCooldown, texts]) // Added texts dependency
+  }, [updateText])
+
+  useEffect(() => {
+    setCurrentIndex(0)
+  }, [texts])
 
   return { text1Ref, text2Ref }
 }
@@ -91,10 +70,98 @@ const useMorphingText = (texts) => {
 const Texts = ({ texts }) => {
   const { text1Ref, text2Ref } = useMorphingText(texts)
   return (
-    <>
-      <span className="absolute inset-x-0 top-0 m-auto inline-block w-full" ref={text1Ref} />
-      <span className="absolute inset-x-0 top-0 m-auto inline-block w-full" ref={text2Ref} />
-    </>
+    <div className="relative w-full">
+      <style jsx>{`
+        .active {
+          opacity: 1;
+          filter: blur(0);
+          transform: translateY(0);
+        }
+        .inactive {
+          opacity: 0;
+          filter: blur(8px);
+          transform: translateY(10px);
+        }
+        .fade-in {
+          animation: fadeIn ${morphTime}s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .fade-out {
+          animation: fadeOut ${morphTime}s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            filter: blur(8px);
+            transform: translateY(10px);
+          }
+          20% {
+            opacity: 0.2;
+            filter: blur(6px);
+            transform: translateY(8px);
+          }
+          40% {
+            opacity: 0.4;
+            filter: blur(4px);
+            transform: translateY(6px);
+          }
+          60% {
+            opacity: 0.6;
+            filter: blur(3px);
+            transform: translateY(4px);
+          }
+          80% {
+            opacity: 0.8;
+            filter: blur(1px);
+            transform: translateY(2px);
+          }
+          100% {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeOut {
+          0% {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+          }
+          20% {
+            opacity: 0.8;
+            filter: blur(1px);
+            transform: translateY(-2px);
+          }
+          40% {
+            opacity: 0.6;
+            filter: blur(3px);
+            transform: translateY(-4px);
+          }
+          60% {
+            opacity: 0.4;
+            filter: blur(4px);
+            transform: translateY(-6px);
+          }
+          80% {
+            opacity: 0.2;
+            filter: blur(6px);
+            transform: translateY(-8px);
+          }
+          100% {
+            opacity: 0;
+            filter: blur(8px);
+            transform: translateY(-10px);
+          }
+        }
+      `}</style>
+      <span 
+        className="absolute inset-x-0 top-0 m-auto block w-full transition-all"
+        ref={text1Ref}
+      />
+      <span 
+        className="absolute inset-x-0 top-0 m-auto block w-full transition-all"
+        ref={text2Ref}
+      />
+    </div>
   )
 }
 

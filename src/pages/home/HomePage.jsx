@@ -30,9 +30,16 @@ import TrustLogo from '../../assets/trust.jpg';
 import VNGLogo from '../../assets/vng.jpg';
 
 // Partner Logos
+
+
+// Client Logos
+
+
+// Partner Logos
 import HPELogo from '../../assets/HPE.jpg';
 import HuaweiLogo from '../../assets/Huawei.jpg';
 import UbiquitiLogo from '../../assets/UBIQUITI.png';
+import ArubLogo from '../../assets/aruba-networks.png';
 import AvayaLogo from '../../assets/avaya.jpg';
 import CiscoLogo from '../../assets/cisco.jpg';
 import DahuaLogo from '../../assets/dahua.jpg';
@@ -41,7 +48,11 @@ import FortinetLogo from '../../assets/fortinet.jpg';
 import HikLogo from '../../assets/hik.jpg';
 import JuniperLogo from '../../assets/juniper.jpg';
 import LenovoLogo from '../../assets/lenovo.jpg';
+import MerakiLogo from '../../assets/meraki-logo-brand.png';
+import MikroTikLogo from '../../assets/MikroTik_Logo.png';
+import PaloAltoLogo from '../../assets/PaloAltoNetworks.png';
 import PolyLogo from '../../assets/poly.jpg';
+import SophosLogo from '../../assets/Sophos-Logo.wine.png';
 import SuperLogo from '../../assets/super.jpg';
 import ViettelLogo from '../../assets/viettel.jpg';
 import VNPTLogo from '../../assets/vnpt.jpg';
@@ -143,6 +154,7 @@ const PartnersSection = () => {
     { name: 'HPE', logo: HPELogo },
     { name: 'Huawei', logo: HuaweiLogo },
     { name: 'UBIQUITI', logo: UbiquitiLogo },
+    { name: 'Aruba Networks', logo: ArubLogo },
     { name: 'Avaya', logo: AvayaLogo },
     { name: 'Cisco', logo: CiscoLogo },
     { name: 'Dahua', logo: DahuaLogo },
@@ -151,7 +163,11 @@ const PartnersSection = () => {
     { name: 'Hikvision', logo: HikLogo },
     { name: 'Juniper', logo: JuniperLogo },
     { name: 'Lenovo', logo: LenovoLogo },
+    { name: 'Meraki', logo: MerakiLogo },
+    { name: 'MikroTik', logo: MikroTikLogo },
+    { name: 'Palo Alto Networks', logo: PaloAltoLogo },
     { name: 'Poly', logo: PolyLogo },
+    { name: 'Sophos', logo: SophosLogo },
     { name: 'Super Micro', logo: SuperLogo },
     { name: 'Viettel', logo: ViettelLogo },
     { name: 'VNPT', logo: VNPTLogo },
@@ -176,15 +192,13 @@ const ServiceModelCanvas = ({ isMain = false }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [isModelReady, setIsModelReady] = useState(false);
   const containerRef = useRef(null);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Khi component sắp vào viewport, bắt đầu load model
         if (entry.isIntersecting) {
           setIsVisible(true);
         } else {
-          // Khi scroll ra khỏi viewport một khoảng xa mới unmount
           if (Math.abs(entry.intersectionRatio) < 0.1) {
             setIsVisible(false);
           }
@@ -209,7 +223,9 @@ const ServiceModelCanvas = ({ isMain = false }) => {
 
   const handleModelLoad = () => {
     setIsModelLoading(false);
-    setIsModelReady(true);
+    setTimeout(() => {
+      setIsModelReady(true);
+    }, 100); // Đợi một chút để đảm bảo model đã render
   };
 
   return (
@@ -223,12 +239,10 @@ const ServiceModelCanvas = ({ isMain = false }) => {
         maxHeight: isMain ? '600px' : '300px',
         willChange: 'transform',
         background: '#000B1A',
-        transition: 'opacity 0.3s ease-in-out',
-        opacity: isModelReady ? 1 : 0
       }}
     >
-      {isModelLoading && (
-        <div style={{
+      <div 
+        style={{
           position: 'absolute',
           top: 0,
           left: 0,
@@ -238,83 +252,96 @@ const ServiceModelCanvas = ({ isMain = false }) => {
           justifyContent: 'center',
           alignItems: 'center',
           background: 'rgba(0, 11, 26, 0.8)',
-          zIndex: 10
-        }}>
-          <ModelLoader />
-        </div>
-      )}
-      <Canvas
-        camera={{
-          position: isMain ? [0, 1.5, 3] : [0, 2, 5],
-          fov: isMain ? 60 : 45,
-          near: 0.1,
-          far: 1000
-        }}
-        style={{ 
-          width: '100%', 
-          height: '100%',
-          willChange: 'transform',
-          visibility: isVisible ? 'visible' : 'hidden'
-        }}
-        dpr={[1, 2]}
-        performance={{ 
-          min: 0.8,
-          max: 1
-        }}
-        frameloop={isVisible ? "always" : "never"}
-        gl={{
-          alpha: false,
-          antialias: true,
-          powerPreference: "high-performance",
-          failIfMajorPerformanceCaveat: true,
-          preserveDrawingBuffer: true
+          zIndex: 10,
+          opacity: isModelLoading ? 1 : 0,
+          transition: 'opacity 0.5s ease-in-out',
+          pointerEvents: isModelLoading ? 'auto' : 'none'
         }}
       >
-        <color attach="background" args={['#000B1A']} />
-        <fog attach="fog" args={['#000B1A', 5, 20]} />
+        <ModelLoader />
+      </div>
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          opacity: isModelReady ? 1 : 0,
+          transition: 'opacity 0.5s ease-in-out'
+        }}
+      >
+        <Canvas
+          camera={{
+            position: isMain ? [0, 1.5, 3] : [0, 2, 5],
+            fov: isMain ? 60 : 45,
+            near: 0.1,
+            far: 1000
+          }}
+          style={{
+            width: '100%',
+            height: '100%',
+            willChange: 'transform',
+            visibility: isVisible ? 'visible' : 'hidden'
+          }}
+          dpr={[1, 2]}
+          performance={{
+            min: 0.8,
+            max: 1
+          }}
+          frameloop={isVisible ? "always" : "never"}
+          gl={{
+            alpha: false,
+            antialias: true,
+            powerPreference: "high-performance",
+            failIfMajorPerformanceCaveat: true,
+            preserveDrawingBuffer: true
+          }}
+        >
+          <color attach="background" args={['#000B1A']} />
+          <fog attach="fog" args={['#000B1A', 5, 20]} />
 
-        <ambientLight intensity={0.2} />
-        <directionalLight
-          position={[10, 10, 5]}
-          intensity={0.8}
-          color="#4cc9ff"
-        />
-
-        <pointLight
-          position={[-5, 2, -5]}
-          intensity={0.6}
-          color="#00ffff"
-          distance={15}
-          decay={2}
-        />
-        <pointLight
-          position={[5, -2, 5]}
-          intensity={0.4}
-          color="#0066cc"
-          distance={15}
-          decay={2}
-        />
-
-        <Suspense fallback={null}>
-          <StarField count={isMain ? 1500 : 800} />
-          <ServiceModel
-            modelPath={modelPath}
-            onLoad={handleModelLoad}
-            scale={isMain ? 0.09 : 0.015}
-            position={[0, isMain ? -0.2 : -1, 0]}
-            rotation={[0, Math.PI / 4, 0]}
+          <ambientLight intensity={0.2} />
+          <directionalLight
+            position={[10, 10, 5]}
+            intensity={0.8}
+            color="#4cc9ff"
           />
-          <Environment preset="night" />
+
+          <pointLight
+            position={[-5, 2, -5]}
+            intensity={0.6}
+            color="#00ffff"
+            distance={15}
+            decay={2}
+          />
+          <pointLight
+            position={[5, -2, 5]}
+            intensity={0.4}
+            color="#0066cc"
+            distance={15}
+            decay={2}
+          />
+
+          <Suspense fallback={null}>
+            <StarField count={isMain ? 1500 : 800} />
+            <ServiceModel
+              modelPath={modelPath}
+              onLoad={handleModelLoad}
+              scale={isMain ? 0.09 : 0.015}
+              position={[0, isMain ? -0.2 : -1, 0]}
+              rotation={[0, isMain ? Math.PI / 4 : 0, 0]}
+            />
+            <Environment preset="city" />
+          </Suspense>
           <OrbitControls
-            enableZoom={false}
             enablePan={false}
-            minPolarAngle={Math.PI / 2.5}
-            maxPolarAngle={Math.PI / 2.5}
-            autoRotate={isMain}
-            autoRotateSpeed={0.5}
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 3}
           />
-        </Suspense>
-      </Canvas>
+        </Canvas>
+      </div>
     </div>
   );
 };
@@ -350,13 +377,13 @@ const HomePage = () => {
   }, []);
 
   const mainTitleTexts = [
-    t('hero.title'),
+    "THANHCONG SOLUTIONS",
     "DIGITAL TRANSFORMATION",
     "数字化转型",
   ];
 
   const subTitleTexts = [
-    t('hero.subtitle'),
+    "Đối tác tin cậy trong hành trình chuyển đổi số ",
     "COMPREHENSIVE",
     "全面的",
   ];
@@ -385,7 +412,7 @@ const HomePage = () => {
     {
       image: '/images/news/cybersecurity.jpg',
       title: 'Bảo mật thông tin: Thách thức và giải pháp trong kỷ nguyên số',
-      description: 'Các chuyên gia hàng đầu thảo luận về các giải pháp bảo mật trong thời đại số...',
+      description: 'Các chuyên gia hàng đầu thảo luận về các giải pháp bảo mật trong thới đại số...',
       date: '24/02/2025'
     }
   ];
@@ -394,14 +421,14 @@ const HomePage = () => {
     const interval = setInterval(() => {
       setActiveNewsIndex((current) => (current + 1) % newsItems.length);
     }, 3000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="home-page-container" ref={mainRef}>
       {isLoading && <LoadingScreen />}
-      <motion.div 
+      <motion.div
         className="content-wrapper"
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoading ? 0 : 1 }}
@@ -410,13 +437,13 @@ const HomePage = () => {
         <main>
           {/* Hero Section */}
           <Section className="hero-section">
-            <motion.div 
+            <motion.div
               className="hero-content"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 50 : 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <motion.div 
+              <motion.div
                 className="hero-title"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
@@ -425,7 +452,7 @@ const HomePage = () => {
                 <MorphingText texts={mainTitleTexts} className="main-title" />
                 <MorphingText texts={subTitleTexts} className="highlight" />
               </motion.div>
-              <motion.p 
+              <motion.p
                 className="hero-subtitle text-black"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
@@ -433,7 +460,7 @@ const HomePage = () => {
               >
                 {t('hero.description')}
               </motion.p>
-              <motion.button 
+              <motion.button
                 className="cta-button"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: isLoading ? 0 : 1, scale: isLoading ? 0.9 : 1 }}
@@ -443,7 +470,7 @@ const HomePage = () => {
               >
                 {t('hero.cta')}
               </motion.button>
-              <motion.div 
+              <motion.div
                 className="tech-icons"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
@@ -454,7 +481,7 @@ const HomePage = () => {
                   { fill: "#FF0000", path: "M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" },
                   { fill: "#0A66C2", path: "M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.68 1.68 0 0 0-1.68 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" }
                 ].map((icon, index) => (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     className="icon-container"
                     initial={{ opacity: 0, scale: 0 }}
@@ -478,7 +505,7 @@ const HomePage = () => {
               </div>
               <motion.div className="news-content">
                 <AnimatePresence mode="wait">
-                  <motion.div 
+                  <motion.div
                     key={activeNewsIndex}
                     className="news-item"
                     initial={{ opacity: 0, y: 50 }}
@@ -486,9 +513,9 @@ const HomePage = () => {
                     exit={{ opacity: 0, y: -50 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <motion.img 
-                      src={newsItems[activeNewsIndex].image} 
-                      alt={newsItems[activeNewsIndex].title} 
+                    <motion.img
+                      src={newsItems[activeNewsIndex].image}
+                      alt={newsItems[activeNewsIndex].title}
                       className="news-image"
                       initial={{ scale: 0.9 }}
                       animate={{ scale: isLoading ? 0.9 : 1 }}
@@ -502,7 +529,7 @@ const HomePage = () => {
                       >
                         {newsItems[activeNewsIndex].title}
                       </motion.h3>
-                      <motion.p 
+                      <motion.p
                         className="news-description"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: isLoading ? 0 : 1, x: isLoading ? -20 : 0 }}
@@ -510,7 +537,7 @@ const HomePage = () => {
                       >
                         {newsItems[activeNewsIndex].description}
                       </motion.p>
-                      <motion.div 
+                      <motion.div
                         className="news-meta"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: isLoading ? 0 : 1 }}
