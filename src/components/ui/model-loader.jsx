@@ -7,7 +7,7 @@ export function ModelLoader() {
   }, []);
 
   return (
-    <div className="model-loader">
+      <div className="model-loader">
       <l-quantum
         size="45"
         speed="1.75"

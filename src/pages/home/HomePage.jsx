@@ -180,9 +180,11 @@ const ServiceModelCanvas = ({ isMain = false }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        // Khi component sắp vào viewport, bắt đầu load model
         if (entry.isIntersecting) {
           setIsVisible(true);
         } else {
+          // Khi scroll ra khỏi viewport một khoảng xa mới unmount
           if (Math.abs(entry.intersectionRatio) < 0.1) {
             setIsVisible(false);
           }
@@ -222,10 +224,10 @@ const ServiceModelCanvas = ({ isMain = false }) => {
         willChange: 'transform',
         background: '#000B1A',
         transition: 'opacity 0.3s ease-in-out',
-        opacity: isModelReady ? 1 : 0.5
+        opacity: isModelReady ? 1 : 0
       }}
     >
-      {(isModelLoading || !isModelReady) && <ModelLoader />}
+      {isModelLoading && <ModelLoader />}
       <Canvas
         camera={{
           position: isMain ? [0, 1.5, 3] : [0, 2, 5],
@@ -278,7 +280,7 @@ const ServiceModelCanvas = ({ isMain = false }) => {
           decay={2}
         />
 
-        <Suspense fallback={<ModelLoader />}>
+        <Suspense fallback={null}>
           <StarField count={isMain ? 1500 : 800} />
           <ServiceModel
             modelPath={modelPath}
