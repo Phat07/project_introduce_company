@@ -364,7 +364,7 @@ const HomePage = () => {
     {
       image: '/images/news/digital-transformation.jpg',
       title: 'Chuyển đổi số toàn diện: Giải pháp cho doanh nghiệp thời đại 4.0',
-      description: 'Viettel Solutions giới thiệu các giải pháp chuyển đổi số toàn diện cho doanh nghiệp...',
+      description: 'ThanhCong Solutions giới thiệu các giải pháp chuyển đổi số toàn diện cho doanh nghiệp...',
       date: '25/02/2025'
     },
     {

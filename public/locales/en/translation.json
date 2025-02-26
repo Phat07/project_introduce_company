@@ -12,7 +12,7 @@
     "support": "SUPPORT",
     "search": "Search...",
     "menu": "Menu",
-    "logoAlt": "Viettel Solutions Logo",
+    "logoAlt": "ThanhCong Solutions Logo",
     "home": "Home",
     "services": "Services",
     "contact": "Contact"
@@ -55,7 +55,7 @@
   },
   "about": {
     "title": "About Us",
-    "content": "Viettel Solutions is a pioneer in digital transformation in Vietnam",
+    "content": "ThanhCong Solutions is a pioneer in digital transformation in Vietnam",
     "description": "We are your trusted partner in digital transformation, delivering innovative and effective solutions for businesses.",
     "stats": {
       "projects": {

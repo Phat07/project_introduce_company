@@ -12,7 +12,7 @@
     "support": "技术支持",
     "search": "搜索...",
     "menu": "菜单",
-    "logoAlt": "Viettel Solutions 标志",
+    "logoAlt": "ThanhCong Solutions 标志",
     "home": "首页",
     "services": "服务",
     "contact": "联系我们"
@@ -53,7 +53,7 @@
   },
   "about": {
     "title": "关于我们",
-    "content": "Viettel Solutions 是越南数字化转型领域的先驱",
+    "content": "ThanhCong Solutions 是越南数字化转型领域的先驱",
     "description": "我们是您值得信赖的数字化转型伙伴，为企业提供创新和高效的解决方案。",
     "stats": {
       "projects": {
