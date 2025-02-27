@@ -26,99 +26,101 @@ export function Marquee({
 }) {
   const containerRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [animationPlayState, setAnimationPlayState] = useState('running');
   const dragInfo = useRef({
     startX: 0,
+    currentX: 0,
     scrollLeft: 0,
-    lastX: 0,
-    velocity: 0,
-    timestamp: 0
+    animationOffset: 0,
+    startTime: 0
   });
-  const animationFrameRef = useRef(null);
 
-  const startDragging = (clientX) => {
+  const handleDragStart = (e) => {
     setIsDragging(true);
-    const { offsetLeft, scrollLeft } = containerRef.current;
+    const clientX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+    
     dragInfo.current = {
-      startX: clientX - offsetLeft,
-      scrollLeft,
-      lastX: clientX,
-      velocity: 0,
-      timestamp: Date.now()
+      startX: clientX,
+      currentX: clientX,
+      scrollLeft: containerRef.current.scrollLeft,
+      animationOffset: 0,
+      startTime: Date.now()
     };
+
+    setAnimationPlayState('paused');
   };
 
-  const onDrag = (clientX) => {
+  const handleDragMove = (e) => {
     if (!isDragging) return;
+    e.preventDefault();
+
+    const clientX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+    const dx = clientX - dragInfo.current.currentX;
+    dragInfo.current.currentX = clientX;
     
-    const now = Date.now();
-    const dt = now - dragInfo.current.timestamp;
-    const dx = clientX - dragInfo.current.lastX;
-    
-    dragInfo.current.velocity = dx / dt;
-    dragInfo.current.lastX = clientX;
-    dragInfo.current.timestamp = now;
+    if (containerRef.current) {
+      const scrollWidth = containerRef.current.scrollWidth / 2;
+      let newScrollLeft = containerRef.current.scrollLeft - dx;
 
-    const walk = (clientX - dragInfo.current.startX) * 2;
-    containerRef.current.scrollLeft = dragInfo.current.scrollLeft - walk;
-  };
-
-  const stopDragging = () => {
-    if (!isDragging) return;
-    
-    setIsDragging(false);
-    const startVelocity = dragInfo.current.velocity * 100;
-    let lastTimestamp = Date.now();
-
-    const animate = () => {
-      const now = Date.now();
-      const dt = now - lastTimestamp;
-      lastTimestamp = now;
-
-      if (Math.abs(dragInfo.current.velocity) > 0.01) {
-        containerRef.current.scrollLeft -= dragInfo.current.velocity * dt;
-        dragInfo.current.velocity *= 0.95; // Deceleration factor
-        animationFrameRef.current = requestAnimationFrame(animate);
+      // Handle infinite scroll while dragging
+      if (newScrollLeft < 0) {
+        newScrollLeft = scrollWidth + newScrollLeft;
+      } else if (newScrollLeft > scrollWidth) {
+        newScrollLeft = newScrollLeft - scrollWidth;
       }
-    };
 
-    if (Math.abs(startVelocity) > 0.1) {
-      dragInfo.current.velocity = startVelocity;
-      animate();
+      containerRef.current.scrollLeft = newScrollLeft;
+      dragInfo.current.scrollLeft = newScrollLeft;
+      dragInfo.current.animationOffset += dx;
+    }
+  };
+
+  const handleDragEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    setAnimationPlayState('running');
+
+    // Calculate momentum
+    const dragDuration = Date.now() - dragInfo.current.startTime;
+    const dragDistance = dragInfo.current.animationOffset;
+    const velocity = dragDistance / dragDuration;
+
+    // Apply momentum animation
+    if (Math.abs(velocity) > 0.1) {
+      const momentum = velocity * 500; // Adjust this multiplier to control momentum strength
+      const currentScroll = containerRef.current.scrollLeft;
+      const targetScroll = currentScroll - momentum;
+      
+      containerRef.current.style.scrollBehavior = 'smooth';
+      containerRef.current.scrollLeft = targetScroll;
+      
+      setTimeout(() => {
+        containerRef.current.style.scrollBehavior = 'auto';
+      }, 500);
     }
   };
 
   useEffect(() => {
-    return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleMouseEnter = () => pauseOnHover && setAnimationPlayState('paused');
+    const handleMouseLeave = () => {
+      setAnimationPlayState('running');
+      setIsDragging(false);
     };
-  }, []);
 
-  const handleMouseDown = (e) => {
-    e.preventDefault();
-    startDragging(e.pageX);
-  };
+    container.addEventListener('mouseenter', handleMouseEnter);
+    container.addEventListener('mouseleave', handleMouseLeave);
 
-  const handleTouchStart = (e) => {
-    startDragging(e.touches[0].clientX);
-  };
-
-  const handleMouseMove = (e) => {
-    e.preventDefault();
-    onDrag(e.pageX);
-  };
-
-  const handleTouchMove = (e) => {
-    if (isDragging) {
-      e.preventDefault();
-      onDrag(e.touches[0].clientX);
-    }
-  };
+    return () => {
+      container.removeEventListener('mouseenter', handleMouseEnter);
+      container.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [pauseOnHover]);
 
   return (
     <div
-      {...props}
       ref={containerRef}
       className={cn(
         "group relative flex overflow-hidden select-none",
@@ -134,13 +136,14 @@ export function Marquee({
         "--duration": "30s",
         "--gap": "1rem",
       }}
-      onMouseDown={handleMouseDown}
-      onTouchStart={handleTouchStart}
-      onMouseMove={handleMouseMove}
-      onTouchMove={handleTouchMove}
-      onMouseUp={stopDragging}
-      onTouchEnd={stopDragging}
-      onMouseLeave={stopDragging}
+      onMouseDown={handleDragStart}
+      onTouchStart={handleDragStart}
+      onMouseMove={handleDragMove}
+      onTouchMove={handleDragMove}
+      onMouseUp={handleDragEnd}
+      onTouchEnd={handleDragEnd}
+      onMouseLeave={handleDragEnd}
+      {...props}
     >
       {Array(repeat)
         .fill(0)
@@ -152,11 +155,11 @@ export function Marquee({
               "animate-marquee-vertical flex-col": vertical && !isDragging,
               "group-hover:[animation-play-state:paused]": pauseOnHover,
               "[animation-direction:reverse]": reverse,
-              "animation-none": isDragging,
             })}
             style={{
               minWidth: !vertical ? '100%' : 'auto',
-              minHeight: vertical ? '100%' : 'auto'
+              minHeight: vertical ? '100%' : 'auto',
+              animationPlayState: animationPlayState
             }}
           >
             {children}

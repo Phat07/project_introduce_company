@@ -511,18 +511,34 @@ main {
   max-width: 120px;
   max-height: 70px;
   object-fit: contain;
-  filter: grayscale(100%) contrast(0.8) brightness(1.2);
-  opacity: 0.7;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateZ(0);
   will-change: transform, filter, opacity;
 }
 
-.client-logo:hover img,
-.partner-logo:hover img {
-  filter: grayscale(0%) contrast(1) brightness(1);
-  opacity: 1;
-  transform: scale(1.1) translateZ(0);
+/* Apply grayscale only on desktop */
+@media (min-width: 769px) {
+  .client-logo img,
+  .partner-logo img {
+    filter: grayscale(100%) contrast(0.8) brightness(1.2);
+    opacity: 0.7;
+  }
+
+  .client-logo:hover img,
+  .partner-logo:hover img {
+    filter: grayscale(0%) contrast(1) brightness(1);
+    opacity: 1;
+    transform: scale(1.1) translateZ(0);
+  }
+}
+
+/* On mobile, always show colored logos */
+@media (max-width: 768px) {
+  .client-logo img,
+  .partner-logo img {
+    filter: none;
+    opacity: 1;
+  }
 }
 
 .client-logo:hover,
