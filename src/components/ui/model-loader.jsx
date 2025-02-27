@@ -14,7 +14,7 @@ export function ModelLoader() {
         speed="1.75"
         color="#f5222d"
       ></l-quantum>
-      <p className="loading-text">Loading 3D Model...</p>
+      <p className="loading-text">Loading ...</p>
     </div>
   );
 }
