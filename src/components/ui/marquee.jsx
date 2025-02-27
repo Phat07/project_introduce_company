@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
 import { cn } from "../../lib/utils";
+import React, { useState, useRef, useEffect } from 'react';
 
 /**
  * @typedef {Object} MarqueeProps
@@ -121,7 +121,7 @@ export function Marquee({
       {...props}
       ref={containerRef}
       className={cn(
-        "group flex overflow-x-auto overflow-y-hidden p-2 [--duration:40s] [--gap:0rem] [gap:var(--gap)] select-none",
+        "group relative flex overflow-hidden select-none",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
@@ -130,6 +130,10 @@ export function Marquee({
         },
         className
       )}
+      style={{
+        "--duration": "30s",
+        "--gap": "1rem",
+      }}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
       onMouseMove={handleMouseMove}
@@ -137,12 +141,6 @@ export function Marquee({
       onMouseUp={stopDragging}
       onTouchEnd={stopDragging}
       onMouseLeave={stopDragging}
-      style={{
-        scrollBehavior: isDragging ? 'auto' : 'smooth',
-        scrollbarWidth: 'none',
-        msOverflowStyle: 'none',
-        WebkitOverflowScrolling: 'touch',
-      }}
     >
       {Array(repeat)
         .fill(0)
@@ -167,3 +165,5 @@ export function Marquee({
     </div>
   );
 }
+
+Marquee.displayName = "Marquee";

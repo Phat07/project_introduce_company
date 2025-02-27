@@ -12,12 +12,12 @@ import MorphingText from '../../components/ui/morphing-text';
 import './HomePage.css';
 
 // Client Logos
-import AdidasLogo from '../../assets/adidas.jpg';
-import AeonLogo from '../../assets/aeon.jpg';
-import BestLogo from '../../assets/best.jpg';
+import AdidasLogo from '../../assets/adidas.png';
+import AeonLogo from '../../assets/aeon.png';
+import BestLogo from '../../assets/best.png';
 import CoachLogo from '../../assets/coach.jpg';
 import DamCamauLogo from '../../assets/damcamau.jpg';
-import DXCLogo from '../../assets/dxc.jpg';
+import DXCLogo from '../../assets/dxc.png';
 import GoldLogo from '../../assets/gold.jpg';
 import LXLogo from '../../assets/lx.jpg';
 import LYBLogo from '../../assets/lyb.jpg';
@@ -54,8 +54,8 @@ import PaloAltoLogo from '../../assets/PaloAltoNetworks.png';
 import PolyLogo from '../../assets/poly.jpg';
 import SophosLogo from '../../assets/Sophos-Logo.wine.png';
 import SuperLogo from '../../assets/super.jpg';
-import ViettelLogo from '../../assets/viettel.jpg';
-import VNPTLogo from '../../assets/vnpt.jpg';
+import ViettelLogo from '../../assets/viettel.png';
+import VNPTLogo from '../../assets/vnpt.png';
 
 const Section = ({ children, className = '' }) => {
   return (
