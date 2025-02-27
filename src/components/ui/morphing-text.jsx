@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { cn } from "../../lib/utils"
 
-const morphTime = 4
+const morphTime = 4.5
 const cooldownTime = 4.5
 
 const useMorphingText = (texts) => {

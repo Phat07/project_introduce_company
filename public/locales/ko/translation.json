@@ -1,0 +1,109 @@
+{
+  "header": {
+    "intro": "소개",
+    "about": "회사 소개",
+    "vision": "비전 & 미션",
+    "digitalTransformation": "디지털 트랜스포메이션",
+    "consulting": "디지털 트랜스포메이션 컨설팅",
+    "solutions": "솔루션",
+    "digitalSpace": "디지털 스페이스",
+    "news": "뉴스",
+    "recruitment": "채용",
+    "support": "고객지원",
+    "search": "검색...",
+    "menu": "메뉴",
+    "logoAlt": "ThanhCong Solutions 로고",
+    "home": "홈",
+    "services": "서비스",
+    "contact": "문의하기"
+  },
+  "hero": {
+    "title": "THANHCONG SOLUTIONS",
+    "subtitle": "디지털 트랜스포메이션의 신뢰할 수 있는 파트너",
+    "description": "기업의 디지털 여정을 지원합니다",
+    "cta": "자세히 보기"
+  },
+  "services": {
+    "title": "서비스",
+    "description": "기업을 위한 포괄적인 디지털 트랜스포메이션 솔루션",
+    "digitalTransformation": {
+      "title": "디지털 트랜스포메이션",
+      "description": "기업의 현대화와 운영 최적화를 위한 포괄적인 디지털 트랜스포메이션 솔루션"
+    },
+    "softwareDevelopment": {
+      "title": "소프트웨어 개발",
+      "description": "최신 기술을 활용한 맞춤형 소프트웨어 솔루션"
+    },
+    "security": {
+      "title": "사이버 보안",
+      "description": "디지털 자산 보호와 비즈니스 연속성을 보장하는 고급 보안 솔루션"
+    },
+    "items": {
+      "consulting": {
+        "title": "디지털 컨설팅",
+        "description": "디지털 트랜스포메이션을 위한 전략적 가이드"
+      },
+      "implementation": {
+        "title": "구현",
+        "description": "엔드투엔드 디지털 솔루션 구현"
+      },
+      "support": {
+        "title": "지원",
+        "description": "24/7 기술 지원 및 유지보수"
+      }
+    }
+  },
+  "about": {
+    "title": "회사 소개",
+    "content": "ThanhCong Solutions는 베트남의 디지털 트랜스포메이션 선구자입니다",
+    "description": "혁신적이고 효과적인 솔루션을 제공하는 신뢰할 수 있는 디지털 트랜스포메이션 파트너입니다.",
+    "stats": {
+      "projects": {
+        "number": "500+",
+        "label": "완료된 프로젝트"
+      },
+      "clients": {
+        "number": "200+",
+        "label": "만족한 고객"
+      },
+      "experts": {
+        "number": "15+",
+        "label": "년의 경험"
+      }
+    }
+  },
+  "contact": {
+    "title": "문의하기",
+    "address": "주소",
+    "phone": "전화",
+    "email": "이메일",
+    "form": {
+      "name": "이름",
+      "email": "이메일",
+      "message": "메시지",
+      "submit": "메시지 보내기"
+    }
+  },
+  "partners": {
+    "title": "주요 파트너"
+  },
+  "clients": {
+    "title": "주요 고객"
+  },
+  "welcome": "환영합니다",
+  "language": "언어",
+  "footer": {
+    "sections": {
+      "company_info": "회사 정보",
+      "office_system": "사무실 시스템",
+      "bank_info": "은행 계좌 정보"
+    },
+    "company": {
+      "name": "ThanhCong Solutions",
+      "address": "베트남",
+      "phone": "전화번호",
+      "email": "이메일"
+    },
+    "copyright": "© 2025 ThanhCong Solutions. All rights reserved."
+  }
+}

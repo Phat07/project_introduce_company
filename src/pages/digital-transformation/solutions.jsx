@@ -1,132 +1,282 @@
-import React from 'react';
-import { Typography, Row, Col, Card, Space } from 'antd';
-import {
-  GlobalOutlined,
-  SafetyCertificateOutlined,
-  CloudOutlined,
-  AppstoreOutlined,
-  CheckCircleOutlined
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { Radio, Pagination, Card, ConfigProvider, Tabs } from 'antd';
+import { Link } from 'react-router-dom';
+import { 
+  GlobalOutlined, 
+  DesktopOutlined, 
+  CloudServerOutlined,
+  AppstoreOutlined
 } from '@ant-design/icons';
+import LoadingScreen from '../../components/ui/loading-screen';
 
-const { Title, Paragraph } = Typography;
+const ITEMS_PER_PAGE = 6;
+
+const solutions = [
+  // Viễn thông
+  {
+    id: 1,
+    title: 'Giải pháp Tổng đài IP',
+    category: 'telecom',
+    image: '/images/solutions/ip-pbx.jpg',
+    description: 'Hệ thống tổng đài IP hiện đại, tích hợp đầy đủ tính năng cho doanh nghiệp',
+    features: [
+      'Tích hợp nhiều nền tảng giao tiếp',
+      'Quản lý cuộc gọi thông minh',
+      'Báo cáo chi tiết'
+    ]
+  },
+  {
+    id: 2,
+    title: 'Hệ thống Camera AI',
+    category: 'telecom',
+    image: '/images/solutions/ai-camera.jpg',
+    description: 'Camera thông minh tích hợp AI cho bảo mật và phân tích hành vi',
+    features: [
+      'Nhận diện khuôn mặt',
+      'Phân tích hành vi',
+      'Cảnh báo thông minh'
+    ]
+  },
+  // CNTT
+  {
+    id: 3,
+    title: 'Phần mềm ERP',
+    category: 'it',
+    image: '/images/solutions/erp.jpg',
+    description: 'Giải pháp quản lý doanh nghiệp toàn diện',
+    features: [
+      'Quản lý tài chính',
+      'Quản lý nhân sự',
+      'Quản lý kho vận'
+    ]
+  },
+  {
+    id: 4,
+    title: 'Nền tảng IoT',
+    category: 'it',
+    image: '/images/solutions/iot.jpg',
+    description: 'Nền tảng IoT cho smart city và nhà máy thông minh',
+    features: [
+      'Thu thập dữ liệu realtime',
+      'Phân tích dữ liệu',
+      'Dashboard trực quan'
+    ]
+  },
+  // Hạ tầng số
+  {
+    id: 5,
+    title: 'Trung tâm dữ liệu',
+    category: 'infrastructure',
+    image: '/images/solutions/datacenter.jpg',
+    description: 'Giải pháp trung tâm dữ liệu hiện đại',
+    features: [
+      'Bảo mật cao cấp',
+      'Hiệu suất tối ưu',
+      'Khả năng mở rộng'
+    ]
+  },
+  {
+    id: 6,
+    title: 'Cloud Platform',
+    category: 'infrastructure',
+    image: '/images/solutions/cloud.jpg',
+    description: 'Nền tảng điện toán đám mây doanh nghiệp',
+    features: [
+      'Đa nền tảng',
+      'Tự động hóa',
+      'Bảo mật đa lớp'
+    ]
+  }
+];
+
+const categories = [
+  { 
+    value: 'all', 
+    label: 'Tất cả giải pháp',
+    icon: <AppstoreOutlined />,
+    description: 'Xem tất cả các giải pháp của chúng tôi'
+  },
+  { 
+    value: 'telecom', 
+    label: 'Viễn thông', 
+    icon: <GlobalOutlined />,
+    description: 'Các giải pháp về hệ thống viễn thông và truyền thông'
+  },
+  { 
+    value: 'it', 
+    label: 'Công nghệ thông tin',
+    icon: <DesktopOutlined />,
+    description: 'Giải pháp phần mềm và công nghệ thông tin'
+  },
+  { 
+    value: 'infrastructure', 
+    label: 'Hạ tầng số',
+    icon: <CloudServerOutlined />,
+    description: 'Giải pháp về hạ tầng và nền tảng số'
+  }
+];
+
+const SolutionCard = ({ solution }) => {
+  const { t } = useTranslation();
+  
+  return (
+    <Card
+      hoverable
+      cover={<img alt={solution.title} src={solution.image} />}
+      className="h-full"
+    >
+      <Card.Meta
+        title={solution.title}
+        description={solution.description}
+      />
+      <div className="mt-4">
+        <Link 
+          to={`/solutions/${solution.id}`}
+          className="text-[#ff6d00] hover:text-[#ff8f40]"
+        >
+          {t('common.viewDetails')}
+        </Link>
+      </div>
+    </Card>
+  );
+};
 
 const SolutionsPage = () => {
-  const corePrinciples = [
-    {
-      icon: <GlobalOutlined className="text-3xl text-red-500" />,
-      title: 'Toàn diện',
-      description: 'Chúng tôi hướng đến việc tổ chức đánh giá và chuyển đổi số toàn diện, từ con người, quy trình, công nghệ, ở tất cả đơn vị, phòng ban.'
-    },
-    {
-      icon: <SafetyCertificateOutlined className="text-3xl text-red-500" />,
-      title: 'Linh hoạt',
-      description: 'Các giải pháp công nghệ được đánh giá và tư vấn triển khai một cách linh hoạt, dựa trên nhu cầu và sự phù hợp với từng tổ chức/doanh nghiệp.'
-    },
-    {
-      icon: <CloudOutlined className="text-3xl text-red-500" />,
-      title: 'Tối ưu',
-      description: 'Chúng tôi tư vấn những giải pháp, công nghệ giúp doanh nghiệp có thể tối ưu các hệ thống hiện có, với kì vọng tiết kiệm chi phí nhưng vẫn đem lại hiệu quả tối đa.'
-    },
-    {
-      icon: <AppstoreOutlined className="text-3xl text-red-500" />,
-      title: 'Minh bạch',
-      description: 'Tất cả các nội dung đánh giá và tư vấn đều được triển khai cụ thể, với đầy đủ lộ trình, thời gian, các đề xuất đều có hướng dẫn thực hiện.'
-    }
-  ];
+  const { t } = useTranslation();
+  const [currentCategory, setCurrentCategory] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
-  const processSteps = [
-    {
-      title: 'AGILE - Enable',
-      description: 'Khai phóng tiềm năng số và tối ưu hóa hoạt động doanh nghiệp',
-      features: [
-        'Phát hiện tiềm năng số',
-        'Hiện thực hóa giá trị mới',
-        'Tạo mô hình kinh doanh mới'
-      ]
-    },
-    {
-      title: 'AGILE - Go through',
-      description: 'Đánh giá toàn diện và xây dựng lộ trình',
-      features: [
-        'Khảo sát toàn tổ chức',
-        'Nhận diện vấn đề tổng thể',
-        'Xây dựng đề án chuyển đổi số'
-      ]
-    },
-    {
-      title: 'AGILE - Implement',
-      description: 'Triển khai giải pháp theo mô hình tối ưu',
-      features: [
-        'Triển khai theo lộ trình',
-        'Tùy chỉnh phù hợp tổ chức',
-        'Đảm bảo hiệu quả tối đa'
-      ]
-    }
-  ];
+  // Giả lập loading data
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Loading 2 giây
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Lọc solutions theo category
+  const filteredSolutions = currentCategory === 'all'
+    ? solutions
+    : solutions.filter(solution => solution.category === currentCategory);
+
+  // Tính toán phân trang
+  const totalItems = filteredSolutions.length;
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentSolutions = filteredSolutions.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handleCategoryChange = (value) => {
+    setCurrentCategory(value);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   return (
-    <div className="min-h-screen pt-16 px-4 md:px-8 lg:px-16">
-      <div className="max-w-7xl mx-auto">
-        <Title level={1} className="text-center mb-8">
-          Giải pháp Chuyển đổi số
-        </Title>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#ff6d00',
+        },
+      }}
+    >
+      <div className="container mx-auto px-4 py-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ marginTop: '4rem' }}
+        >
+          {/* <h1 className="text-3xl font-bold mb-8 text-center">
+            {t('solutions.title')}
+          </h1> */}
 
-        <Paragraph className="text-lg text-center mb-12">
-          Cung cấp giải pháp chuyển đổi số toàn diện dựa trên nền tảng công nghệ hiện đại
-          và phương pháp luận AGILE, giúp doanh nghiệp tối ưu hóa hoạt động và tạo ra
-          giá trị mới.
-        </Paragraph>
+          {/* Filter */}
+          <div className="mb-12 mr-12 ml-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {categories.map(category => (
+                <motion.div
+                  key={category.value}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Card
+                    hoverable
+                    className={`h-full transition-all duration-300 ${
+                      currentCategory === category.value 
+                        ? 'border-[#ff6d00] border-2 shadow-lg bg-orange-50' 
+                        : 'border hover:border-[#ff6d00]'
+                    }`}
+                    onClick={() => handleCategoryChange(category.value)}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className={`
+                        text-2xl p-3 rounded-full 
+                        ${currentCategory === category.value 
+                          ? 'bg-[#ff6d00] text-white' 
+                          : 'bg-gray-100 text-gray-600'
+                        }
+                      `}>
+                        {category.icon}
+                      </div>
+                      <div>
+                        <h3 className={`text-lg font-medium mb-1 ${
+                          currentCategory === category.value 
+                            ? 'text-[#ff6d00]' 
+                            : 'text-gray-800'
+                        }`}>
+                          {category.label}
+                        </h3>
+                        <p className="text-sm text-gray-500 line-clamp-2">
+                          {category.description}
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
-        <Title level={2} className="mb-8">
-          Nguyên tắc cốt lõi
-        </Title>
+          {/* Solutions Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {currentSolutions.map(solution => (
+              <motion.div
+                key={solution.id}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <SolutionCard solution={solution} />
+              </motion.div>
+            ))}
+          </div>
 
-        <Row gutter={[24, 24]} className="mb-16">
-          {corePrinciples.map((principle, index) => (
-            <Col xs={24} md={12} lg={6} key={index}>
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                <Space direction="vertical" align="center" className="w-full">
-                  {principle.icon}
-                  <Title level={3} className="text-center mt-4">
-                    {principle.title}
-                  </Title>
-                  <Paragraph className="text-center text-gray-600">
-                    {principle.description}
-                  </Paragraph>
-                </Space>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-
-        <Title level={2} className="mb-8">
-          Quy trình triển khai
-        </Title>
-
-        <Row gutter={[24, 24]}>
-          {processSteps.map((step, index) => (
-            <Col xs={24} md={8} key={index}>
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                <Title level={3} className="text-center mb-4">
-                  {step.title}
-                </Title>
-                <Paragraph className="text-gray-600 text-center mb-6">
-                  {step.description}
-                </Paragraph>
-                <ul className="list-none pl-0">
-                  {step.features.map((feature, idx) => (
-                    <li key={idx} className="mb-3 flex items-start">
-                      <CheckCircleOutlined className="text-red-500 mt-1 mr-2" />
-                      <span className="text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+          {/* Pagination */}
+          <div className="flex justify-center">
+            <Pagination
+              current={currentPage}
+              total={totalItems}
+              pageSize={ITEMS_PER_PAGE}
+              onChange={handlePageChange}
+              showSizeChanger={false}
+            />
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </ConfigProvider>
   );
 };
 

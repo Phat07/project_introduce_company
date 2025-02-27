@@ -51,7 +51,13 @@
 }
 
 /* Dropdown menu styles */
+.ant-menu-submenu-popup {
+  animation-duration: 0.2s !important;
+}
+
+/* Điều chỉnh khoảng cách giữa menu chính và submenu */
 .ant-menu-submenu-popup > .ant-menu {
+  margin-top: -20px !important;
   background-color: white !important;
 }
 

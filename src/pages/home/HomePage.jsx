@@ -380,12 +380,14 @@ const HomePage = () => {
     "THANHCONG SOLUTIONS",
     "DIGITAL TRANSFORMATION",
     "数字化转型",
+    "디지털 트랜스포메이션"
   ];
 
   const subTitleTexts = [
-    "Đối tác tin cậy trong hành trình chuyển đổi số ",
+    "Đối tác tin cậy trong hành trình chuyển đổi số",
     "COMPREHENSIVE",
     "全面的",
+    "포괄적인"
   ];
 
   const handleSubmit = (e) => {

@@ -17,6 +17,7 @@ const LanguageSwitcher = ({ onClose }) => {
     { value: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
     { value: 'en', label: 'English', flag: '🇺🇸' },
     { value: 'cn', label: '中文', flag: '🇨🇳' },
+    { value: 'ko', label: '한국어', flag: '🇰🇷' },
   ];
 
   return (

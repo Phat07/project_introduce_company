@@ -413,25 +413,53 @@ main {
 /* Clients and Partners Section */
 .clients-section,
 .partners-section {
-  padding: 20px 0;
+  padding: 40px 0;
   background: #fff;
   overflow: hidden;
+  position: relative;
+}
+
+.clients-section::before,
+.partners-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
 }
 
 .clients-section .section-title,
 .partners-section .section-title {
   text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 2.2rem;
+  font-weight: 700;
   color: #333;
   margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clients-section .section-title::after,
+.partners-section .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #f5222d, transparent);
+  border-radius: 3px;
 }
 
 .clients-marquee,
 .partners-marquee {
   background: #f8f9fa;
-  padding: 1.5rem 0;
-  border-radius: 8px;
+  padding: 2rem 0;
+  border-radius: 12px;
   cursor: grab;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -439,6 +467,8 @@ main {
   user-select: none;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .clients-marquee:active,
@@ -462,22 +492,25 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
+  padding: 1rem;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin: 0 0.75rem;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin: 0 1rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100px;
+  width: 160px;
 }
 
 .client-logo img,
 .partner-logo img {
-  max-width: 80px;
-  height: auto;
+  max-width: 120px;
+  max-height: 70px;
   object-fit: contain;
   filter: grayscale(100%) contrast(0.8) brightness(1.2);
   opacity: 0.7;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateZ(0);
   will-change: transform, filter, opacity;
 }
@@ -486,57 +519,48 @@ main {
 .partner-logo:hover img {
   filter: grayscale(0%) contrast(1) brightness(1);
   opacity: 1;
-  transform: scale(1.05) translateZ(0);
+  transform: scale(1.1) translateZ(0);
 }
 
 .client-logo:hover,
 .partner-logo:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.client-logo img,
-.partner-logo img {
-  max-width: 80px;
-  height: auto;
-  object-fit: contain;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  border-color: rgba(245, 34, 45, 0.2);
 }
 
 @media (max-width: 768px) {
   .clients-section,
   .partners-section {
-    padding: 20px 0;
+    padding: 30px 0;
   }
 
   .clients-section .section-title,
   .partners-section .section-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
-  }
-
-  .client-logo img,
-  .partner-logo img {
-    max-width: 60px;
   }
 
   .client-logo,
   .partner-logo {
-    animation: pulse 2s ease-in-out infinite;
+    height: 80px;
+    width: 120px;
+    padding: 0.75rem;
   }
 
-  @keyframes pulse {
-    0% {
-      transform: translateZ(0) scale(1);
-    }
-    50% {
-      transform: translateZ(0) scale(1.05);
-    }
-    100% {
-      transform: translateZ(0) scale(1);
-    }
+  .client-logo img,
+  .partner-logo img {
+    max-width: 90px;
+    max-height: 50px;
+  }
+
+  .client-logo:hover,
+  .partner-logo:hover {
+    animation: none;
   }
 
   .animate-marquee {
-    animation-duration: 30s;
+    animation-duration: 25s;
   }
 }
 

@@ -4,6 +4,7 @@ import AboutPage from './pages/intro/about';
 import VisionPage from './pages/intro/vision';
 import ConsultingPage from './pages/digital-transformation/consulting';
 import SolutionsPage from './pages/digital-transformation/solutions';
+import SolutionDetail from './pages/digital-transformation/solution-detail';
 import DigitalSpacePage from './pages/digital-space';
 import NewsPage from './pages/news';
 import RecruitmentPage from './pages/recruitment';
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path="/vision" element={<VisionPage />} />
       <Route path="/consulting" element={<ConsultingPage />} />
       <Route path="/solutions" element={<SolutionsPage />} />
+      <Route path="/solutions/:id" element={<SolutionDetail />} />
       <Route path="/digital-space" element={<DigitalSpacePage />} />
       <Route path="/news" element={<NewsPage />} />
       <Route path="/recruitment" element={<RecruitmentPage />} />
