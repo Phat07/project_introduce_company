@@ -8,7 +8,7 @@ import { cn } from "../../lib/utils";
  * @property {boolean} [pauseOnHover=false] - Whether to pause the animation on hover
  * @property {React.ReactNode} children - Content to be displayed in the marquee
  * @property {boolean} [vertical=false] - Whether to animate vertically instead of horizontally
- * @property {number} [repeat=4] - Number of times to repeat the content
+ * @property {number} [repeat=2] - Number of times to repeat the content
  */
 
 /**
@@ -21,7 +21,7 @@ export function Marquee({
   pauseOnHover = false,
   children,
   vertical = false,
-  repeat = 4,
+  repeat = 2,
   ...props
 }) {
   const containerRef = useRef(null);
@@ -121,7 +121,7 @@ export function Marquee({
       {...props}
       ref={containerRef}
       className={cn(
-        "group flex overflow-x-auto overflow-y-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] select-none",
+        "group flex overflow-x-auto overflow-y-hidden p-2 [--duration:40s] [--gap:0rem] [gap:var(--gap)] select-none",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
@@ -156,6 +156,10 @@ export function Marquee({
               "[animation-direction:reverse]": reverse,
               "animation-none": isDragging,
             })}
+            style={{
+              minWidth: !vertical ? '100%' : 'auto',
+              minHeight: vertical ? '100%' : 'auto'
+            }}
           >
             {children}
           </div>
