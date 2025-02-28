@@ -448,7 +448,7 @@ export const solutions = [
     id: 20,
     title: 'HỆ THỐNG VĂN PHÒNG ĐIỆN TỬ (MOFFICE)',
     category: 'it',
-    image: '/images/solutions/moffice.jpg',
+    image: '/images/solutions/moffice.png',
     description: 'Hệ thống văn phòng điện tử Viettel Office là hệ thống Văn phòng thông minh dành cho Doanh nghiệp sử dụng trên đa nền tảng với mục tiêu quản lý các hoạt động hành chính chuyên nghiệp, hiện đại mà vẫn đảm bảo tính linh hoạt, đơn giản. Là tập đoàn đi đầu về chuyển đổi số, Viettel có nhiều kinh nghiệm triển khai hệ thống Văn phòng điện tử cho các Tập đoàn, ngân hàng, doanh nghiệp lớn trong và ngoài nước, có nhiều kinh nghiệm xử lý những vướng mắc doanh nghiệp gặp phải khi triển khai hệ thống.',
     features: [
       'QUẢN LÝ VĂN BẢN, HỒ SƠ, LỊCH LÀM VIỆC',

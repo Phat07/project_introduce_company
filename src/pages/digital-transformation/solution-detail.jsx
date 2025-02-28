@@ -284,10 +284,10 @@ const SolutionDetail = () => {
         if (imageWrapper) {
           imageWrapper.replaceWith(imageWrapper.cloneNode(true));
         }
-        featureCards.forEach(card => {
+        featureCards?.forEach(card => {
           card.replaceWith(card.cloneNode(true));
         });
-        benefitCards.forEach(card => {
+        benefitCards?.forEach(card => {
           card.replaceWith(card.cloneNode(true));
         });
         if (hotlineBox) {
@@ -610,7 +610,7 @@ const SolutionDetail = () => {
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <p className="font-medium mb-2">Hotline tư vấn</p>
-                      <p className="text-lg font-bold text-[#ff6d00]">1800 xxxx</p>
+                      <p className="text-lg font-bold text-[#ff6d00]">1900 9269</p>
                     </motion.div>
 
                     <motion.div whileHover={{ scale: 1.02 }}>
