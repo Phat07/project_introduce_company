@@ -12,15 +12,15 @@ const TypewriterText = ({ text }) => {
   );
 };
 
-const LoadingScreen = () => {
+const LoadingScreen = ({ text = "ThanhCongSolutions" }) => {
   return (
     <div className="loading-screen">
       <div className="loading-content">
-        <TypewriterText text="ThanhCongSolutions" />
+        <TypewriterText text={text} />
         <l-bouncy-arc
           size="70"
           speed="1.65"
-          color="black"
+          color="#FF6D00"
         ></l-bouncy-arc>
       </div>
     </div>

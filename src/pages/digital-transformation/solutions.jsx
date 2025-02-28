@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Radio, Pagination, Card, ConfigProvider, Tabs } from 'antd';
+import { Radio, Card, ConfigProvider, Tabs } from 'antd';
 import { Link } from 'react-router-dom';
-import { 
-  GlobalOutlined, 
-  DesktopOutlined, 
-  CloudServerOutlined,
-  AppstoreOutlined,
-  CheckCircleOutlined,
-  RightOutlined,
+import {
   ArrowRightOutlined
 } from '@ant-design/icons';
 import LoadingScreen from '../../components/ui/loading-screen';
@@ -48,7 +42,7 @@ const SolutionCard = ({ solution, onClick }) => (
       </ul>
     </div> */}
     <div className="mt-3">
-      <Link 
+      <Link
         to={`/solutions/${solution.id}`}
         className="text-[#ff6d00] text-xs hover:text-orange-500"
       >
@@ -90,7 +84,7 @@ const SolutionsPage = () => {
     setPageLoading(true);
     // setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
+
     // Simulate page loading
     setTimeout(() => {
       setPageLoading(false);
@@ -101,7 +95,7 @@ const SolutionsPage = () => {
     setPageLoading(true);
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
+
     // Simulate page loading
     setTimeout(() => {
       setPageLoading(false);
@@ -138,33 +132,31 @@ const SolutionsPage = () => {
                 >
                   <Card
                     hoverable
-                    className={`h-full transition-all duration-300 ${
-                      currentCategory === category.value 
-                        ? 'border-[#ff6d00] border-2 shadow-lg bg-orange-50' 
+                    className={`h-full transition-all duration-300 ${currentCategory === category.value
+                        ? 'border-[#ff6d00] border-2 shadow-lg bg-orange-50'
                         : 'border hover:border-[#ff6d00]'
-                    }`}
+                      }`}
                     onClick={() => handleCategoryChange(category.value)}
                   >
                     <div className="flex items-center gap-3">
                       <div className={`
                         text-xl p-2.5 rounded-full 
-                        ${currentCategory === category.value 
-                          ? 'bg-[#ff6d00] text-white' 
+                        ${currentCategory === category.value
+                          ? 'bg-[#ff6d00] text-white'
                           : 'bg-gray-100 text-gray-600'
                         }
                       `}>
                         {category.icon}
                       </div>
                       <div>
-                        <h3 className={`text-base font-medium mb-1 ${
-                          currentCategory === category.value 
-                            ? 'text-[#ff6d00]' 
+                        <h3 className={`text-base font-medium mb-1 ${currentCategory === category.value
+                            ? 'text-[#ff6d00]'
                             : 'text-gray-800'
-                        }`}>
+                          }`}>
                           {category.label}
                         </h3>
                         <p className="text-xs text-gray-500 line-clamp-2">
-                          {category.description} 
+                          {category.description}
                         </p>
                       </div>
                     </div>
@@ -197,14 +189,97 @@ const SolutionsPage = () => {
           )}
 
           {/* Pagination */}
-          <div className="flex justify-center">
-            <Pagination
-              current={currentPage}
-              total={totalItems}
-              pageSize={ITEMS_PER_PAGE}
-              onChange={handlePageChange}
-              showSizeChanger={false}
-            />
+          <div className="flex justify-center overflow-x-auto py-2">
+            <div className="flex items-center gap-1 min-w-fit">
+              <button
+                onClick={() => handlePageChange(1)}
+                disabled={currentPage === 1}
+                className={`hidden sm:block px-3 py-1 border ${currentPage === 1
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                  }`}
+              >
+                First
+              </button>
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className={`px-3 py-1 border ${currentPage === 1
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                  }`}
+              >
+                Prev
+              </button>
+
+              {/* Page Numbers */}
+              {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }, (_, i) => i + 1)
+                .filter(page => {
+                  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+                  if (window.innerWidth < 640) { // For mobile
+                    if (totalPages <= 3) return true;
+                    if (page === 1 || page === totalPages) return true;
+                    if (page === currentPage) return true;
+                    return false;
+                  } else { // For desktop
+                    if (totalPages <= 5) return true;
+                    if (page === 1 || page === totalPages) return true;
+                    if (Math.abs(page - currentPage) <= 1) return true;
+                    return false;
+                  }
+                })
+                .map((page, index, array) => {
+                  if (index > 0 && array[index - 1] !== page - 1) {
+                    return (
+                      <React.Fragment key={`ellipsis-${page}`}>
+                        <span className="px-2 py-1">...</span>
+                        <button
+                          onClick={() => handlePageChange(page)}
+                          className={`min-w-[36px] px-3 py-1 border ${currentPage === page
+                              ? 'bg-[#ff6d00] text-white'
+                              : 'bg-white text-gray-600 hover:bg-gray-100'
+                            }`}
+                        >
+                          {page}
+                        </button>
+                      </React.Fragment>
+                    );
+                  }
+                  return (
+                    <button
+                      key={page}
+                      onClick={() => handlePageChange(page)}
+                      className={`min-w-[36px] px-3 py-1 border ${currentPage === page
+                          ? 'bg-[#ff6d00] text-white'
+                          : 'bg-white text-gray-600 hover:bg-gray-100'
+                        }`}
+                    >
+                      {page}
+                    </button>
+                  );
+                })}
+
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)}
+                className={`px-3 py-1 border ${currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                  }`}
+              >
+                Next
+              </button>
+              <button
+                onClick={() => handlePageChange(Math.ceil(totalItems / ITEMS_PER_PAGE))}
+                disabled={currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)}
+                className={`hidden sm:block px-3 py-1 border ${currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                  }`}
+              >
+                End
+              </button>
+            </div>
           </div>
         </motion.div>
       </div>

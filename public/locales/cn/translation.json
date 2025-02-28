@@ -51,6 +51,37 @@
       "description": "全天候技术支持和维护服务"
     }
   },
+  "solutions": {
+    "title": "解决方案",
+    "description": "我们的解决方案",
+    "features": "主要特点",
+    "benefits": "优势",
+    "categories": {
+      "all": "全部",
+      "telecom": "电信",
+      "it": "信息技术",
+      "infrastructure": "基础设施"
+    },
+    "items": {
+      "1": {
+        "title": "云呼叫中心解决方案",
+        "description": "在4.0技术时代，云呼叫中心已成为一个熟悉的术语。通过VoIP、AI、大数据、IoT等技术平台，推动了语音领域和客户服务的创新发展，帮助降低80%以上的部署和通话成本，最大限度地减少服务时间。",
+        "features": [
+          "基于互联网使用",
+          "大量用户，灵活扩展",
+          "集成多个号码（1900,1800，固定电话，移动电话）"
+        ]
+      },
+      "2": {
+        "title": "专线服务",
+        "description": "专线服务提供专用通信线路，直接连接两个网络点，确保稳定的速度和带宽。",
+        "features": [
+          "承诺带宽，稳定性高",
+          "专用连接，安全可靠"
+        ]
+      }
+    }
+  },
   "about": {
     "title": "关于我们",
     "content": "ThanhCong Solutions 是越南数字化转型领域的先驱",
@@ -69,6 +100,16 @@
         "label": "行业经验"
       }
     }
+  },
+  "common": {
+    "back": "返回",
+    "viewDetails": "查看详情",
+    "readMore": "阅读更多",
+    "showLess": "收起",
+    "contact": "联系我们",
+    "callUs": "致电我们",
+    "emailUs": "发送邮件",
+    "loading": "加载中..."
   },
   "contact": {
     "title": "联系我们",
@@ -117,6 +158,6 @@
       "bank_label": "开户银行",
       "bank_name": "亚洲商业银行 (ACB) - 高美分行"
     },
-    "copyright": "© {{year}} 成功解决方案. 版权所有."
+    "copyright": "  成功解决方案. 版权所有."
   }
 }

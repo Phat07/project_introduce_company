@@ -29,10 +29,10 @@
   font-size: 28px;
   font-weight: bold;
   margin: 0;
-  color: #333;
+  color: #FF6D00;
   font-family: 'Segoe UI', Arial, sans-serif;
   letter-spacing: 2px;
-  border-right: 3px solid #333;
+  border-right: 3px solid #FF6D00;
   white-space: nowrap;
   overflow: hidden;
   width: 0;
@@ -57,7 +57,7 @@
 /* Cursor animation */
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #333 }
+  50% { border-color: #FF6D00 }
 }
 
 .loading-screen.fade-out {

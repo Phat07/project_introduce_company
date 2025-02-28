@@ -12,7 +12,7 @@ export function ModelLoader() {
       <l-quantum
         size="45"
         speed="1.75"
-        color="#f5222d"
+        color="#FF6D00"
       ></l-quantum>
       <p className="loading-text">Loading ...</p>
     </div>
