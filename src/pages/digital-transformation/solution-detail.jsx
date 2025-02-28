@@ -13,7 +13,8 @@ import {
   MailOutlined,
   RightOutlined,
   ArrowUpOutlined,
-  ArrowDownOutlined
+  ArrowDownOutlined,
+  FireOutlined
 } from '@ant-design/icons';
 import LoadingScreen from '../../components/ui/loading-screen';
 import DynamicImage from '../../components/ui/dynamic-image';
@@ -105,7 +106,7 @@ const SolutionDetail = () => {
       });
 
       // Features cards animation with hover effect - Auto animate without scroll
-      const featureCards = featuresRef.current.querySelectorAll('.feature-card');
+      const featureCards = featuresRef?.current?.querySelectorAll('.feature-card');
       gsap.from(featureCards, {
         opacity: 0,
         y: 50,
@@ -115,7 +116,7 @@ const SolutionDetail = () => {
         delay: 0.5 // Small delay after page load
       });
 
-      featureCards.forEach(card => {
+      featureCards?.forEach(card => {
         card.addEventListener('mouseenter', () => {
           gsap.to(card, {
             backgroundColor: '#fff8f3',
@@ -145,8 +146,56 @@ const SolutionDetail = () => {
         });
       });
 
+      // Đặc điểm nổi bật animation with slide and fade effect
+      const advantageCards = document?.querySelectorAll('.advantage-card');
+      gsap.from(advantageCards, {
+        opacity: 0,
+        x: -100,
+        rotateY: -45,
+        duration: 1,
+        stagger: 0.15,
+        ease: "back.out(1.7)",
+        delay: 0.3
+      });
+
+      advantageCards?.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, {
+            scale: 1.05,
+            x: 15,
+            backgroundColor: '#fff8f3',
+            boxShadow: '0 4px 15px rgba(255, 109, 0, 0.1)',
+            duration: 0.4,
+            ease: "power2.out"
+          });
+          gsap.to(card.querySelector('.anticon'), {
+            scale: 1.3,
+            rotate: 360,
+            color: '#ff6d00',
+            duration: 0.4
+          });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, {
+            scale: 1,
+            x: 0,
+            backgroundColor: 'transparent',
+            boxShadow: 'none',
+            duration: 0.4,
+            ease: "power2.out"
+          });
+          gsap.to(card.querySelector('.anticon'), {
+            scale: 1,
+            rotate: 0,
+            color: '#ff6d00',
+            duration: 0.4
+          });
+        });
+      });
+
       // Benefits cards animation with hover effect - Auto animate without scroll
-      const benefitCards = benefitsRef.current.querySelectorAll('.benefit-card');
+      const benefitCards = benefitsRef?.current?.querySelectorAll('.benefit-card');
       gsap.from(benefitCards, {
         opacity: 0,
         x: -50,
@@ -156,7 +205,7 @@ const SolutionDetail = () => {
         delay: 0.8 // Small delay after features
       });
 
-      benefitCards.forEach(card => {
+      benefitCards?.forEach(card => {
         card.addEventListener('mouseenter', () => {
           gsap.to(card, {
             x: 10,
@@ -200,7 +249,7 @@ const SolutionDetail = () => {
       });
 
       // Hotline hover effect
-      const hotlineBox = contactSection.querySelector('.hotline-box');
+      const hotlineBox = contactSection?.querySelector('.hotline-box');
       if (hotlineBox) {
         hotlineBox.addEventListener('mouseenter', () => {
           gsap.to(hotlineBox, {
@@ -422,7 +471,13 @@ const SolutionDetail = () => {
                             <div className="flex items-start feature-card">
                               <CheckCircleOutlined className="text-green-500 mr-3 mt-1" />
                               <div>
-                                <p className="font-medium">{feature}</p>
+                                <pre style={{
+                                  fontFamily: 'inherit',
+                                  fontSize: 'inherit',
+                                  fontWeight: 500,
+                                  margin: 0,
+                                  whiteSpace: 'pre-wrap'
+                                }}>{feature}</pre>
                               </div>
                             </div>
                           </Col>
@@ -437,13 +492,19 @@ const SolutionDetail = () => {
                   <motion.div variants={fadeInUp}>
                     <Card className="mb-8">
                       <Title level={3} className="text-[#ff6d00] mb-6">Đặc điểm nổi bật</Title>
-                      <Row gutter={[16, 16]} ref={benefitsRef}>
-                        {solution?.advantage?.map((benefit, index) => (
+                      <Row gutter={[16, 16]}>
+                        {solution?.advantage?.map((advantage, index) => (
                           <Col xs={24} md={12} key={index}>
-                            <div className="flex items-start benefit-card">
+                            <div className="flex items-start advantage-card">
                               <RightOutlined className="text-[#ff6d00] mr-3 mt-1" />
                               <div>
-                                <p className="font-medium">{benefit}</p>
+                                <pre style={{
+                                  fontFamily: 'inherit',
+                                  fontSize: 'inherit',
+                                  fontWeight: 500,
+                                  margin: 0,
+                                  whiteSpace: 'pre-wrap'
+                                }}>{advantage}</pre>
                               </div>
                             </div>
                           </Col>
@@ -462,9 +523,15 @@ const SolutionDetail = () => {
                         {solution?.benefits?.map((benefit, index) => (
                           <Col xs={24} md={12} key={index}>
                             <div className="flex items-start benefit-card">
-                              <RightOutlined className="text-[#ff6d00] mr-3 mt-1" />
+                              <FireOutlined className="text-[#ff6d00] mr-3 mt-1" />
                               <div>
-                                <p className="font-medium">{benefit}</p>
+                                <pre style={{
+                                  fontFamily: 'inherit',
+                                  fontSize: 'inherit',
+                                  fontWeight: 500,
+                                  margin: 0,
+                                  whiteSpace: 'pre-wrap'
+                                }}>{benefit}</pre>
                               </div>
                             </div>
                           </Col>
@@ -504,7 +571,12 @@ const SolutionDetail = () => {
                                 <List.Item>
                                   <List.Item.Meta
                                     avatar={<CheckCircleOutlined style={{ color: '#55C51E' }} />}
-                                    description={item}
+                                    description={<pre style={{
+                                      fontFamily: 'inherit',
+                                      fontSize: 'inherit',
+                                      margin: 0,
+                                      whiteSpace: 'pre-wrap'
+                                    }}>{item}</pre>}
                                   />
                                 </List.Item>
                               )}
