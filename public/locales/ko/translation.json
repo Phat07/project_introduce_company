@@ -844,6 +844,7 @@
     }
   },
   "news": {
+    "title": "주요 뉴스",
     "items": [
       {
         "image": "/images/news/new.png",

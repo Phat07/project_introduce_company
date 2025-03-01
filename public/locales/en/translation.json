@@ -867,6 +867,7 @@
     }
   },
   "news": {
+    "title": "NEWS",
     "items": [
       {
         "image": "/images/news/new.png",
