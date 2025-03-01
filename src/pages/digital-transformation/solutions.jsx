@@ -306,11 +306,13 @@ const SolutionCard = ({ solution, t }) => (
     hoverable
     cover={
       <div className="h-36 overflow-hidden">
-        <img
-          alt={t(`solutions.items.${solution.key}.title`)}
-          src={solution.image}
-          className="w-full h-full object-cover"
-        />
+        <Link to={`/solutions/${solution.id}`}>
+          <img
+            alt={t(`solutions.items.${solution.key}.title`)}
+            src={solution.image}
+            className="w-full h-full object-cover"
+          />
+        </Link>
       </div>
     }
     className="h-full flex flex-col"
@@ -420,8 +422,8 @@ const SolutionsPage = () => {
                   <Card
                     hoverable
                     className={`h-full transition-all duration-300 ${currentCategory === category.value
-                        ? 'border-[#ff6d00] border-2 shadow-lg bg-orange-50'
-                        : 'border hover:border-[#ff6d00]'
+                      ? 'border-[#ff6d00] border-2 shadow-lg bg-orange-50'
+                      : 'border hover:border-[#ff6d00]'
                       }`}
                     onClick={() => handleCategoryChange(category.value)}
                   >
@@ -437,8 +439,8 @@ const SolutionsPage = () => {
                       </div>
                       <div>
                         <h3 className={`text-base font-medium mb-1 ${currentCategory === category.value
-                            ? 'text-[#ff6d00]'
-                            : 'text-gray-800'
+                          ? 'text-[#ff6d00]'
+                          : 'text-gray-800'
                           }`}>
                           {category.label}
                         </h3>
@@ -480,8 +482,8 @@ const SolutionsPage = () => {
                 onClick={() => handlePageChange(1)}
                 disabled={currentPage === 1}
                 className={`hidden sm:block px-3 py-1 border ${currentPage === 1
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-white text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 First
@@ -490,8 +492,8 @@ const SolutionsPage = () => {
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
                 className={`px-3 py-1 border ${currentPage === 1
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-white text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 Prev
@@ -520,8 +522,8 @@ const SolutionsPage = () => {
                         <button
                           onClick={() => handlePageChange(page)}
                           className={`min-w-[36px] px-3 py-1 border ${currentPage === page
-                              ? 'bg-[#ff6d00] text-white'
-                              : 'bg-white text-gray-600 hover:bg-gray-100'
+                            ? 'bg-[#ff6d00] text-white'
+                            : 'bg-white text-gray-600 hover:bg-gray-100'
                             }`}
                         >
                           {page}
@@ -534,8 +536,8 @@ const SolutionsPage = () => {
                       key={page}
                       onClick={() => handlePageChange(page)}
                       className={`min-w-[36px] px-3 py-1 border ${currentPage === page
-                          ? 'bg-[#ff6d00] text-white'
-                          : 'bg-white text-gray-600 hover:bg-gray-100'
+                        ? 'bg-[#ff6d00] text-white'
+                        : 'bg-white text-gray-600 hover:bg-gray-100'
                         }`}
                     >
                       {page}
@@ -547,8 +549,8 @@ const SolutionsPage = () => {
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)}
                 className={`px-3 py-1 border ${currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-white text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 Next
@@ -557,8 +559,8 @@ const SolutionsPage = () => {
                 onClick={() => handlePageChange(Math.ceil(totalItems / ITEMS_PER_PAGE))}
                 disabled={currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)}
                 className={`hidden sm:block px-3 py-1 border ${currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-white text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 End
