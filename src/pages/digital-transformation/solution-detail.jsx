@@ -6,15 +6,19 @@ import { Card, Button, List, Typography, Breadcrumb, ConfigProvider, Row, Col, D
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { 
-  ArrowLeftOutlined, 
-  CheckCircleOutlined, 
-  PhoneOutlined, 
+import {
+  ArrowLeftOutlined,
+  CheckCircleOutlined,
+  PhoneOutlined,
   MailOutlined,
   RightOutlined,
   ArrowUpOutlined,
   ArrowDownOutlined,
-  FireOutlined
+  FireOutlined,
+  CalendarOutlined,
+  TagOutlined,
+  UserOutlined,
+  MessageOutlined
 } from '@ant-design/icons';
 import LoadingScreen from '../../components/ui/loading-screen';
 import DynamicImage from '../../components/ui/dynamic-image';
@@ -36,6 +40,11 @@ const staggerChildren = {
     }
   }
 };
+const fadeInRight = {
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 50 }
+};
 
 const SolutionDetail = () => {
   const { id } = useParams();
@@ -44,7 +53,7 @@ const SolutionDetail = () => {
   const [loading, setLoading] = useState(true);
   const [solutionKey, setSolutionKey] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState(false);
-  
+
   const mainRef = useRef(null);
   const imageRef = useRef(null);
   const featuresRef = useRef(null);
@@ -291,6 +300,8 @@ const SolutionDetail = () => {
     return <LoadingScreen />;
   }
 
+ 
+
   if (!solutionKey) {
     return (
       <ConfigProvider theme={{ token: { colorPrimary: '#ff6d00' } }}>
@@ -311,7 +322,13 @@ const SolutionDetail = () => {
   }
 
   const solutionData = t(`solutions.items.${solutionKey}`, { returnObjects: true });
-
+ // Dữ liệu bổ sung giả lập (có thể lấy từ translation hoặc API)
+ const additionalInfo = {
+  updatedDate: t('solution.updated', { date: '28/02/2025' }), // Ngày cập nhật (dịch từ translation)
+  category: t(`solutions.categories.${solutionData.category}`), // Danh mục
+  users: t('solution.users', { count: 1000000 }), // Số lượng người dùng (giả lập)
+  contactEmail: 'support@thanhcongsolutions.com', // Email liên hệ
+};
   return (
     <ConfigProvider theme={{ token: { colorPrimary: '#ff6d00' } }}>
       <div className="container mx-auto px-4 py-8">
@@ -322,7 +339,7 @@ const SolutionDetail = () => {
           transition={{ duration: 0.5 }}
           style={{ marginTop: '3rem' }}
         >
-          <motion.div
+          {/* <motion.div
             className="mb-4"
             variants={fadeInUp}
             initial="initial"
@@ -345,7 +362,71 @@ const SolutionDetail = () => {
             >
               {t('common.back')}
             </Button>
-          </motion.div>
+          </motion.div> */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+            {/* Breadcrumb và Button */}
+            <motion.div
+              className="w-full md:w-auto"
+              variants={fadeInUp}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+            >
+              <Breadcrumb className="breadcrumb-custom">
+                <Breadcrumb.Item>
+                  <a onClick={() => navigate('/solutions')} className="text-gray-700 hover:text-[#ff6d00] transition-colors">
+                    {t('solutions.title')}
+                  </a>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item className="text-gray-800 font-medium">
+                  {t(`solutions.items.${solutionKey}.title`)}
+                </Breadcrumb.Item>
+              </Breadcrumb>
+
+              <motion.div
+                className="mt-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
+                <Button
+                  icon={<ArrowLeftOutlined />}
+                  onClick={() => navigate('/solutions')}
+                  className="back-button bg-white border-[#ff6d00] text-[#ff6d00] hover:bg-[#ff6d00] hover:text-white transition-all duration-300"
+                >
+                  {t('common.back')}
+                </Button>
+              </motion.div>
+            </motion.div>
+
+            {/* Info Bar (ngang bên phải) */}
+            <motion.div
+              className="w-full md:w-auto flex flex-col md:flex-row gap-4 bg-gray-50 p-4 rounded-lg shadow-md info-bar"
+              variants={fadeInRight}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+            >
+              <div className="info-item flex items-center gap-2 text-sm text-gray-600">
+                <CalendarOutlined className="text-[#ff6d00]" />
+                <span>{additionalInfo.updatedDate}</span>
+              </div>
+              <div className="info-item flex items-center gap-2 text-sm text-gray-600">
+                <TagOutlined className="text-[#ff6d00]" />
+                <span>{additionalInfo.category}</span>
+              </div>
+              <div className="info-item flex items-center gap-2 text-sm text-gray-600">
+                <UserOutlined className="text-[#ff6d00]" />
+                <span>{additionalInfo.users}</span>
+              </div>
+              <div className="info-item flex items-center gap-2 text-sm text-gray-600">
+                <MessageOutlined className="text-[#ff6d00]" />
+                <a href={`mailto:${additionalInfo.contactEmail}`} className="hover:text-[#ff6d00] transition-colors">
+                  {additionalInfo.contactEmail}
+                </a>
+              </div>
+            </motion.div>
+          </div>
 
           <Row gutter={[32, 32]}>
             <Col xs={24} lg={16}>
