@@ -127,6 +127,765 @@
       "bank_label": "Bank",
       "bank_name": "Asia Commercial Bank (ACB) - Go May Branch"
     },
-    "copyright": "  Thanh Cong Solutions. All rights reserved."
+    "copyright": "© 2025 Thanh Cong Solutions. All rights reserved."
+  },
+  "common": {
+    "back": "Back",
+    "viewDetails": "View Details",
+    "readMore": "Read More",
+    "showLess": "Show Less",
+    "contact": "Contact",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "loading": "Loading..."
+  },
+  "solutions": {
+    "title": "Solutions",
+    "features":"Features",
+    "benefits":"Benefits",
+    "advantages":"Advantages",
+    "pricing": "Pricing",
+    "categories": {
+      "all": "All",
+      "telecom": "Telecommunications",
+      "it": "IT",
+      "infrastructure": "Infrastructure",
+      "all_desc": "View all solutions and services",
+      "telecom_desc": "Telecommunication solutions and services",
+      "it_desc": "Information technology solutions",
+      "infrastructure_desc": "Digital infrastructure solutions"
+    },
+    "items": {
+      "cloud_pbx": {
+        "id": 1,
+        "title": "CLOUD PBX SOLUTION",
+        "category": "telecom",
+        "image": "/images/solutions/tongdai.jpg",
+        "description": "Virtual PBX is no longer a unfamiliar term in the era of Industry 4.0, with technologies such as VoIP, AI, Big Data, IoT, etc., contributing to advancing the voice sector in general and customer service in particular. It helps reduce deployment costs and call expenses by over 80%, while significantly minimizing customer service time. A virtual PBX is a telephone service that uses the internet over an IP network instead of traditional phone lines. What’s particularly special is that the cloud-based virtual PBX operates on a cloud platform, with connections made via IP (network address), making installation straightforward—just requiring an internet connection and devices like IP Phones, computers or laptops (calls can be made via a website or softphone app), or smartphones (with an installed app). As long as there’s internet access, the PBX can be accessed anytime, anywhere.",
+        "features": [
+          "Operates over the internet",
+          "Supports a large number of users with flexible scalability",
+          "Integrates multiple numbers: 1900, 1800, fixed-line, mobile",
+          "Greeting message (with interactive IVR support)",
+          "Default hold music",
+          "Custom hold music for VIP customers",
+          "Set password (PIN) for outgoing calls",
+          "Time-based outbound call routing",
+          "Transfer (call forwarding)",
+          "Call pickup",
+          "Call forward: Used when unable to answer directly, outside working hours, or during holidays. The system uses a mobile or fixed SIP number to forward calls to a designated number.",
+          "Free internal calls between users, departments, and branches",
+          "Block disruptive calls (blacklist)",
+          "Limit call directions (internal, local, inter-provincial, mobile, international, etc.)",
+          "Group ringing (Ringgroup), Queues",
+          "Time-based call routing",
+          "VIP customer call routing (can transfer calls from these customers directly to the responsible person without waiting)",
+          "Connects multiple offices, branches, and store chains",
+          "Voicemail (leave a message after the beep)",
+          "Audio conference (audio meeting room function)",
+          "Call recording (incoming, outgoing, internal)",
+          "Recording duration (committed for 3 months - expandable based on customer needs)",
+          "Web-based call management account",
+          "Supports search by phone number, line number, call time (incoming/outgoing)",
+          "Listen to recorded files directly from the web browser"
+        ],
+        "benefits": [
+          "No need to invest in or operate the PBX system.",
+          "The entire PBX system is professionally managed by Viettel with high security.",
+          "Easy extension expansion.",
+          "Quick deployment, saving time.",
+          "Low cost, extremely economical call rates.",
+          "No geographical limitations.",
+          "High and stable call quality.",
+          "No limit on the number of calls.",
+          "Easy capacity expansion.",
+          "Connect calls from anywhere using smartphones or tablets.",
+          "No complex configuration required, fast deployment time."
+        ],
+        "pricing": [
+          {
+            "name": "Combo TCS_FTTH_01",
+            "bandwidth": "International bandwidth: 1Mbps & Domestic bandwidth: 90Mbps",
+            "users": "10 User access",
+            "router": "Includes Router & Router configuration support",
+            "setupFee": "Setup fee: 1 million VND (PBX installation & Leased Line Internet deployment)",
+            "price": "1,200,000 VND/month (VAT excluded)",
+            "paymentTerm": "6 months or 12 months per payment"
+          },
+          {
+            "name": "Combo TCS_FTTH_02",
+            "bandwidth": "International bandwidth: 1Mbps & Domestic bandwidth: 90Mbps",
+            "users": "20 User access",
+            "router": "Includes Router & Router configuration support",
+            "setupFee": "Setup fee: 1 million VND (PBX installation & Leased Line Internet deployment)",
+            "price": "1,700,000 VND/month (VAT excluded)",
+            "paymentTerm": "6 months or 12 months per payment"
+          },
+          {
+            "name": "Combo TCS_FTTH_03",
+            "bandwidth": "International bandwidth: 1Mbps & Domestic bandwidth: 90Mbps",
+            "users": "30 User access",
+            "router": "Includes Router & Router configuration support",
+            "setupFee": "Setup fee: 1 million VND (PBX installation & Leased Line Internet deployment)",
+            "price": "2,200,000 VND/month (VAT excluded)",
+            "paymentTerm": "6 months or 12 months per payment"
+          }
+        ]
+      },
+      "leased_line": {
+        "id": 2,
+        "title": "Leased Line",
+        "category": "telecom",
+        "image": "/images/solutions/kenhthue.png",
+        "description": "The Leased Line service provides a dedicated physical connection for customers using fiber optic cables to transmit information between fixed points within the country via a point-to-point connection method. Customers will not share bandwidth at any time.",
+        "features": [
+          "Connection model: Point-to-point or point-to-multipoint",
+          "Connection infrastructure: Leased Line service deployed on SDH infrastructure"
+        ],
+        "advantage": [
+          "CUSTOMIZABLE TO NEEDS: Customers can lease channels with speeds starting as low as 64Kb/s up to unlimited, with standard network interfaces.",
+          "FAST SUPPORT AND ISSUE RESOLUTION: Incident response time <0.5h, resolution time 2h-6h, 24/7/365 support.",
+          "BEST QUALITY: With a nationwide fiber optic network covering all districts and a high redundancy structure, customers using domestic or international leased lines are assured the best quality and redundancy levels.",
+          "HIGHEST STABILITY: Deployed on a modern international telecommunications network with the highest level of redundancy. Service availability reaches 99.99%, with a committed error rate of less than 10⁻⁴%.",
+          "FLEXIBILITY: Easy capacity/speed upgrades, offering various interface types: FE, V.35, G.703, BNC, LC, etc.",
+          "SECURITY: Highest security with point-to-point channels dedicated to customers."
+        ]
+      },
+      "metro_wan": {
+        "id": 3,
+        "title": "HIGH-SPEED VIRTUAL PRIVATE NETWORK SOLUTION (METRO WAN)",
+        "category": "telecom",
+        "image": "/images/solutions/metroWan.png",
+        "description": "MetroWan is a service providing a virtual private network (VPN: Virtual Private Network Layer 2) aimed at transmitting data for businesses with multiple branches and headquarters nationwide, based on Viettel’s MPLS/VPN (Multi-Protocol Label Switching/Virtual Private Network) infrastructure. It meets the needs for high-speed, secure data transmission (data, voice, video, etc.) between two or more customer branch locations.",
+        "features": [
+          "IP PLANNING: IP can be planned by the customer or Viettel",
+          "Point-to-multipoint connection",
+          "Point-to-point connection",
+          "Multipoint-to-multipoint connection",
+          "Fullmesh connection",
+          "Suitable for customers capable of managing internal network systems (e.g., banks, government agencies, IT companies)."
+        ],
+        "advantage": [
+          "COST SAVINGS: The MetroWan service helps customers establish a private network at a low cost by creating virtual connections. All locations can connect directly with just one physical connection per site.",
+          "FLEXIBILITY: Using this service, customers can easily expand their model, add connection points, and increase bandwidth or speed during use without needing to change the model or network architecture.",
+          "HIGH SECURITY: Connections between sites are encrypted, labeled, and established with private tunnels on Viettel’s core network system."
+        ]
+      },
+      "office_wan": {
+        "id": 4,
+        "title": "VIRTUAL PRIVATE NETWORK SOLUTION (OFFICE WAN)",
+        "category": "telecom",
+        "image": "/images/solutions/officeWan.jpg",
+        "description": "Office Wan is a service providing a virtual private network (VPN: Virtual Private Network Layer 3) aimed at transmitting data for businesses with multiple branches and headquarters nationwide, based on Viettel’s MPLS/VPN (Multi-Protocol Label Switching/Virtual Private Network) infrastructure.",
+        "features": [
+          "IP PLANNING: IP can be planned by the customer or Viettel",
+          "Point-to-point connection",
+          "Point-to-multipoint connection",
+          "Full mesh connection"
+        ],
+        "advantage": [
+          "COST SAVINGS: The Office Wan service helps customers establish a private network at a low cost by creating virtual connections. All locations can connect directly with just one physical connection per site.",
+          "FLEXIBILITY: Using this service, customers can easily expand their model, add connection points, and increase bandwidth or speed during use without needing to change the model or network architecture.",
+          "HIGH SECURITY: Connections between sites are encrypted, labeled, and established with private tunnels on Viettel’s core network system."
+        ]
+      },
+      "video_conference": {
+        "id": 5,
+        "title": "VIDEO CONFERENCING SOLUTION",
+        "category": "telecom",
+        "image": "/images/solutions/hnth.jpg",
+        "description": "Video Conferencing (VC) is a service that transmits audio, video, and shares data and content between two or more remote locations over a network, enabling simultaneous two-way communication as if participants were in the same meeting room. VC services are commonly used to connect meetings, discussions, online training, etc., between locations.",
+        "features": [
+          "MEETING ORGANIZATION:\n- Organize meetings anytime.\n- Sharp images up to HD/FullHD standards",
+          "QUALITY:\n- Multidirectional, realistic sound.",
+          "FEATURE INTEGRATION:\n- Integrates with meeting room audio systems.\n- Easily shares slides and presentation data.\n- Records meeting content.\n- Simple to use and operate"
+        ],
+        "advantage": [
+          "EXPERIENCE: Viettel is the leading provider in Vietnam with experience in consulting, designing, deploying, and managing VC systems on a large scale, with thousands of endpoints, serving many businesses and key customers.",
+          "SUPPLY CAPACITY: Capable of providing solutions from various global vendors such as Polycom, Avaya - Radvision, Cisco, Aver, Cypresscom Veda, etc., to meet customer requirements."
+        ],
+        "benefits": [
+          "REDUCE TIME: Reduces travel time and risks",
+          "COST SAVINGS: Saves organizational costs",
+          "ENABLE CONNECTIONS: Connects multiple locations",
+          "QUICK ORGANIZATION: Quickly organizes meetings; etc."
+        ]
+      },
+      "sms_brandname": {
+        "id": 6,
+        "title": "BRANDED SMS (SMS BRANDNAME)",
+        "category": "telecom",
+        "image": "/images/solutions/sms.png",
+        "description": "SMS Brandname is a service that allows agencies, organizations, businesses, or individuals to send internal information, customer care messages, or advertisements by sending SMS directly to mobile subscribers of telecom providers, displaying the sender’s brand name instead of a numeric sender ID.",
+        "advantage": [
+          "COST-EFFECTIVE AND EFFICIENT: Businesses save on design, printing, and manpower costs, enabling direct communication to target recipients.",
+          "BRAND PROMOTION: Messages sent to employees or customers always display the agency/organization/business brand, aiding in brand promotion.",
+          "PRECISE CUSTOMER REACH BY CRITERIA AND LOCATION: Messages are sent to the right target audience, enhancing communication effectiveness through the LBS (Location-Based Service) SMS system."
+        ],
+        "benefits": [
+          "FLEXIBLE AND SUITABLE: Offers convenient and flexible solutions for all entities:\n\n - Method 1: Send bulk SMS via a free provided website/app.\n - Method 2: Service applications are pre-programmed and installed on the business’s SMS Gateway, automatically delivering messages to customers (requires IT staff to manage and program the system)."
+        ]
+      },
+      "voip": {
+        "id": 7,
+        "title": "VOIP TELEPHONY SERVICE FOR BUSINESSES",
+        "category": "telecom",
+        "image": "/images/solutions/voip.jpg",
+        "description": "The SIP Trunk service is a voice trunking service using the SIP 2.0 (Session Initiation Protocol). It is divided into two types: Fixed-line SIP Trunk (1800, 1900, PSTN, IPPhone): uses transmission channels to connect 1800, 1900, PSTN, and IPPhone numbers to the customer’s IP PBX supporting SIP. Mobile SIP Trunk (09xxx/086xxx): uses transmission channels.",
+        "advantage": [
+          "COST SAVINGS: Low cost, extremely economical call rates",
+          "NO GEOGRAPHICAL LIMITS: Not restricted by location",
+          "CALL QUALITY: High and stable call quality",
+          "NO CALL LIMITS: No restrictions on the number of calls",
+          "EXPANDABLE CAPACITY: Easy capacity expansion",
+          "INTERNET: Requires only one internet line",
+          "CALL CONNECTION: Connects calls from anywhere via smartphones or tablets",
+          "QUICK DEPLOYMENT: No complex configuration needed, fast deployment time."
+        ],
+        "benefits": [
+          "OPERATION: The entire PBX system is professionally managed by Viettel with high security.",
+          "EXPANSION: Easy extension expansion.",
+          "TIME-SAVING: Quick deployment, saving time."
+        ]
+      },
+      "e1": {
+        "id": 8,
+        "title": "DIGITAL TRUNK SERVICE (E1)",
+        "category": "telecom",
+        "image": "/images/solutions/e1.png",
+        "description": "The Digital Trunk (E1) service provides a transmission link between the telecom provider’s PBX and the customer’s internal PBX. Each trunk allows up to 30 simultaneous calls.",
+        "advantage": [
+          "INFRASTRUCTURE: Deployed on fiber optic infrastructure",
+          "BANDWIDTH: Each E1 trunk has a 2Mbps bandwidth",
+          "PHONE NUMBERS: No limit on the number of phone numbers activated on one E1 trunk",
+          "VOICE CHANNELS: Supports 30 simultaneous voice channels, each at 64 kbps (2048 kbps = 32 x 64 kbps) with 2 signaling channels.",
+          "DEPLOYMENT: Deployment condition: The customer’s PBX must have an E1 interface port and use SS7 or R2 signaling."
+        ],
+        "benefits": [
+          "HIGH QUALITY: The E1 digital trunk establishes a direct transmission channel from the provider’s central switching PBX to the customer’s PABX, bypassing intermediate PBXs, ensuring high call quality and better information security compared to regular phones.",
+          "STABLE SIGNAL: Deployed via fiber optic cables, it’s unaffected by external environmental factors, ensuring stable voice signals.",
+          "COST OPTIMIZATION: Using an E1 digital trunk offers significantly lower rates than regular PSTN services.",
+          "GREATER FLEXIBILITY: Easily expands the business’s phone system with a single input signal and supports unlimited subscriber extensions."
+        ]
+      },
+      "dcom": {
+        "id": 9,
+        "title": "DCOM SERVICE",
+        "category": "telecom",
+        "image": "/images/solutions/dcom.png",
+        "description": "The Dcom service is a mobile internet access service based on 4G/3G networks, offering high speed and mobility.",
+        "advantage": [
+          "SALES MANAGEMENT SYSTEM: Equips sales and distribution channels with access to the business’s sales management system.",
+          "MOBILE ACCESS CAPABILITY: Provides staff with network access for mobile needs or in areas without fixed-line infrastructure (ADSL/FTTH).",
+          "WIFI HOTSPOT: Used to provide wifi for staff, customers, or passenger vehicles."
+        ],
+        "benefits": [
+          "HIGH SPEED: High-speed 3G/4G network access.",
+          "MOBILITY: Offers the widest coverage, meeting the mobility needs of staff.",
+          "EFFICIENCY: Increases sales efficiency and optimizes business costs.",
+          "ACCESS ON DEMAND: Meets routing access to specific destinations and internal network access based on business requirements."
+        ]
+      },
+      "head_number_1900": {
+        "id": 10,
+        "title": "1900 HEAD NUMBER SERVICE",
+        "category": "telecom",
+        "image": "/images/solutions/1900.jpg",
+        "description": "Viettel’s 1900 head number service is a customer care PBX service for businesses, allowing the reception of one or multiple simultaneous incoming calls through a single nationwide 1900 number.",
+        "advantage": [
+          "CHARGING: Charges callers based on the 1900 number’s tariff.",
+          "USAGE CONDITION: Customers must have an existing Viettel service to receive 1900 calls, such as PSTN, IPPhone, E1 Trunk, SIP Trunking, Mobile, or Homephone."
+        ],
+        "benefits": [
+          "BENEFITS FOR CALLERS/SENDERS:\n\n - Can call from anywhere; customers contacting business branches don’t need to use area codes.\n - A single, easy-to-remember nationwide number.",
+          "BENEFITS FOR BUSINESSES AND ORGANIZATIONS USING 1900:\n\n - Enhances brand recognition and professionalism.\n - An effective business model via telephone for consulting, entertainment, or customer care services.\n - Easy promotion with a single access number for all branches nationwide.\n - Handles multiple simultaneous calls at once."
+        ]
+      },
+      "leasedline_internet": {
+        "id": 11,
+        "title": "LEASEDLINE INTERNET",
+        "category": "telecom",
+        "image": "/images/solutions/leased-internet.png",
+        "description": "Leasedline Internet is a direct internet connection service with a dedicated international gateway, deployed on fiber optic infrastructure, capable of meeting all customer speed requirements.",
+        "features": [
+          "INFRASTRUCTURE: Deployed on fiber optic infrastructure with prioritized routing. International gateway capacity up to hundreds of Gbps.",
+          "MULTI-SERVICE: With 8 free static IPs, customers can deploy high-quality applications such as VPNs, video conferencing, and set up and manage Mail Servers and Web Servers.",
+          "CONNECTION SPEED: Easily adjusts speed up or down without changing customer endpoints or connection models.",
+          "TECHNICAL SUPPORT: Direct 24/24 technical support.",
+          "BANDWIDTH QUALITY: Bandwidth provided to customers is always 100% at all times.",
+          "EQUIPMENT SUPPLY: The company provides equipment for customers during service usage."
+        ]
+      },
+      "ftth": {
+        "id": 12,
+        "title": "FIBER OPTIC INTERNET SERVICE (FTTH)",
+        "category": "telecom",
+        "image": "/images/solutions/ftth.png",
+        "description": "The Fiber Optic Internet Service FTTH (Fiber-To-The-Home) is the most modern service enabling high-speed internet access based on fiber optic technology.",
+        "features": [
+          "OPTICAL TECHNOLOGY: Deployed on optical technology platform",
+          "TRANSMISSION QUALITY: Stable transmission quality with minimal loss",
+          "TRANSFER SPEED: Equal download/upload speeds, serving multiple computers simultaneously"
+        ],
+        "advantage": [
+          "SAFETY: Fiber optics don’t conduct electricity, ensuring device safety and no risk of lightning strikes through the line.",
+          "EASY BANDWIDTH UPGRADES: Viettel’s FTTH service allows easy bandwidth upgrades without needing new cables.",
+          "MULTI-SERVICE: Supports multiple services on the same fiber."
+        ]
+      },
+      "head_number_1800": {
+        "id": 13,
+        "title": "FREE CALLER SERVICE 1800",
+        "category": "telecom",
+        "image": "/images/solutions/1800.jpg",
+        "description": "The Free Caller Service – 1800 is the most effective solution for consulting on products and services for customers. Customers of businesses enjoy FREE calls to the 1800xxxx number of that business.",
+        "advantage": [
+          "ACCEPTS ALL CALLS: The Free Caller Service – 1800 accepts all calls from mobile and fixed-line subscribers of various networks nationwide.",
+          "DEPLOYMENT: No external deployment required (cable pulling or customer-side installation)",
+          "SERVICE USAGE CONDITION: Customers must use Viettel’s wired telephony services: PSTN, NGN, Trunk (used as the destination 1800xxxx number for routing)",
+          "ROUTING: Calls to 1800xxxx are routed to the destination phone number"
+        ],
+        "benefits": [
+          "BOOST REVENUE: Free call services encourage customers to engage more with products and services, increasing business-customer interaction",
+          "PROFESSIONALISM: The service helps organizations and businesses assert professionalism with a single, memorable number for all branches and offices nationwide",
+          "BRAND AFFIRMATION: Creates a communication channel tied to the brand of organizations and businesses throughout their development.",
+          "FLEXIBILITY: A single number for all products and services, with no limits on future product or service expansion."
+        ]
+      },
+      "sd_wan": {
+        "id": 14,
+        "title": "VIRTUAL NETWORK SETUP SOLUTION (SD-WAN)",
+        "category": "telecom",
+        "image": "/images/solutions/sd-wan.jpg",
+        "description": "SD-WAN is a solution for establishing a virtual WAN network on traditional physical networks like FTTx, LTE/5G, or MPLS, using software with high flexibility, quick deployment, and easier operation compared to traditional solutions.",
+        "advantage": [
+          "CONFIGURATION: Centralized configuration, routing, and monitoring.",
+          "LOAD BALANCING: Capable of load balancing and selecting the best-quality connection.",
+          "CONNECTION: Supports multiple connection types",
+          "QoS PER SERVICE"
+        ],
+        "benefits": [
+          "IMPROVED MANAGEMENT EFFICIENCY: Fully centralized management, integrating DPI (Deep Packet Inspection) to analyze packets down to the user level, assess user trends to adjust configuration policies, and support tools to analyze system security risks.",
+          "NETWORK OPTIMIZATION: Flexible routing based on system SLAs (jitter, latency, packet loss...), enabling application-level routing policies to optimize the network.",
+          "HIGH APPLICATION PERFORMANCE: Recognizes over 2000 applications, providing QoS policies to prioritize business-critical applications.",
+          "HIGH SECURITY: Built-in Firewall features like App Control, IPS/IDS, Anti-Virus, URL filtering, sandbox, SSL Inspection.",
+          "FAST AND FLEXIBLE DEPLOYMENT: Remote configuration and Zero Touch Provisioning reduce integration time. Supports simultaneous deployment of multiple transmission lines from different providers",
+          "HIGH AVAILABILITY: Supports load sharing across multiple lines (LTE/5G/MPLS/FTTx) to enhance system availability."
+        ]
+      },
+      "international_call": {
+        "id": 15,
+        "title": "INTERNATIONAL CALLS",
+        "category": "telecom",
+        "image": "/images/solutions/international-call.jpg",
+        "description": "CHECK RATES Customers can check international call rates by country name and country code here. Registration fee: Per head number Monthly subscription fee: Per head number Service billing method: 6 seconds +1 (6s+1): Calls under 6 seconds are charged as 6 seconds. The remaining time of a call less than 1 second is rounded to 1 second. 60 seconds + 60 seconds (60s+60s): Calls under 60 seconds are charged as 60 seconds. The remaining time of a call less than 1 second is rounded to 60 seconds. International call rates to countries and territories worldwide (*) Note: Countries with special 60s+60s billing blocks include: American Samoa, Western Samoa, Cook Islands, French Polynesia, Gambia, Haiti, Kiribati, Lesotho, Mexico, Nauru, New Caledonia, Niue Island, Papua New Guinea, Solomon Islands, Suriname, Togo, Tokelau, Tonga, Tuvalu, Vanuatu, and satellite numbers",
+        "features": [
+          "Competitive rates",
+          "Global connectivity",
+          "Good sound quality"
+        ]
+      },
+      "rpa": {
+        "id": 16,
+        "title": "RPA SOLUTION",
+        "category": "it",
+        "image": "/images/solutions/rpa.jpg",
+        "description": "Viettel RPA (Robotic Process Automation) service provides a process automation solution based on software robots, offering businesses a new digital workforce to improve productivity and enhance customer experience. The robots are designed to handle high-volume, repetitive tasks across thousands of processes in all functional areas such as customer service, accounting, procurement, human resources, supply chain management, etc."
+      },
+      "managed_service": {
+        "id": 17,
+        "title": "Managed Operations",
+        "category": "it",
+        "image": "/images/solutions/quantrivanhanh.jpg",
+        "description": "The Managed Service is a service for managing and operating business server systems while supporting users in their daily computer usage.",
+        "features": [
+          "MONITORING SYSTEM: Devices and servers are monitored 24/24 with automated SMS processes, color alerts, and sound notifications to Viettel Solutions’ dedicated engineers for immediate intervention if issues arise. Viettel Solutions also provides resource usage statistics reports to customers, suggesting optimizations when needed.",
+          "PERIODIC SYSTEM UPDATES: Regularly check and update patches, operating systems, and new software service versions, immediately detecting and addressing overloaded devices, hardware errors, service hangs, system issues, etc.",
+          "SECURITY VULNERABILITY HANDLING: Viettel Solutions integrates automated security vulnerability scanning tools into the management system, capable of analyzing code security levels and attack methods when signs of sabotage are detected, proactively deploying timely preventive measures.",
+          "SUPPORT FOR DEVICE AND SERVER ISSUES: Beyond system management, Viettel Solutions assists customers with issues such as determining server configurations to meet website code requirements, identifying causes of website access errors on servers, analyzing performance, and recommending suitable device/server configurations."
+        ],
+        "advantage": [
+          "DIVERSE SERVICES: Offers a variety of services: Server management, security management, IT infrastructure upgrades, consulting, etc.",
+          "COST SAVINGS: Saves costs on equipment investment, management tools, personnel, and training.",
+          "24/7 SUPPORT: Modern management tools. Helpdesk system ready to assist 24/7.",
+          "SERVICE QUALITY: Viettel commits to service quality with SLAs equivalent to or better than leading global providers.",
+          "COST: vMS helps businesses optimize IT system operation costs by at least 30% compared to before, thanks to automation and centralized management."
+        ],
+        "benefits": [
+          "SINGLE CONTRACT: Customers only need one contract to manage the entire IT system, regardless of the number of usage points.",
+          "FLEXIBLE COSTS: Costs are based on usage needs and system scale.",
+          "PROFESSIONAL TEAM: Supported by a professional IT team, not reliant on any single individual’s capabilities.",
+          "PREFERENTIAL PRICING: Free IT system consulting and preferential pricing for investment or system upgrades."
+        ]
+      },
+      "dms_lite": {
+        "id": 18,
+        "title": "DMS.LITE – Professional Sales Solution",
+        "category": "it",
+        "image": "/images/solutions/dms.png",
+        "description": "A solution for managing online sales systems for businesses, from company headquarters to supervisors and field sales staff.",
+        "features": [
+          "Route Monitoring:\n\n - Locate staff positions anytime, anywhere\n - Strictly manage staff movement routes and working hours.",
+          "Sales Management:\n\n - Order online via internet, 3G, or 4G…\n - Real-time sales tracking per staff\n - Effective customer management and care\n - Unlimited product management\n - Set KPIs/sales plans\n - Proactively create suitable promotional programs at specific times\n - Scientifically manage inventory and orders",
+          "Executive Reports:\n\n - Monitoring reports\n - Sales reports\n - Inventory reports",
+          "Market Tracking:\n\n - Real-time information updates\n - Quick customer feedback\n - Receive real-time market images"
+        ],
+        "advantage": [
+          "CLOSED PROCESS: Synchronized, secure closed process (Online ordering -> Order approval -> Order printing -> Delivery)",
+          "DEPLOYMENT EXPERIENCE: Successfully deployed for companies with Vietnam’s largest distribution systems…",
+          "BUNDLED PRODUCTS: Viettel can bundle software, devices, and 3G SIMs.",
+          "SIMPLE, USER-FRIENDLY DESIGN: Designed simply and easy to use. Multi-language interface.",
+          "SALES NETWORK: Extensive sales channels across 63 provinces nationwide.",
+          "CUSTOMER SUPPORT: Top-tier customer care system, 24/7 consulting and support via hotline."
+        ],
+        "benefits": [
+          "For Managers:\n\n - Real-time market information\n - Proactively create suitable promotional programs at specific times.\n - Scientifically manage inventory and orders.\n - Strictly manage staff movement routes, working hours, and sales in real-time.\n - Comprehensive reporting system covering all business activities",
+          "For Staff:\n\n - Order online via internet, 3G, or 4G…\n - Automatically track daily and cumulative sales targets.\n - Real-time updates from managers on new products and trade support programs.\n - Reduce time spent on report compilation, enhancing work efficiency."
+        ]
+      },
+      "dms_one": {
+        "id": 19,
+        "title": "DISTRIBUTION SYSTEM MANAGEMENT (DMS.ONE)",
+        "category": "it",
+        "image": "/images/solutions/dmsOne.jpg",
+        "description": "DMS.ONE is an online goods distribution management software solution applicable to: Manufacturers - Distributors - Agents - Retail Points. Through DMS.ONE, distributors provide customer, product, and promotional information, manage inventory for each salesperson delivering goods to retailers like supermarkets, convenience stores, agents, and grocery stores… to reach consumers under sales supervisor management. Orders, images, and customer issues are updated in real-time. This distribution model enables faster, more accurate, efficient, and manageable sales operations.",
+        "features": [
+          "CUSTOMER MANAGEMENT AND CARE: The system quickly updates data, locates customers on maps for management and care. Viettel’s DMS.ONE software offers superior features to categorize and manage customers by unique attribute groups, making customer information searches extremely simple.",
+          "PRODUCT MANAGEMENT: DMS.ONE provides businesses with a systematic goods management solution by categorizing by industry, brand, and volume. It also includes advanced features for management based on enterprise-specific standards like ingredients, flavors, etc.",
+          "INVENTORY MANAGEMENT: Assists business owners and accountants in tracking inventory, replenishing goods on time, and alerting when import/export quantities exceed limits for each item. Additionally, adjusting inventory between distributors is simple and fast.",
+          "TARGET USERS: Applicable fields for DMS.ONE include businesses in sales and distribution such as food, consumer goods, pharmaceuticals, healthcare, agriculture, beverages, soft drinks, electronics, refrigeration, and sanitary equipment."
+        ]
+      },
+      "moffice": {
+        "id": 20,
+        "title": "ELECTRONIC OFFICE SYSTEM (MOFFICE)",
+        "category": "it",
+        "image": "/images/solutions/moffice.png",
+        "description": "Viettel Office Electronic System is a smart office system for businesses, used across multiple platforms to manage administrative activities professionally and modernly while ensuring flexibility and simplicity. As a leader in digital transformation, Viettel has extensive experience deploying electronic office systems for corporations, banks, and large enterprises domestically and internationally, adept at addressing challenges businesses face during implementation.",
+        "features": [
+          "DOCUMENT, RECORD, AND SCHEDULE MANAGEMENT",
+          "COMMUNICATION MANAGEMENT",
+          "ARCHIVE MANAGEMENT"
+        ],
+        "advantage": [
+          "INTEGRATION CAPACITY: Easily integrates with digital devices and various unit software systems.",
+          "AUTHORIZATION CAPACITY: Flexible authorization with high security.",
+          "INFORMATION EXCHANGE: Quick, accurate information exchange, shortening task processing time"
+        ],
+        "benefits": [
+          "EFFICIENCY: Increases office resource utilization efficiency.",
+          "COST SAVINGS: Reduces costs for paper and printing.",
+          "TIME SAVINGS: Reduces storage and document transport time.",
+          "RESPONSE CAPACITY: Capable of handling complex management processes with workflow technology."
+        ]
+      },
+      "ca": {
+        "id": 21,
+        "title": "DIGITAL SIGNATURE AUTHENTICATION SOLUTION (CA)",
+        "category": "it",
+        "image": "/images/solutions/ca.jpg",
+        "description": "Digital signature authentication is a service used in electronic transactions to verify the signer’s identity, ensure data integrity, and provide legal value, making remote electronic transactions over the internet easy, simple, and secure.",
+        "features": [
+          "MULTI-DEVICE: Sign on all device types (Desktop PC, Laptop, Mobile, Tablet)",
+          "SIGN ANYTIME, ANYWHERE: Even during overseas business trips. Only requires a phone with internet access (Wifi, 2G/3G/4G). Eliminates spatial and temporal barriers."
+        ],
+        "advantage": [
+          "UNIQUENESS: The only provider offering signing solutions via mobile SIM.",
+          "NETWORK: Extensive network and sales channels."
+        ],
+        "benefits": [
+          "DECLARATION PROCESSING:\n\n - Online tax declaration and submission.\n - Electronic customs and social insurance declarations.",
+          "INTEGRATION: Electronic banking, securities, and bidding.",
+          "DIGITAL SIGNING:\n\n - Signing contracts and electronic commercial transactions.\n - Signing on internal organizational and business software systems"
+        ]
+      },
+      "reputa": {
+        "id": 22,
+        "title": "REPUTATION MANAGEMENT SERVICE REPUTA",
+        "category": "it",
+        "image": "/images/solutions/reputa.png",
+        "description": "Reputa is a system for monitoring and analyzing information in the online environment (electronic newspapers, forums, blogs, social media: Facebook, Instagram, YouTube channels, etc.), applying the most advanced artificial intelligence technologies to capture insights down to individual internet users.",
+        "features": [
+          "EMOTION-BASED ANALYSIS: By analyzing discussion content based on the writer’s emotional tone (Positive, Negative, Neutral), businesses can better understand customer attitudes toward products and services, promptly identifying issues needing attention and resolution.",
+          "COMPREHENSIVE, VISUAL ANALYSIS: Analyzes and compares effectiveness by tracking key metrics, displayed visually through statistical charts. Captures discussion tones. Explores prominent communication topics and trends on social media.",
+          "CUSTOMER SEGMENTATION: Automatically categorizes and systematizes portraits of discussion groups about products and brands by demographics and geography, helping businesses understand their social media audience.",
+          "INFORMATION PROCESSING: Natural language processing combined with machine learning and pre-existing 'black keywords'",
+          "ALERTS: Periodic alerts for customers: Every 5 minutes"
+        ],
+        "advantage": [
+          "MULTI-SOURCE MONITORING: Collects data by keywords or sources. Easily tracks information from over 100 million daily sources, including Facebook, YouTube, newspapers, electronic news sites, forums, and other websites.",
+          "CUSTOMER INSIGHT: Multi-dimensional analysis of social media data related to product and brand information and user behavior. Provides visual statistical charts based on metrics evaluating communication, marketing effectiveness, and customer portraits.",
+          "FLEXIBLE ALERTS: Customizable alert system based on needs. Customers easily receive real-time alerts via Mobile App, Web, Email, etc. Automated reporting helps customers monitor activities efficiently, saving time."
+        ],
+        "benefits": [
+          "FOR BUSINESSES:\n\n - Monitor information about the business on media and social networks, quickly detecting unfavorable information for appropriate handling solutions, avoiding communication crises that negatively impact the business image.\n - Track competitor information to devise suitable business strategies aligned with competitors’ products and services.\n - Proactively address customer complaints about the business’s services, increasing satisfaction and delivering greater value.",
+          "FOR GOVERNMENT AGENCIES:\n\n - Information synchronized and displayed in real-time.\n - Authorities monitor online social order information via social media.\n - Authorities monitor information on protests and anti-state activities."
+        ]
+      },
+      "vwifi": {
+        "id": 23,
+        "title": "CLOUD WIFI MARKETING (VWIFI)",
+        "category": "it",
+        "image": "/images/solutions/vwifi.jpg",
+        "description": "vWifi is a Wifi Marketing service deployed on the Cloud, enabling businesses to deliver advertising content and interactions directly to users via Wifi infrastructure. Suitable for businesses in hospitality, travel, and tourism services—where there’s a high demand for interaction to advertise to service users.",
+        "features": [
+          "BRAND COMMUNICATION: Advertising with scenarios: posters, videos.",
+          "INFORMATION COLLECTION SUPPORT: Collects information: login via social media accounts, personal info entry, opinion surveys.",
+          "DATA: Manages and analyzes collected data.",
+          "RE-MARKETING: Re-marketing to the customer base accessing Wifi.",
+          "ACCESS MANAGEMENT: Manages access time, bandwidth, and data volume per user."
+        ],
+        "advantage": [
+          "CLOUD PLATFORM: Deployed on the Cloud, so businesses don’t need to invest in additional server or storage infrastructure.",
+          "HIGH COMPATIBILITY: Compatible with all internet service providers and Wifi broadcasting device brands."
+        ]
+      },
+      "wifi_enterprise": {
+        "id": 24,
+        "title": "WIFI SOLUTION FOR ENTERPRISES",
+        "category": "it",
+        "image": "/images/solutions/wifiver2.jpg",
+        "description": "Thanh Cong Solutions provides a comprehensive Wifi solution, ensuring full coverage with high security, stable access speeds, and integration of multiple features as required.",
+        "features": [
+          "ACCESS: Increases simultaneous user access.",
+          "COVERAGE: Expands coverage area, reduces interference between Wifi networks.",
+          "SECURITY: Access authorization and enhanced security.",
+          "CONVENIENCE: Easy access with a single SSID; users can move between access points (APs) without re-logging in.",
+          "INFORMATION MANAGEMENT: Manages and collects user information (login details, feedback).",
+          "SIMPLE DEPLOYMENT: Simple deployment (plug and play), centralized management system, cost-competitive with standalone solutions integrating multiple Wifi points."
+        ],
+        "benefits": [
+          "HIGH PERFORMANCE",
+          "SIMPLE AND EASY TO USE",
+          "HIGH SECURITY"
+        ]
+      },
+      "hybrid_cloud": {
+        "id": 25,
+        "title": "HYBRID CLOUD",
+        "category": "infrastructure",
+        "image": "/images/solutions/hybrid.jpg",
+        "description": "Hybrid Cloud is a cloud computing model combining Private Cloud and Public Cloud. Hybrid Cloud meets the needs for data transfer between Private and Public Clouds when there are changes in cost, computing, or security requirements. Additionally, Hybrid Cloud offers greater flexibility and more deployment options compared to traditional Private or Public Cloud models.",
+        "advantage": [
+          "PROACTIVE CONTROL: Businesses can use Private Cloud for specific, highly sensitive tasks or those requiring low latency.",
+          "HIGH FLEXIBILITY: Businesses can leverage additional resources from Public Cloud when needed.",
+          "COST OPTIMIZATION: With unlimited scalability from Public Cloud infrastructure, businesses only pay for additional computing capacity when used.",
+          "EASY TRANSITION: Businesses can gradually transfer tasks to the cloud environment in small parts, requiring minimal effort. This reduces workload over time."
+        ],
+        "benefits": [
+          "DIVERSE USAGE PURPOSES: Hybrid cloud technology allows businesses to combine Private Cloud for storing highly secure data and Public Cloud for less critical, experimental resources.",
+          "HIGH FLEXIBILITY: Flexibly responds to task deployment with high variability or sudden changes."
+        ]
+      },
+      "cloud_storage": {
+        "id": 26,
+        "title": "ONLINE STORAGE SYSTEM (CLOUD STORAGE)",
+        "category": "infrastructure",
+        "image": "/images/solutions/cloudStorage.jpg",
+        "description": "Cloud Storage is an object-oriented storage system with a simple web service interface, storing and retrieving data from anywhere over the internet.",
+        "advantage": [
+          "SIMPLE CONNECTION: Access the system via S3, HTTP/HTTPS/API connections, allowing users to develop applications simply and quickly.",
+          "UNLIMITED CAPACITY: Expand storage up to Petabytes as needed without service interruption or configuration changes. The larger the storage, the cheaper the rental cost.",
+          "MAXIMUM SPEED: No transmission speed limits, minimizing data download time. Maximizes customer endpoint bandwidth without concerns about undersea cable issues.",
+          "COST SAVINGS: Saves costs on system investment and upgrades, equipment maintenance, avoids resource waste, and eliminates post-sale support costs."
+        ]
+      },
+      "cloud_server": {
+        "id": 27,
+        "title": "VIRTUAL SERVER SERVICE (CLOUD SERVER)",
+        "category": "infrastructure",
+        "image": "/images/solutions/cloudServer.jpg",
+        "description": "Provides servers on a cloud computing platform. Each virtual server is a standalone system, operating independently like a physical server. Users have full control to adjust the system, such as installing software, selecting operating systems, and using internal system functions.",
+        "features": [
+          "POWERFUL CONFIGURATION",
+          "SUPER-FAST DEPLOYMENT",
+          "OPTIMAL SECURITY",
+          "FLEXIBLE SCALABILITY",
+          "EASY MANAGEMENT",
+          "DATA SAFETY"
+        ],
+        "benefits": [
+          "INDEPENDENCE AND FLEXIBILITY",
+          "CONTINUOUS BACKUP",
+          "RAPID SCALABILITY",
+          "COST OPTIMIZATION",
+          "SIMPLE MANAGEMENT",
+          "SECURITY AND SAFETY"
+        ]
+      },
+      "public_cloud": {
+        "id": 28,
+        "title": "PUBLIC CLOUD",
+        "category": "infrastructure",
+        "image": "/images/solutions/cloudPublic.jpg",
+        "description": "Viettel’s Public Cloud service uses cloud computing technology to create IT resources like virtual machines, applications, and storage—always available to users via an internet connection. Public Cloud is an advanced solution replacing traditional IT infrastructure architecture.",
+        "advantage": [
+          "QUICK DEPLOYMENT: Public Cloud enables rapid deployment of infrastructure services with just a few simple steps. What used to take weeks can now be done in minutes.",
+          "ACCESS FROM ANYWHERE: Storing data on Public Cloud allows users to access it from anywhere, anytime via the internet.",
+          "BACKUP AND DATA RECOVERY: With Public Cloud, data backup and recovery are much faster than with physical infrastructure, thanks to cloud computing characteristics and Viettel’s vast infrastructure.",
+          "REDUCED INFRASTRUCTURE RISKS AND ERRORS: The provider manages, updates, and maintains hardware infrastructure, ensuring service continuity.",
+          "RESOURCE SCALING ON DEMAND: Public Cloud can automatically scale resources up or down flexibly according to user needs."
+        ],
+        "benefits": [
+          "REDUCED INVESTMENT AND MAINTENANCE COSTS: Eliminates initial investment costs and enables rapid resource deployment; businesses only pay for used services. Personnel for managing and maintaining infrastructure is minimized.",
+          "ENSURED CONNECTIVITY AND RESOURCE UTILIZATION: Connects, shares data, and collaborates anytime, anywhere via the internet.",
+          "GUARANTEED SERVICE QUALITY WITH 99.99% UPTIME SLA: Complies with international security and safety standards with 24/7/365 support.",
+          "READY ADAPTABILITY: Public Cloud offers high flexibility with scalable and customizable mechanisms based on actual usage needs, including an 'ON/OFF' service feature for maximum adaptability and cost savings.",
+          "BUSINESS COMPETITIVENESS: Businesses save costs and time managing IT infrastructure."
+        ]
+      },
+      "private_cloud": {
+        "id": 29,
+        "title": "PRIVATE CLOUD",
+        "category": "infrastructure",
+        "image": "/images/solutions/cloudPrivate.jpg",
+        "description": "Viettel’s Private Cloud service is developed on OpenStack and VMware open-source platforms. Private Cloud provides a dedicated virtual server system for each organization or business, ensuring secure, independent resources and optimized system management. It can be deployed on the customer’s IT infrastructure or at Viettel’s data centers.",
+        "advantage": [
+          "FAST SETUP, EASY UPGRADES: Creating virtual servers, dividing resources, and automatically allocating them to users based on actual needs saves businesses operational time, minimizing excess resources and optimizing the system. Automated tools accelerate infrastructure service upgrades and expansion with just a few simple steps, reducing what once took weeks to minutes.",
+          "FLEXIBLE SCALABILITY: Scale-out or scale-in features adjust resources instantly based on application demands, quickly responding to services and saving businesses costs, time, and manpower.",
+          "HIGH AVAILABILITY: The system operates stably with high recovery capabilities thanks to pre-established redundancy plans and automatic replacements when failures occur, ensuring safety and 24/7 availability."
+        ],
+        "benefits": [
+          "SIMPLE SYSTEM OPERATION: System operation is simplified with automated management tools integrating multiple features for admin self-operation.",
+          "HIGH AVAILABILITY: The solution enhances system availability and recovery, ensuring continuous business operations without infrastructure interruptions. Viettel’s large-scale, separate hardware infrastructure is always ready for any business expansion needs.",
+          "MAXIMUM MANAGEMENT CONTROL: Private Cloud is accessible only to the using business, which can configure, manage, and allocate server resources flexibly according to needs."
+        ]
+      },
+      "cloud_pc": {
+        "id": 30,
+        "title": "VIRTUAL PC SERVICE (CLOUD PC)",
+        "category": "infrastructure",
+        "image": "/images/solutions/cloudPc.jpg",
+        "description": "The Virtual PC (Cloud PC) service is a hardware and application virtualization solution researched and developed by Viettel IDC. Cloud PC provides a flexible working environment, processing data and applications on a cloud computing platform, completely replacing traditional PC processing.",
+        "features": [
+          "SAFE AND SECURE INFORMATION: Centralized storage reduces data loss risks. Integrated security system with Antivirus.",
+          "QUICK PROVISIONING, FLEXIBLE SCALING: Rapid service provisioning based on templates, flexible upgrades as needed",
+          "CENTRALIZED MANAGEMENT: Centralized management and monitoring, minimizing operational costs",
+          "COST OPTIMIZATION: Reduces PC investment and operational costs. Decreases staffing and power consumption",
+          "MULTI-PLATFORM: Usable anytime, anywhere, on any device: Supports multi-platform access: Clients, laptops, smartphones, tablets, etc."
+        ]
+      },
+      "dedicated_server": {
+        "id": 31,
+        "title": "SERVER RENTAL SERVICE (DEDICATED SERVER)",
+        "category": "infrastructure",
+        "image": "/images/solutions/serverDedicated.jpg",
+        "description": "The Dedicated Server rental service provides equipment rental, including server hardware, network devices, firewalls, network security devices, storage devices, etc. Customers are advised to choose suitable servers and have full usage and management rights over rented equipment via smart management tools.",
+        "benefits": [
+          "COST SAVINGS: Renting space saves businesses costs on initial equipment and infrastructure investment, power consumption, maintenance, and operation.",
+          "CONFIGURATION OPTIONS: Choose configurations from globally trusted providers: HP, DELL, IBM, etc.",
+          "INDEPENDENCE AND SECURITY: Renting a server gives you full usage and management rights over your server.",
+          "SMART MANAGEMENT: Remote device management with specialized tools",
+          "HIGH FLEXIBILITY: Ability to expand resources, upgrade space, and meet equipment needs anytime."
+        ]
+      },
+      "backup_service": {
+        "id": 32,
+        "title": "DATA BACKUP SERVICE (BACKUP AS A SERVICE)",
+        "category": "infrastructure",
+        "image": "/images/solutions/backup.png",
+        "description": "Data Backup (Backup as a Service) is a service that backs up data per customer requirements, stored on a cloud computing infrastructure.",
+        "features": [
+          "BACKUP ALL DATA TYPES: Backs up all data types: Files, databases, operating systems, virtual machines, physical machines to Viettel’s cloud storage infrastructure.",
+          "AUTOMATED SCHEDULING: Automatically backs up hourly, daily, weekly, monthly, yearly. Supports rotating schedules and fixed-time backups.",
+          "AUTOMATED NOTIFICATIONS: The system automatically emails administrators when backups succeed or fail.",
+          "DISASTER RECOVERY: Data is backed up to Viettel IDC’s Cloud system, ensuring safety even if the primary system faces disasters.",
+          "VERSION STORAGE: The system stores multiple versions (recovery points) of data, ensuring safety even if data is corrupted by viruses.",
+          "DATA ENCRYPTION: Data is end-to-end encrypted with the latest standard (AES 256) and SSL transmission encryption, ensuring information security."
+        ]
+      },
+      "cdn": {
+        "id": 33,
+        "title": "CONTENT DELIVERY NETWORK (CDN)",
+        "category": "infrastructure",
+        "image": "/images/solutions/cdn.png",
+        "description": "Content Delivery Network (CDN) is a system of multiple servers distributed across various geographical locations, tasked with copying and storing website content so users accessing the website can load content from the nearest CDN server.",
+        "features": [
+          "LIVE STREAMING: The Live Streaming feature delivers channels and events live to a large number of users.",
+          "VOD STREAMING: The VOD Streaming feature delivers videos to users’ end devices.",
+          "WEB CACHING: Speeds up websites by temporarily storing (caching) web data on the CDN system.",
+          "HTTP DOWNLOAD: Accelerates file downloads by temporarily storing (caching) content files on the CDN system"
+        ],
+        "advantage": [
+          "INCREASED AVAILABILITY: Website content is stored in multiple copies across many servers, ensuring service to users even if some servers fail.",
+          "IMPROVED RESPONSE SPEED: Multiple CDN servers serving customers minimize request wait times, providing the fastest service.",
+          "REDUCED LATENCY: Users accessing websites are served by the nearest content-hosting server, minimizing load wait times.",
+          "COST SAVINGS: Saves initial investment costs for server systems and streaming technology. Optimizes operational costs."
+        ]
+      },
+      "domain": {
+        "id": 34,
+        "title": "DOMAIN SERVICE (DOMAIN)",
+        "category": "infrastructure",
+        "image": "/images/solutions/domain.png",
+        "description": "The Domain service provides an internet identifier for websites. Domains are typically tied to a company’s name and brand. Domains are unique and prioritized for the first registrant.",
+        "features": [
+          "QUICK SETUP: Professional domains with diverse extensions based on usage purposes and customer needs",
+          "SMART MANAGEMENT: No geographical or time restrictions, accessible anytime, anywhere.",
+          "OWNERSHIP ASSURANCE: Ensures the domain is unique, official, and exclusively owned by the registrant"
+        ],
+        "benefits": [
+          "EXCLUSIVE OWNERSHIP: Exclusive ownership for businesses and individuals of an official, unique website identifier",
+          "BRAND AND TRADEMARK AFFIRMATION: Affirms brand and product trademarks through an official, protected domain website",
+          "EXPANDED CUSTOMER REACH: Expands customer reach across all regions and age groups",
+          "ENHANCED CREDIBILITY: Enhances credibility and brand coverage",
+          "CUSTOMER ATTRACTION: Attracts customers on an unlimited scale"
+        ]
+      },
+      "colocation": {
+        "id": 35,
+        "title": "EQUIPMENT SPACE RENTAL SERVICE (COLOCATION)",
+        "category": "infrastructure",
+        "image": "/images/solutions/colocation.jpg",
+        "description": "The Equipment Space Rental (Colocation) service provides infrastructure space, power systems, air conditioning, and related equipment for deploying IT systems, allowing customers full usage and control without needing to invest in installation or maintenance.",
+        "features": [
+          "REMOTE MONITORING: IP camera remote monitoring",
+          "SERVER CONTROL: Remote server control via IP KVM",
+          "TRAFFIC AND BANDWIDTH MONITORING: Monitors traffic and bandwidth via MRTG",
+          "ALERTS: System alerts via SMS",
+          "REMOTE SUPPORT: Remote support via 24/7 portal",
+          "SECURITY: Magnetic card and fingerprint security",
+          "SUPPORT SYSTEMS: Air conditioning, UPS, backup generators, lightning protection, and fire prevention systems"
+        ],
+        "advantage": [
+          "IDEAL INFRASTRUCTURE: Data centers meet Rated 3 - TIA942 standards, optimized supporting infrastructure... providing ideal conditions for equipment",
+          "STABLE CONNECTIVITY: Provides fast, stable, continuous internet with large bandwidth, ensuring seamless operation",
+          "FLEXIBLE EXPANSION: Expands resources and upgrades space as needed. Viettel IDC’s infrastructure is always ready for this.",
+          "MULTI-LAYER SECURITY: Your servers are controlled by a camera monitoring system, fingerprint security, and remote tracking via IP Camera",
+          "COST OPTIMIZATION: Instead of massive investments in data center infrastructure, you can rent and experience it—simpler and far more cost-effective.",
+          "FREE SUPPORT: A highly skilled IT team is always available 24/7 to monitor, answer questions, and resolve any issues."
+        ],
+        "benefits": [
+          "COST SAVINGS: Reduces costs for businesses.",
+          "LONGEVITY: Increases equipment lifespan.",
+          "REDUCED INCIDENTS: Minimizes incidents.",
+          "SMART MANAGEMENT: A solution for business information management.",
+          "SYSTEM SECURITY: Secured with professional Firewall, Anti-Virus, and Anti-Spam systems.",
+          "HIGH STABILITY: 24/7/365 support."
+        ]
+      }
+    }
+  },
+  "news": {
+    "items": [
+      {
+        "image": "/images/news/new.png",
+        "title": "Vietnam’s Largest Submarine Fiber Optic Cable Begins Operation",
+        "description": "ADC (Asia Direct Cable), stretching nearly 10,000 km, runs along the Singapore - Hong Kong - Japan route, connecting three of Asia’s largest data centers. The cable features an 8-fiber pair (8FP) configuration, utilizing high-density wavelength division multiplexing technology with an initial total capacity of over 160 Tbps.",
+        "date": "Thursday, 19/12/2024, 20:59 (GMT+7)"
+      },
+      {
+        "image": "/images/news/ver1.jpg",
+        "title": "Viettel’s 5G Network Surpasses 5.5 Million Users",
+        "description": "On February 28, Viettel Telecom announced reaching 5.5 million 5G users as of early February. The network reported that users are distributed across all 63 provinces, with the majority concentrated in Hanoi and Ho Chi Minh City, totaling 2.4 million, accounting for over 40% of the national user base. The remaining top five locations include Da Nang, Binh Duong, and Can Tho.",
+        "date": "Saturday, 1/3/2025, 06:15 (GMT+7)"
+      },
+      {
+        "image": "/images/news/ver2.jpg",
+        "title": "Vingroup Partners with Viettel",
+        "description": "Vingroup Corporation and the Military Industry and Telecommunications Group (Viettel) signed a Memorandum of Understanding (MOU) on February 18 in Hanoi. The collaboration between these two leading Vietnamese conglomerates aims to build an innovative ecosystem for national sustainable development, elevating the position of Vietnamese businesses on the global stage.",
+        "date": "Wednesday, 19/2/2025, 15:50 (GMT+7)"
+      }
+    ]
   }
 }

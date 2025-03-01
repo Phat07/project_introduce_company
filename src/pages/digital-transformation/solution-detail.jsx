@@ -6,10 +6,10 @@ import { Card, Button, List, Typography, Breadcrumb, ConfigProvider, Row, Col, D
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import {
-  ArrowLeftOutlined,
-  CheckCircleOutlined,
-  PhoneOutlined,
+import { 
+  ArrowLeftOutlined, 
+  CheckCircleOutlined, 
+  PhoneOutlined, 
   MailOutlined,
   RightOutlined,
   ArrowUpOutlined,
@@ -18,7 +18,6 @@ import {
 } from '@ant-design/icons';
 import LoadingScreen from '../../components/ui/loading-screen';
 import DynamicImage from '../../components/ui/dynamic-image';
-import { solutions } from './data.jsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -43,10 +42,9 @@ const SolutionDetail = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
-  const [solution, setSolution] = useState(null);
+  const [solutionKey, setSolutionKey] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState(false);
-
-  // Refs for GSAP animations
+  
   const mainRef = useRef(null);
   const imageRef = useRef(null);
   const featuresRef = useRef(null);
@@ -54,20 +52,20 @@ const SolutionDetail = () => {
   const contactRef = useRef(null);
 
   useEffect(() => {
-    const foundSolution = solutions.find(s => s.id === parseInt(id));
-    setSolution(foundSolution);
-    setShowFullDescription(false);
+    const items = t('solutions.items', { returnObjects: true });
+    const foundKey = Object.keys(items).find(key => items[key].id === parseInt(id));
+    console.log('Found solution key:', foundKey);
+    setSolutionKey(foundKey);
 
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [id]);
+  }, [id, t]);
 
   useEffect(() => {
-    if (!loading && solution) {
-      // Main content fade in
+    if (!loading && solutionKey) {
       gsap.from(mainRef.current, {
         opacity: 0,
         y: 30,
@@ -75,7 +73,6 @@ const SolutionDetail = () => {
         ease: "power3.out"
       });
 
-      // Image parallax and hover effect
       const imageWrapper = imageRef.current;
       gsap.to(imageWrapper, {
         scrollTrigger: {
@@ -88,7 +85,6 @@ const SolutionDetail = () => {
         ease: "none"
       });
 
-      // Image hover animation
       imageWrapper.addEventListener('mouseenter', () => {
         gsap.to(imageWrapper.querySelector('img'), {
           scale: 1.1,
@@ -105,7 +101,6 @@ const SolutionDetail = () => {
         });
       });
 
-      // Features cards animation with hover effect - Auto animate without scroll
       const featureCards = featuresRef?.current?.querySelectorAll('.feature-card');
       gsap.from(featureCards, {
         opacity: 0,
@@ -113,7 +108,7 @@ const SolutionDetail = () => {
         duration: 0.8,
         stagger: 0.2,
         ease: "power3.out",
-        delay: 0.5 // Small delay after page load
+        delay: 0.5
       });
 
       featureCards?.forEach(card => {
@@ -146,7 +141,6 @@ const SolutionDetail = () => {
         });
       });
 
-      // Đặc điểm nổi bật animation with slide and fade effect
       const advantageCards = document?.querySelectorAll('.advantage-card');
       gsap.from(advantageCards, {
         opacity: 0,
@@ -194,7 +188,6 @@ const SolutionDetail = () => {
         });
       });
 
-      // Benefits cards animation with hover effect - Auto animate without scroll
       const benefitCards = benefitsRef?.current?.querySelectorAll('.benefit-card');
       gsap.from(benefitCards, {
         opacity: 0,
@@ -202,7 +195,7 @@ const SolutionDetail = () => {
         duration: 0.8,
         stagger: 0.2,
         ease: "power3.out",
-        delay: 0.8 // Small delay after features
+        delay: 0.8
       });
 
       benefitCards?.forEach(card => {
@@ -235,7 +228,6 @@ const SolutionDetail = () => {
         });
       });
 
-      // Contact section float and hover animations
       const contactSection = contactRef.current;
       gsap.to(contactSection, {
         scrollTrigger: {
@@ -248,7 +240,6 @@ const SolutionDetail = () => {
         ease: "none"
       });
 
-      // Hotline hover effect
       const hotlineBox = contactSection?.querySelector('.hotline-box');
       if (hotlineBox) {
         hotlineBox.addEventListener('mouseenter', () => {
@@ -278,7 +269,6 @@ const SolutionDetail = () => {
         });
       }
 
-      // Cleanup function
       return () => {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         if (imageWrapper) {
@@ -295,13 +285,13 @@ const SolutionDetail = () => {
         }
       };
     }
-  }, [loading, solution]);
+  }, [loading, solutionKey]);
 
   if (loading) {
     return <LoadingScreen />;
   }
 
-  if (!solution) {
+  if (!solutionKey) {
     return (
       <ConfigProvider theme={{ token: { colorPrimary: '#ff6d00' } }}>
         <motion.div
@@ -312,13 +302,15 @@ const SolutionDetail = () => {
           exit={{ opacity: 0 }}
         >
           <h1 className="text-2xl font-bold mb-4">{t('common.notFound')}</h1>
-          <Button onClick={() => navigate('/digital-transformation/solutions')} type="primary">
+          <Button onClick={() => navigate('/solutions')} type="primary">
             {t('common.backToSolutions')}
           </Button>
         </motion.div>
       </ConfigProvider>
     );
   }
+
+  const solutionData = t(`solutions.items.${solutionKey}`, { returnObjects: true });
 
   return (
     <ConfigProvider theme={{ token: { colorPrimary: '#ff6d00' } }}>
@@ -330,7 +322,6 @@ const SolutionDetail = () => {
           transition={{ duration: 0.5 }}
           style={{ marginTop: '3rem' }}
         >
-          {/* Navigation */}
           <motion.div
             className="mb-4"
             variants={fadeInUp}
@@ -344,7 +335,7 @@ const SolutionDetail = () => {
                   {t('solutions.title')}
                 </a>
               </Breadcrumb.Item>
-              <Breadcrumb.Item>{solution.title}</Breadcrumb.Item>
+              <Breadcrumb.Item>{t(`solutions.items.${solutionKey}.title`)}</Breadcrumb.Item>
             </Breadcrumb>
 
             <Button
@@ -352,13 +343,11 @@ const SolutionDetail = () => {
               onClick={() => navigate('/solutions')}
               className="mt-4"
             >
-              Quay lại
+              {t('common.back')}
             </Button>
           </motion.div>
 
-          {/* Main Content */}
           <Row gutter={[32, 32]}>
-            {/* Left Column */}
             <Col xs={24} lg={16}>
               <motion.div
                 ref={mainRef}
@@ -366,20 +355,19 @@ const SolutionDetail = () => {
                 initial="initial"
                 animate="animate"
               >
-                {/* Image and Title */}
                 <motion.div variants={fadeInUp}>
                   <Card
                     cover={
                       <div className="h-[250px] sm:h-[400px] md:h-[600px] overflow-hidden bg-gradient-to-b from-gray-50 to-white relative">
                         <div ref={imageRef}
-                          className="absolute left-1/2 -top-[35%] sm:top-[50%] -translate-x-1/2 translate-y-0 sm:-translate-y-1/2 w-[180%] sm:w-[120%] h-[120%] flex items-center justify-center scale-[0.8] sm:scale-100">
-                          <div className="w-full h-full -translate-y-28 sm:-translate-y-8">
+                          className="absolute left-1/2 -top-[35%] sm:top-[50%] -translate-x-1/2 translate-y-0 sm:-translate-y-1/2 w-[200%] sm:w-[120%] h-[120%] flex items-center justify-center scale-[0.9] sm:scale-100">
+                          <div className="w-full h-full -translate-y-24 sm:-translate-y-8">
                             <Suspense fallback={
                               <div className="w-full h-full bg-gray-100 animate-pulse flex items-center justify-center">
                                 <span className="text-gray-400">
                                   <div className="w-12 h-12 md:w-16 md:h-16 border-4 border-gray-300 border-t-gray-400 rounded-full animate-spin">
                                     <img
-                                      src={solution.image}
+                                      src={solutionData.image}
                                       alt="preload"
                                       style={{ display: 'none' }}
                                       onLoad={() => console.log('Image preloaded')}
@@ -389,8 +377,8 @@ const SolutionDetail = () => {
                               </div>
                             }>
                               <DynamicImage
-                                key={solution.image}
-                                imageUrl={solution.image}
+                                key={solutionData.image}
+                                imageUrl={solutionData.image}
                                 className="w-full h-full"
                               />
                             </Suspense>
@@ -400,7 +388,7 @@ const SolutionDetail = () => {
                     }
                     className="mb-8 overflow-visible"
                   >
-                    <Title level={3} className="mb-3">{solution.title}</Title>
+                    <Title level={3} className="mb-3">{t(`solutions.items.${solutionKey}.title`)}</Title>
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={showFullDescription ? 'full' : 'truncated'}
@@ -411,13 +399,13 @@ const SolutionDetail = () => {
                       >
                         <Paragraph className="text-gray-600">
                           {showFullDescription
-                            ? solution.description
-                            : solution.description.slice(0, 300) + '...'
+                            ? t(`solutions.items.${solutionKey}.description`)
+                            : t(`solutions.items.${solutionKey}.description`).slice(0, 300) + '...'
                           }
                         </Paragraph>
                       </motion.div>
                     </AnimatePresence>
-                    {solution.description.length > 300 && (
+                    {t(`solutions.items.${solutionKey}.description`).length > 300 && (
                       <div className="flex items-center mt-4">
                         <motion.button
                           whileHover={{
@@ -429,7 +417,7 @@ const SolutionDetail = () => {
                           className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border-2 border-[#ff6d00] text-[#ff6d00] hover:bg-gradient-to-r hover:from-[#fff8f3] hover:to-white hover:border-[#ff8f40] hover:text-[#ff8f40] active:bg-[#fff1e6] transition-all duration-300 ease-out group relative overflow-hidden"
                         >
                           <span className="relative z-10 font-medium text-sm">
-                            {showFullDescription ? 'Thu gọn' : 'Xem thêm'}
+                            {showFullDescription ? t('common.showLess') : t('common.readMore')}
                           </span>
                           <AnimatePresence mode="wait">
                             <motion.span
@@ -460,13 +448,12 @@ const SolutionDetail = () => {
                   </Card>
                 </motion.div>
 
-                {/* Features Section */}
-                {solution?.features?.length > 0 && (
+                {Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 0 && (
                   <motion.div variants={fadeInUp}>
                     <Card className="mb-8">
-                      <Title level={3} className="text-[#ff6d00] mb-6">Tính năng</Title>
+                      <Title level={3} className="text-[#ff6d00] mb-6">{t('solutions.features')}</Title>
                       <Row gutter={[16, 16]} ref={featuresRef}>
-                        {solution?.features?.map((feature, index) => (
+                        {t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).map((feature, index) => (
                           <Col xs={24} md={12} key={index}>
                             <div className="flex items-start feature-card">
                               <CheckCircleOutlined className="text-green-500 mr-3 mt-1" />
@@ -487,13 +474,12 @@ const SolutionDetail = () => {
                   </motion.div>
                 )}
 
-                {/* Đặc điểm nổi bật Section */}
-                {solution?.advantage?.length > 0 && (
+                {Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 0 && (
                   <motion.div variants={fadeInUp}>
                     <Card className="mb-8">
-                      <Title level={3} className="text-[#ff6d00] mb-6">Đặc điểm nổi bật</Title>
+                      <Title level={3} className="text-[#ff6d00] mb-6">{t('solutions.advantages')}</Title>
                       <Row gutter={[16, 16]}>
-                        {solution?.advantage?.map((advantage, index) => (
+                        {t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).map((advantage, index) => (
                           <Col xs={24} md={12} key={index}>
                             <div className="flex items-start advantage-card">
                               <RightOutlined className="text-[#ff6d00] mr-3 mt-1" />
@@ -514,13 +500,12 @@ const SolutionDetail = () => {
                   </motion.div>
                 )}
 
-                {/* Lợi ích Section */}
-                {solution?.benefits?.length > 0 && (
+                {Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 0 && (
                   <motion.div variants={fadeInUp}>
                     <Card className="mb-8">
-                      <Title level={3} className="text-[#ff6d00] mb-6">Lợi ích</Title>
+                      <Title level={3} className="text-[#ff6d00] mb-6">{t('solutions.benefits')}</Title>
                       <Row gutter={[16, 16]} ref={benefitsRef}>
-                        {solution?.benefits?.map((benefit, index) => (
+                        {t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).map((benefit, index) => (
                           <Col xs={24} md={12} key={index}>
                             <div className="flex items-start benefit-card">
                               <FireOutlined className="text-[#ff6d00] mr-3 mt-1" />
@@ -541,16 +526,15 @@ const SolutionDetail = () => {
                   </motion.div>
                 )}
 
-                {/* Pricing Section */}
-                {solution?.pricing?.length > 0 && (
+                {Array.isArray(t(`solutions.items.${solutionKey}.pricing`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.pricing`, { returnObjects: true }).length > 0 && (
                   <motion.div
                     className="pricing-section"
                     style={{ marginTop: '4rem' }}
                     variants={fadeInUp}
                   >
-                    <Title level={3} style={{ textAlign: 'center', marginBottom: '2rem' }}>Bảng giá dịch vụ</Title>
+                    <Title level={3} style={{ textAlign: 'center', marginBottom: '2rem' }}>{t('solutions.pricing')}</Title>
                     <Row gutter={[24, 24]} justify="center">
-                      {solution?.pricing?.map((plan, index) => (
+                      {t(`solutions.items.${solutionKey}.pricing`, { returnObjects: true }).map((plan, index) => (
                         <Col xs={24} md={12} key={index}>
                           <Card
                             title={<span style={{ color: '#55C51E' }}>❖ {plan.name}</span>}
@@ -590,7 +574,6 @@ const SolutionDetail = () => {
               </motion.div>
             </Col>
 
-            {/* Right Column */}
             <Col xs={24} lg={8}>
               <motion.div
                 ref={contactRef}
@@ -600,28 +583,27 @@ const SolutionDetail = () => {
                 exit="exit"
                 className="sticky top-8"
               >
-                {/* Contact Card */}
                 <Card className="sticky top-8">
-                  <Title level={4} className="text-[#ff6d00] mb-6">Liên hệ tư vấn</Title>
+                  <Title level={4} className="text-[#ff6d00] mb-6">{t('solutions.contact_us')}</Title>
                   <div className="space-y-4">
                     <motion.div
                       className="p-4 bg-gray-50 rounded-lg hotline-box cursor-pointer"
                       whileHover={{ scale: 1.02 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <p className="font-medium mb-2">Hotline tư vấn</p>
+                      <p className="font-medium mb-2">{t('solutions.hotline')}</p>
                       <p className="text-lg font-bold text-[#ff6d00]">1900 9269</p>
                     </motion.div>
 
                     <motion.div whileHover={{ scale: 1.02 }}>
                       <Button type="primary" icon={<PhoneOutlined />} size="large" block>
-                        Yêu cầu gọi lại
+                        {t('solutions.request_callback')}
                       </Button>
                     </motion.div>
 
                     <motion.div whileHover={{ scale: 1.02 }}>
                       <Button icon={<MailOutlined />} size="large" block>
-                        Gửi email
+                        {t('solutions.send_email')}
                       </Button>
                     </motion.div>
 
@@ -632,28 +614,28 @@ const SolutionDetail = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
                     >
-                      <h4 className="font-medium mb-2">Thông tin thêm</h4>
+                      <h4 className="font-medium mb-2">{t('solutions.more_info')}</h4>
                       <ul className="list-disc list-inside space-y-2 text-gray-600">
                         <motion.li
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.3 }}
                         >
-                          Tư vấn miễn phí 24/7
+                          {t('solutions.free_consultation')}
                         </motion.li>
                         <motion.li
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.4 }}
                         >
-                          Hỗ trợ kỹ thuật tận tình
+                          {t('solutions.dedicated_support')}
                         </motion.li>
                         <motion.li
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.5 }}
                         >
-                          Triển khai nhanh chóng
+                          {t('solutions.quick_deployment')}
                         </motion.li>
                       </ul>
                     </motion.div>

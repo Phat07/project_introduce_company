@@ -30,12 +30,6 @@ import TrustLogo from '../../assets/trust.jpg';
 import VNGLogo from '../../assets/vng.jpg';
 
 // Partner Logos
-
-
-// Client Logos
-
-
-// Partner Logos
 import HPELogo from '../../assets/HPE.jpg';
 import HuaweiLogo from '../../assets/Huawei.jpg';
 import UbiquitiLogo from '../../assets/UBIQUITI.png';
@@ -57,15 +51,13 @@ import SuperLogo from '../../assets/super.jpg';
 import ViettelLogo from '../../assets/viettel.png';
 import VNPTLogo from '../../assets/vnpt.png';
 
-const Section = ({ children, className = '' }) => {
-  return (
-    <section className={`section-container ${className}`}>
-      <div className="section-content">
-        {children}
-      </div>
-    </section>
-  );
-};
+const Section = ({ children, className = '' }) => (
+  <section className={`section-container ${className}`}>
+    <div className="section-content">
+      {children}
+    </div>
+  </section>
+);
 
 const ScrollAnimation = () => {
   const { scrollYProgress } = useScroll();
@@ -74,14 +66,12 @@ const ScrollAnimation = () => {
   const lastScrollY = useRef(0);
   const rafId = useRef();
 
-  // Throttle scroll updates
-  const updateCamera = useCallback(() => {
+  const updateCamera = React.useCallback(() => {
     if (!cameraRef.current) return;
 
     const currentScrollY = scrollYProgress.get();
     const scrollDiff = Math.abs(currentScrollY - lastScrollY.current);
 
-    // Only update if scroll difference is significant
     if (scrollDiff > 0.001) {
       gsap.to(camera.position, {
         y: -currentScrollY * 10,
@@ -95,13 +85,12 @@ const ScrollAnimation = () => {
     rafId.current = requestAnimationFrame(updateCamera);
   }, [camera.position, scrollYProgress]);
 
-  useFrame(() => {
+  React.useFrame(() => {
     if (!rafId.current) {
       rafId.current = requestAnimationFrame(updateCamera);
     }
   });
 
-  // Cleanup
   React.useEffect(() => {
     return () => {
       if (rafId.current) {
@@ -113,95 +102,19 @@ const ScrollAnimation = () => {
   return null;
 };
 
-const ClientsSection = () => {
-  const { t } = useTranslation();
-  const clients = [
-    { name: 'Adidas', logo: AdidasLogo },
-    { name: 'AEON', logo: AeonLogo },
-    { name: 'Best', logo: BestLogo },
-    { name: 'Coach', logo: CoachLogo },
-    { name: 'Dam Ca Mau', logo: DamCamauLogo },
-    { name: 'DXC', logo: DXCLogo },
-    { name: 'Gold', logo: GoldLogo },
-    { name: 'LX', logo: LXLogo },
-    { name: 'LYB', logo: LYBLogo },
-    { name: 'Nike', logo: NikeLogo },
-    { name: 'Prowtech', logo: ProwtechLogo },
-    { name: 'SMG', logo: SMGLogo },
-    { name: 'Smile', logo: SmileLogo },
-    { name: 'Swarovski', logo: SwaroLogo },
-    { name: 'Trust', logo: TrustLogo },
-    { name: 'VNG', logo: VNGLogo },
-  ];
-
-  return (
-    <Section className="clients-section">
-      <h2 className="section-title">{t('clients.title')}</h2>
-      <Marquee className="clients-marquee" pauseOnHover>
-        {clients.map((client, index) => (
-          <div key={index} className="client-logo">
-            <img src={client.logo} alt={client.name} className="h-12 w-auto mx-8" />
-          </div>
-        ))}
-      </Marquee>
-    </Section>
-  );
-};
-
-const PartnersSection = () => {
-  const { t } = useTranslation();
-  const partners = [
-    { name: 'HPE', logo: HPELogo },
-    { name: 'Huawei', logo: HuaweiLogo },
-    { name: 'UBIQUITI', logo: UbiquitiLogo },
-    { name: 'Aruba Networks', logo: ArubLogo },
-    { name: 'Avaya', logo: AvayaLogo },
-    { name: 'Cisco', logo: CiscoLogo },
-    { name: 'Dahua', logo: DahuaLogo },
-    { name: 'Dell', logo: DellLogo },
-    { name: 'Fortinet', logo: FortinetLogo },
-    { name: 'Hikvision', logo: HikLogo },
-    { name: 'Juniper', logo: JuniperLogo },
-    { name: 'Lenovo', logo: LenovoLogo },
-    { name: 'Meraki', logo: MerakiLogo },
-    { name: 'MikroTik', logo: MikroTikLogo },
-    { name: 'Palo Alto Networks', logo: PaloAltoLogo },
-    { name: 'Poly', logo: PolyLogo },
-    { name: 'Sophos', logo: SophosLogo },
-    { name: 'Super Micro', logo: SuperLogo },
-    { name: 'Viettel', logo: ViettelLogo },
-    { name: 'VNPT', logo: VNPTLogo },
-  ];
-
-  return (
-    <Section className="partners-section">
-      <h2 className="section-title">{t('partners.title')}</h2>
-      <Marquee className="partners-marquee" pauseOnHover reverse>
-        {partners.map((partner, index) => (
-          <div key={index} className="partner-logo">
-            <img src={partner.logo} alt={partner.name} className="h-12 w-auto mx-8" />
-          </div>
-        ))}
-      </Marquee>
-    </Section>
-  );
-};
-
 const ServiceModelCanvas = ({ isMain = false }) => {
   const [isModelLoading, setIsModelLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
   const [isModelReady, setIsModelReady] = useState(false);
   const containerRef = useRef(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-        } else {
-          if (Math.abs(entry.intersectionRatio) < 0.1) {
-            setIsVisible(false);
-          }
+        } else if (Math.abs(entry.intersectionRatio) < 0.1) {
+          setIsVisible(false);
         }
       },
       {
@@ -225,7 +138,7 @@ const ServiceModelCanvas = ({ isMain = false }) => {
     setIsModelLoading(false);
     setTimeout(() => {
       setIsModelReady(true);
-    }, 100); // Đợi một chút để đảm bảo model đã render
+    }, 100);
   };
 
   return (
@@ -346,11 +259,86 @@ const ServiceModelCanvas = ({ isMain = false }) => {
   );
 };
 
+const ClientsSection = () => {
+  const { t } = useTranslation();
+  const clients = [
+    { name: 'Adidas', logo: AdidasLogo },
+    { name: 'AEON', logo: AeonLogo },
+    { name: 'Best', logo: BestLogo },
+    { name: 'Coach', logo: CoachLogo },
+    { name: 'Dam Ca Mau', logo: DamCamauLogo },
+    { name: 'DXC', logo: DXCLogo },
+    { name: 'Gold', logo: GoldLogo },
+    { name: 'LX', logo: LXLogo },
+    { name: 'LYB', logo: LYBLogo },
+    { name: 'Nike', logo: NikeLogo },
+    { name: 'Prowtech', logo: ProwtechLogo },
+    { name: 'SMG', logo: SMGLogo },
+    { name: 'Smile', logo: SmileLogo },
+    { name: 'Swarovski', logo: SwaroLogo },
+    { name: 'Trust', logo: TrustLogo },
+    { name: 'VNG', logo: VNGLogo },
+  ];
+
+  return (
+    <Section className="clients-section">
+      <h2 className="section-title">{t('clients.title')}</h2>
+      <Marquee className="clients-marquee" pauseOnHover>
+        {clients.map((client, index) => (
+          <div key={index} className="client-logo">
+            <img src={client.logo} alt={client.name} className="h-12 w-auto mx-8" />
+          </div>
+        ))}
+      </Marquee>
+    </Section>
+  );
+};
+
+const PartnersSection = () => {
+  const { t } = useTranslation();
+  const partners = [
+    { name: 'HPE', logo: HPELogo },
+    { name: 'Huawei', logo: HuaweiLogo },
+    { name: 'UBIQUITI', logo: UbiquitiLogo },
+    { name: 'Aruba Networks', logo: ArubLogo },
+    { name: 'Avaya', logo: AvayaLogo },
+    { name: 'Cisco', logo: CiscoLogo },
+    { name: 'Dahua', logo: DahuaLogo },
+    { name: 'Dell', logo: DellLogo },
+    { name: 'Fortinet', logo: FortinetLogo },
+    { name: 'Hikvision', logo: HikLogo },
+    { name: 'Juniper', logo: JuniperLogo },
+    { name: 'Lenovo', logo: LenovoLogo },
+    { name: 'Meraki', logo: MerakiLogo },
+    { name: 'MikroTik', logo: MikroTikLogo },
+    { name: 'Palo Alto Networks', logo: PaloAltoLogo },
+    { name: 'Poly', logo: PolyLogo },
+    { name: 'Sophos', logo: SophosLogo },
+    { name: 'Super Micro', logo: SuperLogo },
+    { name: 'Viettel', logo: ViettelLogo },
+    { name: 'VNPT', logo: VNPTLogo },
+  ];
+
+  return (
+    <Section className="partners-section">
+      <h2 className="section-title">{t('partners.title')}</h2>
+      <Marquee className="partners-marquee" pauseOnHover reverse>
+        {partners.map((partner, index) => (
+          <div key={index} className="partner-logo">
+            <img src={partner.logo} alt={partner.name} className="h-12 w-auto mx-8" />
+          </div>
+        ))}
+      </Marquee>
+    </Section>
+  );
+};
+
 const HomePage = () => {
   const { t } = useTranslation();
   const isMobile = window.innerWidth <= 768;
   const [isLoading, setIsLoading] = useState(true);
   const mainRef = useRef(null);
+  const [activeNewsIndex, setActiveNewsIndex] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -360,7 +348,6 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Optimize scroll performance
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
@@ -375,6 +362,14 @@ const HomePage = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveNewsIndex((current) => (current + 1) % t('news.items', { returnObjects: true }).length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [t]);
 
   const mainTitleTexts = [
     "THANHCONG SOLUTIONS",
@@ -392,40 +387,11 @@ const HomePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement form submission logic here
     console.log('Form submitted:', e.target);
   };
 
-  const [activeNewsIndex, setActiveNewsIndex] = useState(0);
-
-  const newsItems = [
-    {
-      image: '/images/news/smart-city.jpg',
-      title: 'ThanhCong Solutions tổ chức hội thảo "Giao thông thông minh: Tương lai của thành phố hiện đại"',
-      description: 'Hội thảo tập trung vào các giải pháp công nghệ tiên tiến cho hệ thống giao thông thông minh...',
-      date: '26/02/2025'
-    },
-    {
-      image: '/images/news/digital-transformation.jpg',
-      title: 'Chuyển đổi số toàn diện: Giải pháp cho doanh nghiệp thời đại 4.0',
-      description: 'ThanhCong Solutions giới thiệu các giải pháp chuyển đổi số toàn diện cho doanh nghiệp...',
-      date: '25/02/2025'
-    },
-    {
-      image: '/images/news/cybersecurity.jpg',
-      title: 'Bảo mật thông tin: Thách thức và giải pháp trong kỷ nguyên số',
-      description: 'Các chuyên gia hàng đầu thảo luận về các giải pháp bảo mật trong thới đại số...',
-      date: '24/02/2025'
-    }
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveNewsIndex((current) => (current + 1) % newsItems.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
+  // Lấy newsItems từ file translation
+  const newsItems = t('news.items', { returnObjects: true }) || [];
 
   return (
     <div className="home-page-container" ref={mainRef}>
@@ -500,10 +466,12 @@ const HomePage = () => {
               </motion.div>
             </motion.div>
           </Section>
+
+          {/* News Highlight Section */}
           <Section className="news-highlight-section">
             <div className="news-highlight-container">
               <div className="news-title">
-                <h2>TIN NỔI BẬT</h2>
+                <h2>{t('news.title')}</h2>
               </div>
               <motion.div className="news-content">
                 <AnimatePresence mode="wait">
@@ -546,7 +514,6 @@ const HomePage = () => {
                         transition={{ delay: 0.4 }}
                       >
                         <span className="news-date">{newsItems[activeNewsIndex].date}</span>
-                        {/* <button className="read-more-btn">Xem thêm</button> */}
                       </motion.div>
                     </div>
                   </motion.div>
@@ -573,7 +540,6 @@ const HomePage = () => {
                 <div className="model-container main-model">
                   <ServiceModelCanvas isMain={true} />
                 </div>
-                {/* <h2 className="section-title">{t('services.title')}</h2> */}
               </div>
               <div className="services-grid">
                 <div className="service-card">
@@ -591,8 +557,6 @@ const HomePage = () => {
               </div>
             </div>
           </Section>
-
-          {/* News Highlight Section */}
 
           {/* Clients Section */}
           <ClientsSection />
