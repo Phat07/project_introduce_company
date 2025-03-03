@@ -59,15 +59,15 @@
     "description": "We are your trusted partner in digital transformation, delivering innovative and effective solutions for businesses.",
     "stats": {
       "projects": {
-        "number": "500+",
+        "number": "20+",
         "label": "Projects Completed"
       },
       "clients": {
-        "number": "200+",
+        "number": "20+",
         "label": "Happy Clients"
       },
       "experts": {
-        "number": "15+",
+        "number": "10+",
         "label": "Years Experience"
       }
     }
@@ -141,9 +141,9 @@
   },
   "solutions": {
     "title": "Solutions",
-    "features":"Features",
-    "benefits":"Benefits",
-    "advantages":"Advantages",
+    "features": "Features",
+    "benefits": "Benefits",
+    "advantages": "Advantages",
     "pricing": "Pricing",
     "categories": {
       "all": "All",
@@ -863,6 +863,73 @@
           "SYSTEM SECURITY: Secured with professional Firewall, Anti-Virus, and Anti-Spam systems.",
           "HIGH STABILITY: 24/7/365 support."
         ]
+      },
+      "IPLC": {
+        "id": 36,
+        "title": "International Private Leased Circuit (IPLC)",
+        "category": "telecom",
+        "image": "/images/solutions/IPLC.jpg",
+        "description": "IPLC is a service suitable for organizations, businesses, and international corporations seeking fast, secure, and high-quality connectivity between headquarters and branches. It provides a reliable solution for entities requiring dedicated, high-performance transmission lines across multiple locations.",
+        "features": [
+          "Based on synchronous SDH/DWDM optical infrastructure supporting multiple connection interfaces: V.35, E1, Ethernet, and optical interfaces STM-1, STM-4.",
+          "Offers a wide range of transmission speeds from low to high: nx64Kbps, E1, nx2Mbps, 45M to 10G (STM-64).",
+          "Supports all essential customer applications: voice, fax, video conferencing, and data transmission."
+        ],
+        "advantage": [
+          "Service uptime commitment: 99.9%.",
+          "Channel delivery within 4-10 weeks (depending on overseas location).",
+          "Guaranteed 24/7 transmission monitoring and troubleshooting support."
+        ],
+        "benefits": [
+          "Dedicated high-speed connectivity channel.",
+          "Flexible and secure network connection model.",
+          "Highly reliable and protected multi-connection infrastructure."
+        ]
+      },
+      "MPLS": {
+        "id": 37,
+        "title": "International IP Private Leased Circuit (MPLS)",
+        "category": "telecom",
+        "image": "/images/solutions/MPLS.jpg",
+        "description": "Viettel’s International IP Private Leased Circuit (MPLS) service is a high-speed international data transmission solution designed with diverse connection models (point-to-point, point-to-multipoint, multipoint-to-multipoint) to meet the needs of customers establishing a private network between offices worldwide. It is ideal for corporations, conglomerates, and foreign companies requiring fast, reliable, and secure connections to multiple global locations.",
+        "features": [
+          "MPLS network infrastructure with Ethernet connection interfaces.",
+          "Flexible connection speeds: nx64Kbps, 1-100 Mbps, 1G, 10G, etc.",
+          "Supports all IP-based applications such as VoIP, video conferencing, and Internet."
+        ],
+        "advantage": [
+          "Service uptime commitment: 99.85%.",
+          "Service delivery within 4-10 weeks (depending on overseas location).",
+          "Guaranteed 24/7 transmission monitoring and troubleshooting support."
+        ],
+        "benefits": [
+          "Flexible, secure, and highly reliable connectivity.",
+          "Easy connection setup.",
+          "Cost-effective pricing.",
+          "Priority support for quality based on service groups."
+        ]
+      },
+      "ipTransit": {
+        "id": 38,
+        "title": "IP Transit",
+        "category": "telecom",
+        "image": "/images/solutions/ipTransit.jpg",
+        "description": "IP Transit is a service providing large-scale data transmission from a customer’s domestic infrastructure through international gateways or the Internet infrastructure of the service provider. As a leading provider in Vietnam, Viettel ensures top-tier IP Transit services with a commitment to the highest quality and competitive pricing. Targeting the high bandwidth demands and rapid growth of Internet Service Providers (ISPs), Mobile Operators (MOs), and Content Delivery Networks (CDNs), Viettel offers an IP Transit package with global Internet connectivity focused on performance and efficiency.",
+        "features": [
+          "Supports 10G peering connections with individual carriers at geographically distributed POPs in Hong Kong, Singapore, the USA, and Europe.",
+          "Supports multiple connection interfaces: FE, GE, 10GE, 100GE.",
+          "Supports both IP protocols: IPv4 and IPv6."
+        ],
+        "advantage": [
+          "Service uptime commitment: 99.99%.",
+          "Service delivery within 4-10 weeks (depending on overseas location).",
+          "Guaranteed 24/7 transmission monitoring and troubleshooting support."
+        ],
+        "benefits": [
+          "High resilience with a diverse redundant network structure – all core network nodes connected by multiple 10G links.",
+          "Scalable bandwidth and port connectivity based on demand.",
+          "Direct network connections with all global Tier 1 providers via Viettel’s AS7552."
+        ]
       }
     }
   },
@@ -886,6 +953,18 @@
         "title": "Vingroup Partners with Viettel",
         "description": "Vingroup Corporation and the Military Industry and Telecommunications Group (Viettel) signed a Memorandum of Understanding (MOU) on February 18 in Hanoi. The collaboration between these two leading Vietnamese conglomerates aims to build an innovative ecosystem for national sustainable development, elevating the position of Vietnamese businesses on the global stage.",
         "date": "Wednesday, 19/2/2025, 15:50 (GMT+7)"
+      },
+      {
+        "image": "/images/news/aisc.jpg",
+        "title": "1,000 AI and Semiconductor Experts and Businesses to Visit Vietnam",
+        "description": "At a press conference announcing the 2025 International Conference on Artificial Intelligence and Semiconductors (AISC 2025) held on the afternoon of February 24 in Hanoi, Deputy Minister of Planning and Investment Nguyen Duc Tam stated: The conference will be co-chaired by Eric Schmidt, former CEO of Google, and will bring together approximately 1,000 globally influential experts, scientists, and businesses in the fields of AI and semiconductors. It aims to promote cooperation, knowledge exchange, and guide technological development in Vietnam and the region, Mr. Tam said.",
+        "date": "Wednesday, February 19, 2025, 15:50 (GMT+7)"
+      },
+      {
+        "image": "/images/news/gpt.png",
+        "title": "ChatGPT Company Attracts 400 Million Weekly Users",
+        "description": "An OpenAI spokesperson told Reuters that the company’s weekly user base has grown by 100 million, from 300 million at the end of 2024. Among them, paid enterprise users surpassed 2 million in February, doubling from September 2024. The reason is that many employees used ChatGPT personally and later recommended its deployment to their companies.",
+        "date": "Friday, February 21, 2025, 07:55 (GMT+7)"
       }
     ]
   }

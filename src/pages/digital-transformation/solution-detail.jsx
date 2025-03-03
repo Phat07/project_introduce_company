@@ -607,7 +607,7 @@ const SolutionDetail = () => {
                   </motion.div>
                 )}
 
-                {Array.isArray(t(`solutions.items.${solutionKey}.pricing`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.pricing`, { returnObjects: true }).length > 0 && (
+                {/* {Array.isArray(t(`solutions.items.${solutionKey}.pricing`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.pricing`, { returnObjects: true }).length > 0 && (
                   <motion.div
                     className="pricing-section"
                     style={{ marginTop: '4rem' }}
@@ -651,7 +651,7 @@ const SolutionDetail = () => {
                       ))}
                     </Row>
                   </motion.div>
-                )}
+                )} */}
               </motion.div>
             </Col>
 

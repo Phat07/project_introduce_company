@@ -50,6 +50,9 @@ import SophosLogo from '../../assets/Sophos-Logo.wine.png';
 import SuperLogo from '../../assets/super.jpg';
 import ViettelLogo from '../../assets/viettel.png';
 import VNPTLogo from '../../assets/vnpt.png';
+import { Link } from 'react-router-dom';
+import NewsHighlightSection from './NewsHighlightSection';
+import { Modal } from 'antd';
 
 const Section = ({ children, className = '' }) => (
   <section className={`section-container ${className}`}>
@@ -154,7 +157,7 @@ const ServiceModelCanvas = ({ isMain = false }) => {
         background: '#000B1A',
       }}
     >
-      <div 
+      <div
         style={{
           position: 'absolute',
           top: 0,
@@ -280,16 +283,155 @@ const ClientsSection = () => {
     { name: 'VNG', logo: VNGLogo },
   ];
 
+  const [selectedClient, setSelectedClient] = useState(null);
+
+  const handleClientClick = React.useCallback((client) => {
+    setSelectedClient(client);
+  }, []);
+
+  const handleCloseClientModal = React.useCallback(() => {
+    const modalContent = document.querySelector('.client-modal .ant-modal-content');
+    if (modalContent) {
+      modalContent.style.transition = 'all 0.3s ease-in-out';
+      modalContent.style.transform = 'scale(0.95)';
+      modalContent.style.opacity = '0';
+    }
+    setTimeout(() => {
+      setSelectedClient(null);
+    }, 200);
+  }, []);
+
   return (
     <Section className="clients-section">
       <h2 className="section-title">{t('clients.title')}</h2>
-      <Marquee className="clients-marquee" pauseOnHover>
+      <Marquee className="clients-marquee" pauseOnHover gradient={false}>
         {clients.map((client, index) => (
-          <div key={index} className="client-logo">
-            <img src={client.logo} alt={client.name} className="h-12 w-auto mx-8" />
-          </div>
+          <motion.div 
+            key={index} 
+            className="client-logo relative cursor-pointer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClientClick(client.name.toLowerCase());
+            }}
+          >
+            <img 
+              src={client.logo} 
+              alt={client.name} 
+              className="h-12 w-auto mx-8 pointer-events-none" 
+            />
+          </motion.div>
         ))}
       </Marquee>
+
+      <AnimatePresence>
+        {selectedClient && (
+          <Modal
+            open={!!selectedClient}
+            onCancel={handleCloseClientModal}
+            footer={null}
+            centered
+            width={800}
+            className="client-modal"
+            maskClosable={true}
+            destroyOnClose
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="p-6 bg-white rounded-lg shadow-xl"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div className="flex items-center space-x-4">
+                  <motion.img
+                    src={clients.find(c => c.name.toLowerCase() === selectedClient)?.logo}
+                    alt={t(`clients.details.${selectedClient}.name`)}
+                    className="w-16 h-16 object-contain"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  />
+                  <motion.h2 
+                    className="text-2xl font-bold text-gray-900"
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    {t(`clients.details.${selectedClient}.name`)}
+                  </motion.h2>
+                </div>
+                {/* <motion.button
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  onClick={handleCloseClientModal}
+                  className="text-gray-400 hover:text-gray-500 focus:outline-none"
+                >
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </motion.button> */}
+              </div>
+              
+              <motion.div 
+                className="space-y-4"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <motion.p 
+                  className="text-gray-600"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  {t(`clients.details.${selectedClient}.description`)}
+                </motion.p>
+                <motion.div 
+                  className="grid grid-cols-2 gap-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <motion.div 
+                    className="bg-gray-50 p-4 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <h3 className="font-semibold text-gray-700">Industry</h3>
+                    <p className="text-gray-600">
+                      {t(`clients.details.${selectedClient}.industry`)}
+                    </p>
+                  </motion.div>
+                  <motion.div 
+                    className="bg-gray-50 p-4 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <h3 className="font-semibold text-gray-700">Partnership</h3>
+                    <p className="text-gray-600">
+                      {t(`clients.details.${selectedClient}.partnership`)}
+                    </p>
+                  </motion.div>
+                </motion.div>
+                <motion.a
+                  href={t(`clients.details.${selectedClient}.website`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  whileHover={{ scale: 1.05, backgroundColor: "#2563EB" }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  Visit Website
+                </motion.a>
+              </motion.div>
+            </motion.div>
+          </Modal>
+        )}
+      </AnimatePresence>
     </Section>
   );
 };
@@ -319,16 +461,131 @@ const PartnersSection = () => {
     { name: 'VNPT', logo: VNPTLogo },
   ];
 
+  const [selectedPartner, setSelectedPartner] = useState(null);
+
+  const handlePartnerClick = React.useCallback((partner) => {
+    setSelectedPartner(partner);
+  }, []);
+
+  const handleClosePartnerModal = React.useCallback(() => {
+    const modalContent = document.querySelector('.partner-modal .ant-modal-content');
+    if (modalContent) {
+      modalContent.style.transition = 'all 0.3s ease-in-out';
+      modalContent.style.transform = 'scale(0.95)';
+      modalContent.style.opacity = '0';
+    }
+    setTimeout(() => {
+      setSelectedPartner(null);
+    }, 200);
+  }, []);
+
   return (
     <Section className="partners-section">
       <h2 className="section-title">{t('partners.title')}</h2>
-      <Marquee className="partners-marquee" pauseOnHover reverse>
+      <Marquee className="partners-marquee" pauseOnHover gradient={false} speed={50}>
         {partners.map((partner, index) => (
-          <div key={index} className="partner-logo">
-            <img src={partner.logo} alt={partner.name} className="h-12 w-auto mx-8" />
-          </div>
+          <motion.div 
+            key={index} 
+            className="partner-logo relative cursor-pointer touch-manipulation"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              handlePartnerClick(partner.name.toLowerCase());
+            }}
+          >
+            <img 
+              src={partner.logo} 
+              alt={partner.name} 
+              className="h-12 w-auto mx-8 pointer-events-none select-none" 
+              draggable="false"
+            />
+          </motion.div>
         ))}
       </Marquee>
+
+      <AnimatePresence>
+        {selectedPartner && (
+          <Modal
+            open={!!selectedPartner}
+            onCancel={handleClosePartnerModal}
+            footer={null}
+            centered
+            width={800}
+            className="partner-modal"
+            maskClosable={true}
+            destroyOnClose
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="p-6 bg-white rounded-lg shadow-xl"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div className="flex items-center space-x-4">
+                  <motion.img
+                    src={partners.find(p => p.name.toLowerCase() === selectedPartner)?.logo}
+                    alt={t(`partners.details.${selectedPartner}.name`)}
+                    className="w-16 h-16 object-contain"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  />
+                  <motion.h2 
+                    className="text-2xl font-bold text-gray-900"
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    {t(`partners.details.${selectedPartner}.name`)}
+                  </motion.h2>
+                </div>
+              </div>
+              
+              <motion.div 
+                className="space-y-4"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <motion.p 
+                  className="text-gray-600"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  {t(`partners.details.${selectedPartner}.description`)}
+                </motion.p>
+                <motion.div 
+                  className="bg-gray-50 p-4 rounded-lg"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <h3 className="font-semibold text-gray-700 mb-2">Partnership Level</h3>
+                  <p className="text-gray-600">
+                    {t(`partners.details.${selectedPartner}.partnershipLevel`)}
+                  </p>
+                </motion.div>
+                <motion.a
+                  href={t(`partners.details.${selectedPartner}.website`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  whileHover={{ scale: 1.05, backgroundColor: "#2563EB" }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  Visit Website
+                </motion.a>
+              </motion.div>
+            </motion.div>
+          </Modal>
+        )}
+      </AnimatePresence>
     </Section>
   );
 };
@@ -339,6 +596,8 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const mainRef = useRef(null);
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State để điều khiển modal
+  const [selectedNews, setSelectedNews] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -347,6 +606,7 @@ const HomePage = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
 
   useEffect(() => {
     let ticking = false;
@@ -366,7 +626,7 @@ const HomePage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveNewsIndex((current) => (current + 1) % t('news.items', { returnObjects: true }).length);
-    }, 3000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [t]);
@@ -392,7 +652,26 @@ const HomePage = () => {
 
   // Lấy newsItems từ file translation
   const newsItems = t('news.items', { returnObjects: true }) || [];
+  const showModal = (news) => {
+    setSelectedNews(news);
+    setIsModalOpen(true);
+  };
 
+  // Hàm đóng modal
+  const handleCancel = () => {
+    const modalContent = document.querySelector('.custom-modal .ant-modal-content');
+    if (modalContent) {
+      modalContent.style.transition = 'all 0.3s ease-in-out';
+      modalContent.style.transform = 'scale(0.95)';
+      modalContent.style.opacity = '0';
+    }
+    
+    // Delay the actual closing
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setSelectedNews(null);
+    }, 200);
+  };
   return (
     <div className="home-page-container" ref={mainRef}>
       {isLoading && <LoadingScreen />}
@@ -436,10 +715,10 @@ const HomePage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {t('hero.cta')}
+                <Link to="/solutions" className='text-white hover:text-black'>{t('hero.cta')}</Link>
               </motion.button>
               <motion.div
-                className="tech-icons"
+                className="tech-icons cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
                 transition={{ delay: 1.2, duration: 0.6 }}
@@ -486,9 +765,10 @@ const HomePage = () => {
                     <motion.img
                       src={newsItems[activeNewsIndex].image}
                       alt={newsItems[activeNewsIndex].title}
-                      className="news-image"
+                      className="news-image cursor-pointer"
                       initial={{ scale: 0.9 }}
                       animate={{ scale: isLoading ? 0.9 : 1 }}
+                      onClick={() => showModal(newsItems[activeNewsIndex])}
                       transition={{ duration: 0.5 }}
                     />
                     <div className="news-text">
@@ -532,6 +812,7 @@ const HomePage = () => {
               </motion.div>
             </div>
           </Section>
+          {/* <NewsHighlightSection isLoading={isLoading} /> */}
 
           {/* Services Section */}
           <Section className="services-section" id="services">
@@ -629,6 +910,49 @@ const HomePage = () => {
             </div>
           </Section> */}
         </main>
+        <AnimatePresence>
+          {isModalOpen && selectedNews && (
+            <Modal
+              open={isModalOpen}
+              onCancel={handleCancel}
+              footer={null} // Không hiển thị footer mặc định của Modal
+              centered
+              width={800} // Đặt chiều rộng modal
+              className="custom-modal" // Class để tùy chỉnh Tailwind
+              destroyOnClose // Xóa dữ liệu khi đóng modal
+              maskTransitionName="fade"
+              transitionName="custom-modal"
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                className="p-6" // Padding từ Tailwind
+              >
+                <img
+                  src={selectedNews.image}
+                  alt={selectedNews.title}
+                  className="w-full h-64 object-cover rounded-lg mb-4" // Styling Tailwind cho ảnh
+                />
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  {selectedNews.title}
+                </h2>
+                <p className="text-gray-700 mb-4">{selectedNews.description}</p>
+                <div className="text-sm text-gray-500">
+                  <span>{selectedNews.date}</span>
+                </div>
+                {/* Nội dung thêm nếu cần */}
+                <p className="text-gray-600 mt-4">
+                  {/* Đây là nơi bạn có thể thêm nội dung chi tiết hơn nếu muốn */}
+                  {t('news.extraContentPlaceholder', {
+                    defaultValue: 'This is additional content for the news item.',
+                  })}
+                </p>
+              </motion.div>
+            </Modal>
+          )}
+        </AnimatePresence>
       </motion.div>
     </div>
   );

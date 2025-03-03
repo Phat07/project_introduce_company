@@ -59,15 +59,15 @@
     "description": "Chúng tôi là đối tác tin cậy trong lĩnh vực chuyển đổi số, mang đến những giải pháp sáng tạo và hiệu quả cho doanh nghiệp.",
     "stats": {
       "projects": {
-        "number": "500+",
+        "number": "20+",
         "label": "Dự án thành công"
       },
       "clients": {
-        "number": "200+",
+        "number": "20+",
         "label": "Khách hàng"
       },
       "experts": {
-        "number": "50+",
+        "number": "10+",
         "label": "Chuyên gia"
       }
     }
@@ -141,9 +141,9 @@
   },
   "solutions": {
     "title": "Giải pháp",
-    "features":"Tính năng",
-    "benefits":"Lợi ích",
-    "advantages":"Đặc điểm nổi bật",
+    "features": "Tính năng",
+    "benefits": "Lợi ích",
+    "advantages": "Đặc điểm nổi bật",
     "pricing": "Bảng giá",
     "categories": {
       "all": "Tất cả",
@@ -862,6 +862,73 @@
           "BẢO MẬT HỆ THỐNG: Bảo mật với hệ thống Firewall, Anti Virus, Anti Spam chuyên nghiệp.",
           "TÍNH ỔN ĐỊNH CAO: Hỗ trợ 24/7/365."
         ]
+      },
+      "IPLC": {
+        "id": 36,
+        "title": "KÊNH THUÊ RIÊNG QUỐC TẾ (IPLC)",
+        "category": "telecom",
+        "image": "/images/solutions/IPLC.jpg",
+        "description": "IPLC là dịch vụ phù hợp với các tổ chức, doanh nghiệp và tập đoàn quốc tế cần tìm kiếm đường truyền kết nối nhanh, bảo mật và chất lượng dịch vụ cao giữa trụ sở và các chi nhánh. IPLC là dịch vụ phù hợp với các tổ chức, doanh nghiệp và tập đoàn quốc tế cần tìm kiếm đường truyền kết nối nhanh, bảo mật và chất lượng dịch vụ cao giữa trụ sở và các chi nhánh.",
+        "features": [
+          "Dựa trên hạ tầng quang đồng bộ SDH/DWDM hỗ trợ đa giao diện kết nối: V.35, E1, Ethernet và các giao diện quang STM-1, STM-4.",
+          "Cung cấp đa dạng tốc độ kênh truyền từ mức thấp đến mức cao: nx64Kbps, E1, nx2Mbps, 45M đến 10G (STM-64).",
+          "Hỗ trợ toàn bộ các ứng dụng cần thiết của khách hàng: thoại, fax, video conference, truyền tải dữ liệu."
+        ],
+        "advantage": [
+          "Cam kết thời gian sử dụng dich vụ : 99.9%",
+          "Bàn giao kênh truyền sau 4-10 tuần (tùy địa điểm tại nước ngoài)",
+          "Đảm bảo hỗ trợ giám sát đường truyền và xử lý sự cố  24/7"
+        ],
+        "benefits": [
+          "Kênh truyền kết nối dành riêng tốc độ cao",
+          "Mô hình kết nội mạng linh hoạt và bảo mật",
+          "Hạ tầng mạng đa kết nối bảo vê và độ tin cậy cao"
+        ]
+      },
+      "MPLS": {
+        "id": 37,
+        "title": "KÊNH THUÊ RIÊNG QUỐC TẾ IP (MPLS)",
+        "category": "telecom",
+        "image": "/images/solutions/MPLS.jpg",
+        "description": "Dịch vụ Kênh thuê riêng IP quốc tế của Viettel là dịch vụ truyền số liệu quốc tế được thiết kế với tốc độ cao, mô hình đấu nối đa dạng (điểm nối điểm, điểm nối đa điểm, đa điểm với đa điểm) nhằm đáp ứng nhu cầu của khách hàng thiết lập một mạng dùng riêng giữa các văn phòng trên toàn cầu. Kênh thuê riêng IP quốc tế phù hợp với mô hình khách hàng tập đoàn, các tổng công ty và các công ty nước ngoài với yêu cầu kết nối tới nhiều địa điểm trên thế giới với tốc độ nhanh, độ tin cậy và bảo mật cao.",
+        "features": [
+          "Cấu trúc hạ tầng mạng MPLS với giao diện kết nối Ethernet",
+          "Tốc độ kết nối linh hoạt: nx64Kbps, 1-100 Mbps, 1G, 10G..",
+          "Hỗ trợ tất cả các ứng dụng nền IP như VoIP, video conference, Internet.."
+        ],
+        "advantage": [
+          "Cam kết thời gian sử dụng dịch vụ cao: 99.85%",
+          "Cam kết bàn giao dịch vụ sau 4-10 tuần (tùy theo vị trí tại nước ngoài)",
+          "Đảm bảo hỗ trợ giám sát đường truyền và xử lý sự cố  24/7"
+        ],
+        "benefits": [
+          "Kết nối linh hoạt, tính bảo mật và độ tin cậy cao",
+          "Dễ dàng kết nối",
+          "Chi phí hợp lý",
+          "Hỗ trợ ưu tiên chất lượng theo nhóm dịch vụ"
+        ]
+      },
+      "ipTransit": {
+        "id": 38,
+        "title": "KÊNH THUÊ RIÊNG QUỐC TẾ IP (MPLS)",
+        "category": "telecom",
+        "image": "/images/solutions/ipTransit.jpg",
+        "description": "IP Transit là dịch vụ cung cấp truyền tải dữ liệu lớn từ hệ thống hạ tầng của khách hàng trong nước qua cổng kết nối quốc tế hay hạ tầng kết nối Internet quốc tế của nhà cung cấp. Là nhà cung cấp hàng đầu tại thị trường Việt Nam, Viettel bảo đảm cung cấp dịch vụ IP Transit hàng đầu trên thị trường cho khách hàng với cam kết chất lượng dịch vụ ở mức cao nhất cùng với mức giá hết sức cạnh tranh. Nhắm đáp ứng nhu cầu băng thông cao và phát triển nhanh chóng của các nhà cung cấp dịch vụ Internet (ISP), các nhà cung cấp dịch vụ di động (MO) và các nhà cung cấp mạng nội dung (CDN), Viettel cung cấp gói dịch vụ IP Transit cho khách hàng với kết nối mạng Internet toàn cầu hướng tới hiệu suất và  hiệu quả cao.",
+        "features": [
+          "Hỗ trợ đa kết nối 10G peering với từng nhà mạng – tại các POP phân bố theo địa lý Hong Kong, Singapore, Mỹ và cả Châu Âu.",
+          "Hỗ trợ đa giao diện kết nối: FE, GE, 10GE, 100GE",
+          "Hỗ trợ cả 2 giao thức IP: IPv4 và IPv6."
+        ],
+        "advantage": [
+          "Cam kết thời gian sử dụng dịch vụ cao: 99.99%",
+          "Cam kết bàn giao dịch vụ sau 4-10 tuần (tùy theo vị trí tại nước ngoài)",
+          "Đảm bảo hỗ trợ giám sát đường truyền và xử lý sự cố  24/7"
+        ],
+        "benefits": [
+          "Đáp ứng khả năng hồi phục cao với mạng cấu trúc liên kết dự phòng đa dạng – Tất cả các node mạng Core được kết nối bởi nhiều link 10G.",
+          "Đáp ứng băng thông theo nhu cầu: đảm bảo khả năng mở rộng băng thông và cổng kết nối",
+          "Kết nối mạng trực tiếp với tất cả các nhà cung cấp Tier1 toàn cầu qua AS7552 của Viettel"
+        ]
       }
     }
   },
@@ -885,6 +952,18 @@
         "title": "Vingroup hợp tác với Viettel",
         "description": "Tập đoàn Vingroup và Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel) ký kết biên bản ghi nhớ (MOU), ngày 18/2, tại Hà Nội. Sự hợp tác giữa hai tập đoàn hàng đầu Việt Nam nhằm xây dựng hệ sinh thái đổi mới sáng tạo vì mục tiêu phát triển bền vững quốc gia sẽ góp phần nâng tầm vị thế doanh nghiệp Việt trên trường quốc tế.",
         "date": "Thứ tư, 19/2/2025, 15:50 (GMT+7)"
+      },
+      {
+        "image": "/images/news/aisc.jpg",
+        "title": "1.000 chuyên gia, doanh nghiệp AI và bán dẫn sắp đến Việt Nam",
+        "description": "Tại họp báo công bố sự kiện Hội nghị quốc tế về Trí tuệ nhân tạo và Bán dẫn 2025 (AISC 2025) chiều 24/2 ở Hà Nội, Thứ trưởng Kế hoạch và Đầu tư Nguyễn Đức Tâm cho biết: Hội nghị sẽ được tổ chức với sự đồng chủ trì của ông Eric Schmidt, cựu CEO Google, và quy tụ khoảng 1.000 chuyên gia, nhà khoa học, doanh nghiệp có ảnh hưởng trên thế giới trong lĩnh vực AI và bán dẫn, nhằm thúc đẩy hợp tác, trao đổi tri thức và định hướng phát triển công nghệ tại Việt Nam và khu vực, ông Tâm nói.",
+        "date": "Thứ tư, 19/2/2025, 15:50 (GMT+7)"
+      },
+      {
+        "image": "/images/news/gpt.png",
+        "title": "Công ty ChatGPT thu hút 400 triệu người dùng hàng tuần",
+        "description": "Phát ngôn viên OpenAI chia sẻ với Reuters rằng số người dùng hàng tuần của công ty đã tăng 100 triệu từ mức 300 triệu vào tháng cuối năm 2024. Trong đó, người dùng doanh nghiệp trả phí cũng vượt 2 triệu trong tháng 2, nhân đôi so với tháng 9/2024. Lý do là nhiều nhân viên sử dụng ChatGPT cá nhân và sau đó đề xuất công ty triển khai công cụ này.",
+        "date": "Thứ sáu, 21/2/2025, 07:55 (GMT+7)"
       }
     ]
   }
