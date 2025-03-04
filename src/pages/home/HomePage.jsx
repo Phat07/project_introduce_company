@@ -56,6 +56,7 @@ import MobileLogo from '../../assets/mobile.jpg';
 import ViettelIDCLogo from '../../assets/viettelidc.jpg';
 import ViettelMoneyLogo from '../../assets/viettelMoney.png';
 import VinaphoneLogo from '../../assets/vinaphone.jpg';
+import AWSLogo from '../../assets/aws.png';
 
 import { Link } from 'react-router-dom';
 import NewsHighlightSection from './NewsHighlightSection';
@@ -474,6 +475,7 @@ const PartnersSection = () => {
     { name: 'ViettelIDC', logo: ViettelIDCLogo },
     { name: 'ViettelMoney', logo: ViettelMoneyLogo },
     { name: 'Vinaphone', logo: VinaphoneLogo },
+    { name: 'AWS', logo: AWSLogo },
   ];
 
   const [selectedPartner, setSelectedPartner] = useState(null);
@@ -656,7 +658,7 @@ const HomePage = () => {
   ];
 
   const subTitleTexts = [
-    "Đối tác tin cậy trong hành trình chuyển đổi số",
+    "Đối tác tin cậy chuyển đổi số",
     "COMPREHENSIVE",
     "全面的",
     "포괄적인"
@@ -725,7 +727,7 @@ const HomePage = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <motion.div
-                className="hero-title"
+                className="hero-title mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
