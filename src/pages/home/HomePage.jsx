@@ -55,6 +55,7 @@ import { Link } from 'react-router-dom';
 import NewsHighlightSection from './NewsHighlightSection';
 import { Modal } from 'antd';
 import { Pointer } from '../../components/ui/pointer';
+import SparklesText from '../../components/ui/sparklestext';
 
 const Section = ({ children, className = '' }) => (
   <section className={`section-container ${className}`}>
@@ -728,7 +729,12 @@ const HomePage = () => {
                 animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
               >
-                {t('hero.description')}
+                <SparklesText
+                  text={t('hero.description')}
+                  colors={{ first: "#FF6D00", second: "#FE8BBB" }} // Optional: customize colors
+                  sparklesCount={15} // Optional: customize number of sparkles
+                />
+                {/* {t('hero.description')} */}
               </motion.p>
               <motion.button
                 className="cta-button"
