@@ -298,6 +298,7 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import LoadingScreen from '../../components/ui/loading-screen';
 import { ModelLoader } from '../../components/ui/model-loader';
 import { categories as staticCategories } from './data.jsx';
+import Lens from '../../components/ui/lens.jsx';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -404,171 +405,175 @@ const SolutionsPage = () => {
         },
       }}
     >
-      <div className="container mx-auto px-4 py-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          style={{ marginTop: '4rem' }}
-        >
-          <div className="mb-8 mr-8 ml-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-              {translatedCategories.map(category => (
-                <motion.div
-                  key={category.value}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Card
-                    hoverable
-                    className={`h-full transition-all duration-300 ${currentCategory === category.value
-                      ? 'border-[#ff6d00] border-2 shadow-lg bg-orange-50'
-                      : 'border hover:border-[#ff6d00]'
-                      }`}
-                    onClick={() => handleCategoryChange(category.value)}
+      {/* <Lens zoomFactor={1.2} lensSize={200}> */}
+        <div className="container mx-auto px-4 py-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{ marginTop: '4rem' }}
+          >
+            <div className="mb-8 mr-8 ml-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                {translatedCategories.map(category => (
+                  <motion.div
+                    key={category.value}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <div className="flex items-center gap-3">
-                      <div className={`
+                    <Card
+                      hoverable
+                      className={`h-full transition-all duration-300 ${currentCategory === category.value
+                        ? 'border-[#ff6d00] border-2 shadow-lg bg-orange-50'
+                        : 'border hover:border-[#ff6d00]'
+                        }`}
+                      onClick={() => handleCategoryChange(category.value)}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`
                         text-xl p-2.5 rounded-full 
                         ${currentCategory === category.value
-                          ? 'bg-[#ff6d00] text-white'
-                          : 'bg-gray-100 text-gray-600'
-                        }
-                      `}>
-                        {category.icon}
-                      </div>
-                      <div>
-                        <h3 className={`text-base font-medium mb-1 ${currentCategory === category.value
-                          ? 'text-[#ff6d00]'
-                          : 'text-gray-800'
-                          }`}>
-                          {category.label}
-                        </h3>
-                        <p className="text-xs text-gray-500 line-clamp-2">
-                          {category.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {pageLoading ? (
-            <div className="flex justify-center items-center min-h-[200px]">
-              <ModelLoader />
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-              {currentSolutions.map(solution => (
-                <motion.div
-                  key={solution.id}
-                  layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="flex"
-                >
-                  <SolutionCard solution={solution} t={t} />
-                </motion.div>
-              ))}
-            </div>
-          )}
-
-          <div className="flex justify-center overflow-x-auto py-2">
-            <div className="flex items-center gap-1 min-w-fit">
-              <button
-                onClick={() => handlePageChange(1)}
-                disabled={currentPage === 1}
-                className={`hidden sm:block px-3 py-1 border ${currentPage === 1
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
-                  }`}
-              >
-                First
-              </button>
-              <button
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-                className={`px-3 py-1 border ${currentPage === 1
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
-                  }`}
-              >
-                Prev
-              </button>
-
-              {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }, (_, i) => i + 1)
-                .filter(page => {
-                  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-                  if (window.innerWidth < 640) {
-                    if (totalPages <= 3) return true;
-                    if (page === 1 || page === totalPages) return true;
-                    if (page === currentPage) return true;
-                    return false;
-                  } else {
-                    if (totalPages <= 5) return true;
-                    if (page === 1 || page === totalPages) return true;
-                    if (Math.abs(page - currentPage) <= 1) return true;
-                    return false;
-                  }
-                })
-                .map((page, index, array) => {
-                  if (index > 0 && array[index - 1] !== page - 1) {
-                    return (
-                      <React.Fragment key={`ellipsis-${page}`}>
-                        <span className="px-2 py-1">...</span>
-                        <button
-                          onClick={() => handlePageChange(page)}
-                          className={`min-w-[36px] px-3 py-1 border ${currentPage === page
                             ? 'bg-[#ff6d00] text-white'
-                            : 'bg-white text-gray-600 hover:bg-gray-100'
-                            }`}
-                        >
-                          {page}
-                        </button>
-                      </React.Fragment>
-                    );
-                  }
-                  return (
-                    <button
-                      key={page}
-                      onClick={() => handlePageChange(page)}
-                      className={`min-w-[36px] px-3 py-1 border ${currentPage === page
-                        ? 'bg-[#ff6d00] text-white'
-                        : 'bg-white text-gray-600 hover:bg-gray-100'
-                        }`}
-                    >
-                      {page}
-                    </button>
-                  );
-                })}
-
-              <button
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)}
-                className={`px-3 py-1 border ${currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
-                  }`}
-              >
-                Next
-              </button>
-              <button
-                onClick={() => handlePageChange(Math.ceil(totalItems / ITEMS_PER_PAGE))}
-                disabled={currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)}
-                className={`hidden sm:block px-3 py-1 border ${currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
-                  }`}
-              >
-                End
-              </button>
+                            : 'bg-gray-100 text-gray-600'
+                          }
+                      `}>
+                          {category.icon}
+                        </div>
+                        <div>
+                          <h3 className={`text-base font-medium mb-1 ${currentCategory === category.value
+                            ? 'text-[#ff6d00]'
+                            : 'text-gray-800'
+                            }`}>
+                            {category.label}
+                          </h3>
+                          <p className="text-xs text-gray-500 line-clamp-2">
+                            {category.description}
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        </motion.div>
-      </div>
+
+            {pageLoading ? (
+              <div className="flex justify-center items-center min-h-[200px]">
+                <ModelLoader />
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                {currentSolutions.map(solution => (
+                  <motion.div
+                    key={solution.id}
+                    layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="flex"
+                  >
+                    <Lens zoomFactor={1.2} lensSize={200}> 
+                    <SolutionCard solution={solution} t={t} />
+                    </Lens>
+                  </motion.div>
+                ))}
+              </div>
+            )}
+
+            <div className="flex justify-center overflow-x-auto py-2">
+              <div className="flex items-center gap-1 min-w-fit">
+                <button
+                  onClick={() => handlePageChange(1)}
+                  disabled={currentPage === 1}
+                  className={`hidden sm:block px-3 py-1 border ${currentPage === 1
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                    }`}
+                >
+                  First
+                </button>
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className={`px-3 py-1 border ${currentPage === 1
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                    }`}
+                >
+                  Prev
+                </button>
+
+                {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }, (_, i) => i + 1)
+                  .filter(page => {
+                    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+                    if (window.innerWidth < 640) {
+                      if (totalPages <= 3) return true;
+                      if (page === 1 || page === totalPages) return true;
+                      if (page === currentPage) return true;
+                      return false;
+                    } else {
+                      if (totalPages <= 5) return true;
+                      if (page === 1 || page === totalPages) return true;
+                      if (Math.abs(page - currentPage) <= 1) return true;
+                      return false;
+                    }
+                  })
+                  .map((page, index, array) => {
+                    if (index > 0 && array[index - 1] !== page - 1) {
+                      return (
+                        <React.Fragment key={`ellipsis-${page}`}>
+                          <span className="px-2 py-1">...</span>
+                          <button
+                            onClick={() => handlePageChange(page)}
+                            className={`min-w-[36px] px-3 py-1 border ${currentPage === page
+                              ? 'bg-[#ff6d00] text-white'
+                              : 'bg-white text-gray-600 hover:bg-gray-100'
+                              }`}
+                          >
+                            {page}
+                          </button>
+                        </React.Fragment>
+                      );
+                    }
+                    return (
+                      <button
+                        key={page}
+                        onClick={() => handlePageChange(page)}
+                        className={`min-w-[36px] px-3 py-1 border ${currentPage === page
+                          ? 'bg-[#ff6d00] text-white'
+                          : 'bg-white text-gray-600 hover:bg-gray-100'
+                          }`}
+                      >
+                        {page}
+                      </button>
+                    );
+                  })}
+
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)}
+                  className={`px-3 py-1 border ${currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                    }`}
+                >
+                  Next
+                </button>
+                <button
+                  onClick={() => handlePageChange(Math.ceil(totalItems / ITEMS_PER_PAGE))}
+                  disabled={currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)}
+                  className={`hidden sm:block px-3 py-1 border ${currentPage === Math.ceil(totalItems / ITEMS_PER_PAGE)
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                    }`}
+                >
+                  End
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      {/* </Lens> */}
     </ConfigProvider>
   );
 };
