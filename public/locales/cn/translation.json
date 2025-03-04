@@ -17,6 +17,10 @@
     "services": "服务",
     "contact": "联系我们"
   },
+  "home": {
+    "title": "首页",
+    "description": "企业数字化转型之旅"
+  },
   "hero": {
     "title": "THANHCONG SOLUTIONS",
     "subtitle": "您值得信赖的数字化转型伙伴",
@@ -137,7 +141,8 @@
     "contact": "联系",
     "callUs": "致电我们",
     "emailUs": "发送邮件",
-    "loading": "加载中..."
+    "loading": "加载中...",
+    "similarSolutions": "相似解决方案"
   },
   "solutions": {
     "title": "解决方案",

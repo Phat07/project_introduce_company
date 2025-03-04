@@ -53,6 +53,10 @@
       }
     }
   },
+  "home": {
+    "title": "Trang chủ",
+    "description": "Trang chủ cùng doanh nghiệp trong hành trình số hóa"
+  },
   "about": {
     "title": "Về chúng tôi",
     "content": "ThanhCong Solutions là đơn vị tiên phong trong lĩnh vực chuyển đổi số tại Việt Nam",
@@ -98,7 +102,9 @@
     "contact": "Liên hệ",
     "callUs": "Gọi cho chúng tôi",
     "emailUs": "Gửi email",
-    "loading": "Đang tải..."
+    "loading": "Đang tải...",
+    "similarSolutions": "Sản phẩm liên quan",
+    "hotline": "Hotline"
   },
   "welcome": "Xin chào",
   "language": "Ngôn ngữ",

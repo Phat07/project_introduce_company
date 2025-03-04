@@ -17,6 +17,10 @@
     "services": "Services",
     "contact": "Contact"
   },
+  "home": {
+    "title": "Home",
+    "description": "Home page of ThanhCong Solutions"
+  },
   "hero": {
     "title": "THANHCONG SOLUTIONS",
     "subtitle": "Your trusted partner in digital transformation",
@@ -137,7 +141,8 @@
     "contact": "Contact",
     "callUs": "Call Us",
     "emailUs": "Email Us",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "similarSolutions": "Similar Solutions"
   },
   "solutions": {
     "title": "Solutions",

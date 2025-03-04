@@ -17,6 +17,10 @@
     "services": "서비스",
     "contact": "문의하기"
   },
+  "home": {
+    "title": "홈",
+    "description": "기업의 디지털 여정을 지원합니다"
+  },
   "hero": {
     "title": "THANHCONG SOLUTIONS",
     "subtitle": "디지털 트랜스포메이션의 신뢰할 수 있는 파트너",
@@ -114,7 +118,8 @@
     "contact": "문의하기",
     "callUs": "전화하기",
     "emailUs": "이메일 보내기",
-    "loading": "로딩 중..."
+    "loading": "로딩 중...",
+    "similarSolutions": "상품 연관"
   },
   "solutions": {
     "title": "솔루션",
