@@ -51,6 +51,12 @@ import SophosLogo from '../../assets/Sophos-Logo.wine.png';
 import SuperLogo from '../../assets/super.jpg';
 import ViettelLogo from '../../assets/viettel.png';
 import VNPTLogo from '../../assets/vnpt.png';
+
+import MobileLogo from '../../assets/mobile.jpg';
+import ViettelIDCLogo from '../../assets/viettelidc.jpg';
+import ViettelMoneyLogo from '../../assets/viettelMoney.png';
+import VinaphoneLogo from '../../assets/vinaphone.jpg';
+
 import { Link } from 'react-router-dom';
 import NewsHighlightSection from './NewsHighlightSection';
 import { Modal } from 'antd';
@@ -464,6 +470,10 @@ const PartnersSection = () => {
     { name: 'Super Micro', logo: SuperLogo },
     { name: 'Viettel', logo: ViettelLogo },
     { name: 'VNPT', logo: VNPTLogo },
+    { name: 'Mobile', logo: MobileLogo },
+    { name: 'ViettelIDC', logo: ViettelIDCLogo },
+    { name: 'ViettelMoney', logo: ViettelMoneyLogo },
+    { name: 'Vinaphone', logo: VinaphoneLogo },
   ];
 
   const [selectedPartner, setSelectedPartner] = useState(null);
