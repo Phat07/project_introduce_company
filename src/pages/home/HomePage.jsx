@@ -10,6 +10,7 @@ import { ModelLoader } from '../../components/ui/model-loader';
 import { Marquee } from '../../components/ui/marquee';
 import MorphingText from '../../components/ui/morphing-text';
 import './HomePage.css';
+import Lens from '../../components/ui/lens'; // Import Lens component
 
 // Client Logos
 import AdidasLogo from '../../assets/adidas.png';
@@ -30,7 +31,7 @@ import TrustLogo from '../../assets/trust.jpg';
 import VNGLogo from '../../assets/vng.jpg';
 
 // Partner Logos
-import HPELogo from '../../assets/HPE.jpg';
+import HPELogo from '../../assets/HPE.png';
 import HuaweiLogo from '../../assets/Huawei.jpg';
 import UbiquitiLogo from '../../assets/UBIQUITI.png';
 import ArubLogo from '../../assets/aruba-networks.png';
@@ -53,6 +54,7 @@ import VNPTLogo from '../../assets/vnpt.png';
 import { Link } from 'react-router-dom';
 import NewsHighlightSection from './NewsHighlightSection';
 import { Modal } from 'antd';
+import { Pointer } from '../../components/ui/pointer';
 
 const Section = ({ children, className = '' }) => (
   <section className={`section-container ${className}`}>
@@ -306,22 +308,24 @@ const ClientsSection = () => {
       <h2 className="section-title">{t('clients.title')}</h2>
       <Marquee className="clients-marquee" pauseOnHover gradient={false}>
         {clients.map((client, index) => (
-          <motion.div 
-            key={index} 
-            className="client-logo relative cursor-pointer"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={(e) => {
-              e.stopPropagation();
-              handleClientClick(client.name.toLowerCase());
-            }}
-          >
-            <img 
-              src={client.logo} 
-              alt={client.name} 
-              className="h-12 w-auto mx-8 pointer-events-none" 
-            />
-          </motion.div>
+          <Lens key={index} zoomFactor={1.2} lensSize={200}>
+            <motion.div
+              key={index}
+              className="client-logo relative cursor-pointer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleClientClick(client.name.toLowerCase());
+              }}
+            >
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="h-12 w-auto mx-8 pointer-events-none"
+              />
+            </motion.div>
+          </Lens>
         ))}
       </Marquee>
 
@@ -353,7 +357,7 @@ const ClientsSection = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   />
-                  <motion.h2 
+                  <motion.h2
                     className="text-2xl font-bold text-gray-900"
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -374,14 +378,14 @@ const ClientsSection = () => {
                   </svg>
                 </motion.button> */}
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 className="space-y-4"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <motion.p 
+                <motion.p
                   className="text-gray-600"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -389,13 +393,13 @@ const ClientsSection = () => {
                 >
                   {t(`clients.details.${selectedClient}.description`)}
                 </motion.p>
-                <motion.div 
+                <motion.div
                   className="grid grid-cols-2 gap-4"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="bg-gray-50 p-4 rounded-lg"
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -405,7 +409,7 @@ const ClientsSection = () => {
                       {t(`clients.details.${selectedClient}.industry`)}
                     </p>
                   </motion.div>
-                  <motion.div 
+                  <motion.div
                     className="bg-gray-50 p-4 rounded-lg"
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -484,24 +488,26 @@ const PartnersSection = () => {
       <h2 className="section-title">{t('partners.title')}</h2>
       <Marquee className="partners-marquee" pauseOnHover gradient={false} speed={50}>
         {partners.map((partner, index) => (
-          <motion.div 
-            key={index} 
-            className="partner-logo relative cursor-pointer touch-manipulation"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              handlePartnerClick(partner.name.toLowerCase());
-            }}
-          >
-            <img 
-              src={partner.logo} 
-              alt={partner.name} 
-              className="h-12 w-auto mx-8 pointer-events-none select-none" 
-              draggable="false"
-            />
-          </motion.div>
+          <Lens key={index} zoomFactor={1.2} lensSize={200}>
+            <motion.div
+              key={index}
+              className="partner-logo relative cursor-pointer touch-manipulation"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handlePartnerClick(partner.name.toLowerCase());
+              }}
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="h-12 w-auto mx-8 pointer-events-none select-none"
+                draggable="false"
+              />
+            </motion.div>
+          </Lens>
         ))}
       </Marquee>
 
@@ -533,7 +539,7 @@ const PartnersSection = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   />
-                  <motion.h2 
+                  <motion.h2
                     className="text-2xl font-bold text-gray-900"
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -543,14 +549,14 @@ const PartnersSection = () => {
                   </motion.h2>
                 </div>
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 className="space-y-4"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <motion.p 
+                <motion.p
                   className="text-gray-600"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -558,7 +564,7 @@ const PartnersSection = () => {
                 >
                   {t(`partners.details.${selectedPartner}.description`)}
                 </motion.p>
-                <motion.div 
+                <motion.div
                   className="bg-gray-50 p-4 rounded-lg"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -665,13 +671,30 @@ const HomePage = () => {
       modalContent.style.transform = 'scale(0.95)';
       modalContent.style.opacity = '0';
     }
-    
+
     // Delay the actual closing
     setTimeout(() => {
       setIsModalOpen(false);
       setSelectedNews(null);
     }, 200);
   };
+  const services = [
+    {
+      title: t('services.digitalTransformation.title'),
+      description: t('services.digitalTransformation.description'),
+      icon: <i className="fas fa-chart-line"></i>
+    },
+    {
+      title: t('services.softwareDevelopment.title'),
+      description: t('services.softwareDevelopment.description'),
+      icon: <i className="fas fa-code"></i>
+    },
+    {
+      title: t('services.security.title'),
+      description: t('services.security.description'),
+      icon: <i className="fas fa-lock"></i>
+    }
+  ];
   return (
     <div className="home-page-container" ref={mainRef}>
       {isLoading && <LoadingScreen />}
@@ -748,96 +771,114 @@ const HomePage = () => {
 
           {/* News Highlight Section */}
           <Section className="news-highlight-section">
-            <div className="news-highlight-container">
-              <div className="news-title">
-                <h2>{t('news.title')}</h2>
-              </div>
-              <motion.div className="news-content">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeNewsIndex}
-                    className="news-item"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 50 : 0 }}
-                    exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <motion.img
-                      src={newsItems[activeNewsIndex].image}
-                      alt={newsItems[activeNewsIndex].title}
-                      className="news-image cursor-pointer"
-                      initial={{ scale: 0.9 }}
-                      animate={{ scale: isLoading ? 0.9 : 1 }}
-                      onClick={() => showModal(newsItems[activeNewsIndex])}
-                      transition={{ duration: 0.5 }}
-                    />
-                    <div className="news-text">
-                      <motion.h3
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: isLoading ? 0 : 1, x: isLoading ? -20 : 0 }}
-                        transition={{ delay: 0.2 }}
-                      >
-                        {newsItems[activeNewsIndex].title}
-                      </motion.h3>
-                      <motion.p
-                        className="news-description"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: isLoading ? 0 : 1, x: isLoading ? -20 : 0 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        {newsItems[activeNewsIndex].description}
-                      </motion.p>
-                      <motion.div
-                        className="news-meta"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: isLoading ? 0 : 1 }}
-                        transition={{ delay: 0.4 }}
-                      >
-                        <span className="news-date">{newsItems[activeNewsIndex].date}</span>
-                      </motion.div>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-                <div className="news-dots">
-                  {newsItems.map((_, index) => (
-                    <motion.div
-                      key={index}
-                      className={`news-dot ${index === activeNewsIndex ? 'active' : ''}`}
-                      onClick={() => setActiveNewsIndex(index)}
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.9 }}
-                    />
-                  ))}
+            <Lens zoomFactor={1.2} lensSize={200}>
+              <div className="news-highlight-container">
+                <div className="news-title">
+                  <h2>{t('news.title')}</h2>
                 </div>
-              </motion.div>
-            </div>
+                <motion.div className="news-content">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeNewsIndex}
+                      className="news-item"
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 50 : 0 }}
+                      exit={{ opacity: 0, y: -50 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <motion.img
+                        src={newsItems[activeNewsIndex].image}
+                        alt={newsItems[activeNewsIndex].title}
+                        className="news-image cursor-pointer"
+                        initial={{ scale: 0.9 }}
+                        animate={{ scale: isLoading ? 0.9 : 1 }}
+                        onClick={() => showModal(newsItems[activeNewsIndex])}
+                        transition={{ duration: 0.5 }}
+                      />
+                      <div className="news-text">
+                        <motion.h3
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: isLoading ? 0 : 1, x: isLoading ? -20 : 0 }}
+                          transition={{ delay: 0.2 }}
+                        >
+                          {newsItems[activeNewsIndex].title}
+                        </motion.h3>
+                        <motion.p
+                          className="news-description"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: isLoading ? 0 : 1, x: isLoading ? -20 : 0 }}
+                          transition={{ delay: 0.3 }}
+                        >
+                          {(newsItems[activeNewsIndex].description).slice(0, 300) + '...'}
+                        </motion.p>
+                        <motion.div
+                          className="news-meta"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: isLoading ? 0 : 1 }}
+                          transition={{ delay: 0.4 }}
+                        >
+                          <span className="news-date">{newsItems[activeNewsIndex].date}</span>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                  <div className="news-dots">
+                    {newsItems.map((_, index) => (
+                      <motion.div
+                        key={index}
+                        className={`news-dot ${index === activeNewsIndex ? 'active' : ''}`}
+                        onClick={() => setActiveNewsIndex(index)}
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </Lens>
           </Section>
           {/* <NewsHighlightSection isLoading={isLoading} /> */}
+          {/* <Pointer /> */}
 
           {/* Services Section */}
           <Section className="services-section" id="services">
-            <div className="section-content">
+            <div className="services-content">
               <div className="services-header">
                 <div className="model-container main-model">
                   <ServiceModelCanvas isMain={true} />
                 </div>
               </div>
               <div className="services-grid">
-                <div className="service-card">
-                  <h3>{t('services.digitalTransformation.title')}</h3>
-                  <p>{t('services.digitalTransformation.description')}</p>
-                </div>
-                <div className="service-card">
-                  <h3>{t('services.softwareDevelopment.title')}</h3>
-                  <p>{t('services.softwareDevelopment.description')}</p>
-                </div>
-                <div className="service-card">
-                  <h3>{t('services.security.title')}</h3>
-                  <p>{t('services.security.description')}</p>
-                </div>
+                {services.map((service, index) => (
+                  <Lens key={index} zoomFactor={1.2} lensSize={200}>
+                    <div className="service-card">
+                      <div className="service-icon">{service.icon}</div>
+                      <h3>{service.title}</h3>
+                      <p>{service.description}</p>
+                    </div>
+                  </Lens>
+                ))}
               </div>
             </div>
           </Section>
+          <Pointer>
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="transform rotate-[-5deg]"
+            >
+              <circle cx="11" cy="11" r="7" stroke="#FF6D00" strokeWidth="2" />
+              <path
+                d="M20 20L16 16"
+                stroke="#FF6D00"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </Pointer>
 
           {/* Clients Section */}
           <ClientsSection />
