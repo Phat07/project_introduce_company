@@ -954,7 +954,21 @@
     }
   },
   "news": {
-    "title": "NEWS",
+    "title": "News & Events",
+    "all": "All News",
+    "press": "Press Releases",
+    "events": "Events",
+    "readMore": "Read More",
+    "latestNews": "Latest News",
+    "featured": "Featured News",
+    "relatedNews": "Related News",
+    "publishedOn": "Published on",
+    "categories": {
+      "technology": "Technology",
+      "business": "Business",
+      "events": "Events",
+      "press": "Press"
+    },
     "items": [
       {
         "image": "/images/news/new.png",

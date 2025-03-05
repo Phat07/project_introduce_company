@@ -83,7 +83,7 @@ const Footer = () => {
   };
 
   const mapContainerStyle = {
-    width: '70%',
+    width: isMobile ? '90%' : '70%',
     height: isMobile ? '250px' : '400px',
     marginBottom: '2rem'
   };
