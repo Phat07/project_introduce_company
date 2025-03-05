@@ -142,7 +142,9 @@
     "callUs": "致电我们",
     "emailUs": "发送邮件",
     "loading": "加载中...",
-    "similarSolutions": "相似解决方案"
+    "similarSolutions": "相似解决方案",
+    "updated": "最近更新",
+    "users": "用户数"
   },
   "solutions": {
     "title": "解决方案",

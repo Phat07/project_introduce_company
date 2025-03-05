@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import './Footer.css';
+import { GoogleMap, LoadScript, MarkerF, InfoWindowF } from '@react-google-maps/api';
+import logo from '../../assets/logo.png';
 
 const Footer = () => {
   const { t } = useTranslation();
-  
+  const [isInfoWindowOpen, setIsInfoWindowOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+    
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
   const locations = [
     {
       title: t('footer.locations.headquarters'),
@@ -57,8 +72,8 @@ const Footer = () => {
 
   const childVariants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.3,
@@ -67,16 +82,41 @@ const Footer = () => {
     }
   };
 
+  const mapContainerStyle = {
+    width: '70%',
+    height: isMobile ? '250px' : '400px',
+    marginBottom: '2rem'
+  };
+
+  const center = {
+    lat: 10.801042,
+    lng: 106.591651
+  };
+
+  const options = {
+    mapTypeControl: false,
+    streetViewControl: true,
+    fullscreenControl: true,
+    zoomControl: true,
+    styles: [
+      {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [{ visibility: "on" }],
+      },
+    ],
+  };
+
   return (
     <footer className="footer">
-      <motion.div 
+      <motion.div
         className="footer-content"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={footerVariants}
       >
-        <motion.div 
+        <motion.div
           className="footer-section company-info"
           variants={childVariants}
         >
@@ -91,7 +131,7 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="footer-section locations"
           variants={childVariants}
         >
@@ -106,7 +146,7 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="footer-section bank-info"
           variants={childVariants}
         >
@@ -119,8 +159,49 @@ const Footer = () => {
           </div>
         </motion.div>
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
+        className="map-container center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <LoadScript googleMapsApiKey={import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY}>
+          <GoogleMap
+            mapContainerStyle={mapContainerStyle}
+            center={center}
+            zoom={15}
+            options={options}
+          >
+            <MarkerF
+              position={center}
+              onClick={() => setIsInfoWindowOpen(true)}
+            />
+            {isInfoWindowOpen && (
+              <InfoWindowF
+                position={center}
+                onCloseClick={() => setIsInfoWindowOpen(false)}
+              >
+                <div className="info-window">
+                  <div className="info-window-header">
+                    <img src={logo} alt="Company Logo" className="info-window-logo" />
+                    {/* <h3>Thanh Cong Solutions Company</h3> */}
+                  </div>
+                  <p>73 đường 2A, BÌNH HUNG HÒA B, Quận Bình Tân, TP.HCM</p>
+                  <div className="info-window-actions">
+                    <a href="https://www.google.com/maps/dir//10.801042,106.591651" target="_blank" rel="noopener noreferrer">
+                      Chỉ đường
+                    </a>
+                  </div>
+                </div>
+              </InfoWindowF>
+            )}
+          </GoogleMap>
+        </LoadScript>
+      </motion.div>
+
+      <motion.div
         className="footer-bottom"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

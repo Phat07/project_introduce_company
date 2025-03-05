@@ -86,7 +86,20 @@
       "email": "Email",
       "message": "Message",
       "submit": "Send Message"
-    }
+    },
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "content": "Message",
+    "send": "Send",
+    "nameRequired": "Please enter your name",
+    "emailRequired": "Please enter your email",
+    "emailInvalid": "Invalid email format",
+    "phoneRequired": "Please enter your phone number",
+    "phoneInvalid": "Invalid phone number",
+    "contentRequired": "Please enter your message",
+    "sendSuccess": "Message sent successfully",
+    "sendError": "Error sending message, please try again"
   },
   "partners": {
     "title": "Featured Partners"
@@ -131,7 +144,7 @@
       "bank_label": "Bank",
       "bank_name": "Asia Commercial Bank (ACB) - Go May Branch"
     },
-    "copyright": "© 2021 - 2025 Thanh Cong Solutions. All rights reserved."
+    "copyright": " 2021 - 2025 Thanh Cong Solutions. All rights reserved."
   },
   "common": {
     "back": "Back",
@@ -142,7 +155,9 @@
     "callUs": "Call Us",
     "emailUs": "Email Us",
     "loading": "Loading...",
-    "similarSolutions": "Similar Solutions"
+    "similarSolutions": "Similar Solutions",
+    "updated": "Updated",
+    "users": "Users"
   },
   "solutions": {
     "title": "Solutions",

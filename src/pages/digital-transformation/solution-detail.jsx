@@ -27,6 +27,7 @@ import {
 import LoadingScreen from '../../components/ui/loading-screen';
 import DynamicImage from '../../components/ui/dynamic-image';
 import Lens from '../../components/ui/lens';
+import ContactForm from '../../components/contact/ContactForm';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -342,10 +343,10 @@ const SolutionDetail = () => {
   const solutionData = t(`solutions.items.${solutionKey}`, { returnObjects: true });
   // Dữ liệu bổ sung giả lập (có thể lấy từ translation hoặc API)
   const additionalInfo = {
-    updatedDate: t('solution.updated', { date: '28/02/2025' }), // Ngày cập nhật (dịch từ translation)
+    updatedDate: t('common.updated', { date: '28/02/2025' }), // Ngày cập nhật (dịch từ translation)
     category: t(`solutions.categories.${solutionData.category}`), // Danh mục
-    users: t('solution.users', { count: 1000000 }), // Số lượng người dùng (giả lập)
-    contactEmail: 'support@thanhcongsolutions.com', // Email liên hệ
+    users: t('common.users', { count: 1000000 }), // Số lượng người dùng (giả lập)
+    contactEmail: 'phongkd@thanhcongsolutions.com', // Email liên hệ
   };
   const similarSolutions = Object.entries(t('solutions.items', { returnObjects: true }))
     .filter(([key, data]) => key !== solutionKey && data.category === solutionData.category)
@@ -424,7 +425,7 @@ const SolutionDetail = () => {
                 </Breadcrumb.Item>
               </Breadcrumb>
 
-              <motion.div
+              {/* <motion.div
                 className="mt-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -437,7 +438,7 @@ const SolutionDetail = () => {
                 >
                   {t('common.back')}
                 </Button>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
 
             {/* Info Bar (ngang bên phải) */}
@@ -874,11 +875,11 @@ const SolutionDetail = () => {
                       </Button>
                     </motion.div>
 
-                    <motion.div whileHover={{ scale: 1.02 }}>
+                    {/* <motion.div whileHover={{ scale: 1.02 }}>
                       <Button icon={<MailOutlined />} size="large" block>
                         {t('common.emailUs')}
                       </Button>
-                    </motion.div>
+                    </motion.div> */}
 
                     <Divider />
 
@@ -887,7 +888,8 @@ const SolutionDetail = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
                     >
-                      <h4 className="font-medium mb-2">{t('common.more_info')}</h4>
+                      <ContactForm />
+                      {/* <h4 className="font-medium mb-2">{t('common.more_info')}</h4>
                       <ul className="list-disc list-inside space-y-2 text-gray-600">
                         <motion.li
                           initial={{ opacity: 0, x: -20 }}
@@ -910,7 +912,7 @@ const SolutionDetail = () => {
                         >
                           {t('common.quick_deployment')}
                         </motion.li>
-                      </ul>
+                      </ul> */}
                     </motion.div>
                   </div>
                 </Card>

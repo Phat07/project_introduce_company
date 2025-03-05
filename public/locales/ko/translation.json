@@ -119,7 +119,9 @@
     "callUs": "전화하기",
     "emailUs": "이메일 보내기",
     "loading": "로딩 중...",
-    "similarSolutions": "상품 연관"
+    "similarSolutions": "상품 연관",
+    "updated": "최신 수정",
+    "users": "사용자 수"
   },
   "solutions": {
     "title": "솔루션",

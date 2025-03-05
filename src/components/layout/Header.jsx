@@ -23,10 +23,10 @@ const Header = () => {
       key: 'intro',
       label: t('header.intro'),
       className: 'text-black',
-      children: [
-        { key: 'about', label: t('header.about') },
-        { key: 'vision', label: t('header.vision') },
-      ],
+      // children: [
+      //   { key: 'about', label: t('header.about') },
+      //   { key: 'vision', label: t('header.vision') },
+      // ],
     },
     {
       key: 'digital-transformation',

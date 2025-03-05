@@ -9,11 +9,13 @@ import DigitalSpacePage from './pages/digital-space';
 import NewsPage from './pages/news';
 import RecruitmentPage from './pages/recruitment';
 import SupportPage from './pages/support';
+import IntroPage from './pages/intro/intro';
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/intro" element={<IntroPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/vision" element={<VisionPage />} />
       <Route path="/consulting" element={<ConsultingPage />} />

@@ -86,7 +86,10 @@
       "email": "Email",
       "message": "Tin nhắn",
       "submit": "Gửi tin nhắn"
-    }
+    },
+    "content": "Nội dung",
+    "name": "Tên của bạn",
+    "send": "Gửi email"
   },
   "partners": {
     "title": "Đối tác tiêu biểu"
@@ -104,7 +107,9 @@
     "emailUs": "Gửi email",
     "loading": "Đang tải...",
     "similarSolutions": "Sản phẩm liên quan",
-    "hotline": "Hotline"
+    "hotline": "Hotline",
+    "updated": "Ngày cập nhật",
+    "users": "Số lượng người dùng"
   },
   "welcome": "Xin chào",
   "language": "Ngôn ngữ",

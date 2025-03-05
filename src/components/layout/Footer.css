@@ -46,8 +46,8 @@
 }
 
 .company-info h4 {
-  color: #fff;
-  font-size: 1.1rem;
+  color: #FF6D00;
+  font-size: 0.9rem;
   margin-bottom: 10px;
 }
 
@@ -60,7 +60,8 @@
 .contact-info p {
   margin: 8px 0;
   color: #ccc;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .locations-grid {
@@ -106,7 +107,7 @@
 .bank-details p {
   margin: 8px 0;
   color: #ccc;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .footer-bottom {
@@ -119,6 +120,77 @@
 .footer-bottom p {
   color: #999;
   font-size: 0.85rem;
+}
+
+/* Map styles */
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+}
+
+.info-window {
+  padding: 8px;
+  max-width: 300px;
+}
+
+.info-window-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.info-window-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.info-window h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #FF6D00;
+}
+
+.info-window p {
+  font-size: 14px;
+  margin: 0 0 8px;
+  color: #ccc;
+}
+
+.info-window-actions {
+  margin-top: 12px;
+}
+
+.info-window-actions a {
+  display: inline-block;
+  color: #FF6D00;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.info-window-actions a:hover {
+  color: #ff8533;
+  text-decoration: underline;
+}
+
+/* Hover effects */
+.contact-info p strong,
+.bank-details p strong {
+  color: #FF6D00;
+}
+
+.contact-info a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+  color: #FF6D00;
 }
 
 @media (max-width: 1024px) {
@@ -147,20 +219,30 @@
   .footer {
     padding: 40px 0 20px;
   }
-}
 
-/* Hover effects */
-.contact-info p strong,
-.bank-details p strong {
-  color: #FF6D00;
-}
+  .map-container {
+    margin: 20px auto;
+    width: 90% !important;
+  }
 
-.contact-info a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
+  .info-window {
+    padding: 6px;
+  }
 
-.contact-info a:hover {
-  color: #FF6D00;
+  .info-window-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .info-window h3 {
+    font-size: 14px;
+  }
+
+  .info-window p {
+    font-size: 12px;
+  }
+
+  .info-window-actions a {
+    font-size: 12px;
+  }
 }
