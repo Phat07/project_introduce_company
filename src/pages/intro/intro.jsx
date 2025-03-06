@@ -93,7 +93,7 @@ const IntroPage = () => {
         </div>
 
         <div className="w-full flex justify-center items-center mb-16">
-          <div className="w-[850px] aspect-[2/1] bg-white rounded-lg shadow-lg p-8">
+          <div className="w-[850px] aspect-[2/1] bg-[#FFFFFF] p-8">
             <SimpleGlobe />
           </div>
         </div>

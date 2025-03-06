@@ -10,6 +10,7 @@ import NewsPage from './pages/news';
 import RecruitmentPage from './pages/recruitment';
 import SupportPage from './pages/support';
 import IntroPage from './pages/intro/intro';
+import NewsDetails from './pages/news/details';
 
 const AppRoutes = () => {
   return (
@@ -23,6 +24,7 @@ const AppRoutes = () => {
       <Route path="/solutions/:id" element={<SolutionDetail />} />
       <Route path="/digital-space" element={<DigitalSpacePage />} />
       <Route path="/news" element={<NewsPage />} />
+      <Route path="/news/:id" element={<NewsDetails />} />
       <Route path="/recruitment" element={<RecruitmentPage />} />
       <Route path="/support" element={<SupportPage />} />
     </Routes>

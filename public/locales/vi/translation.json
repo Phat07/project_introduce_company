@@ -172,7 +172,7 @@
         "title": "GIẢI PHÁP TỔNG ĐÀI CLOUD",
         "category": "telecom",
         "image": "/images/solutions/tongdai.jpg",
-        "description": "Tổng đài ảo là một thuật ngữ không còn lạ ở thời đại công nghệ 4.0, với các nền tảng công nghệ VoIP, AI, Big Data, IoT,… đã góp phần thúc đẩy phát triển sự tiên tiến trong lĩnh vực voice (thoại) nói chung và customer service (chăm sóc khách hàng) nói riêng, giúp giảm chi phí triển khai và chi phí thoại hơn 80%, giảm tối đa thời gian chăm sóc. Tổng đài ảo là dịch vụ điện thoại sử dụng internet trên nền mạng IP thay vì sử dụng đường dây điện. Điều đặc biệt hơn là tổng đài ảo cloud được sử dụng trên nền tảng đám mây nên đầu kết nối là IP(địa chỉ mạng) giúp việc lắp đặt rất đơn giản là chỉ cần có Internet và cần trang bị các thiết bị như điện thoại IP Phone, máy tính hoặc laptop(có thể gọi trên website, hay cài ứng dụng softphone), điện thoại Smartphone(cài app trên điện thoại),… và chỉ cần có internet là có thể truy cập tổng đài mọi lúc mọi nơi.",
+        "description": "Tổng đài ảo là một thuật ngữ không còn lạ ở thởi đại công nghệ 4.0, với các nền tảng công nghệ VoIP, AI, Big Data, IoT,… đã góp phần thúc đẩy phát triển sự tiên tiến trong lĩnh vực voice (thoại) nói chung và customer service (chăm sóc khách hàng) nói riêng, giúp giảm chi phí triển khai và chi phí thoại hơn 80%, giảm tối đa thởi gian chăm sóc. Tổng đài ảo là dịch vụ điện thoại sử dụng internet trên nền mạng IP thay vì sử dụng đường dây điện. Điều đặc biệt hơn là tổng đài ảo cloud được sử dụng trên nền tảng đám mây nên đầu kết nối là IP(địa chỉ mạng) giúp việc lắp đặt rất đơn giản là chỉ cần có Internet và cần trang bị các thiết bị như điện thoại IP Phone, máy tính hoặc laptop(có thể gọi trên website, hay cài ứng dụng softphone), điện thoại Smartphone(cài app trên điện thoại),… và chỉ cần có internet là có thể truy cập tổng đài mọi lúc mọi nơi.",
         "features": [
           "Sử dụng trên nền internet",
           "Số lượng user lớn, mở rộng linh hoạt",
@@ -189,7 +189,7 @@
           "Chặn cuộc gọi phá rối (blacklist)",
           "Giới hạn hướng gọi. (Nội bộ, nội hạt, liên tỉnh, di động, quốc tế…)",
           "Đổ chuông theo nhóm (Ringgroup), Queues (hàng đợi).",
-          "Định tuyến cuộc gọi theo thời gian",
+          "Định tuyến cuộc gọi theo thởi gian",
           "Định tuyến cuộc gọi cho KH VIP (có thể chuyển cuộc gọi những KH này trực tiếp đến người phụ trách mà không phải chờ đợi)",
           "Kết nối nhiều văn phòng, chi nhánh, chuỗi cửa hàng",
           "Hộp thư thoại Voicemail (để lại lời nhắn sau tiếng bíp)",
@@ -197,21 +197,21 @@
           "Ghi âm cuộc gọi (vào, ra, nội bộ)",
           "Thời gian ghi âm (cam kết 03 tháng - có thể mở rộng theo nhu cầu khách hàng)",
           "Tài khoản quản lý cuộc gọi trên web",
-          "Hỗ trợ tìm kiếm theo số điện thoại, số line, thời gian cuộc gọi vào ra…",
+          "Hỗ trợ tìm kiếm theo số điện thoại, số line, thởi gian cuộc gọi vào ra…",
           "Nghe trực tiếp file ghi âm từ trình duyệt web"
         ],
         "benefits": [
           "Không phải đầu tư, vận hành hệ thống tổng đài.",
           "Toàn bộ hệ thống tổng đài được Viettel vận hành một cách chuyên nghiệp và bảo mật cao.",
           "Dễ dàng trong việc mở rộng máy nhánh.",
-          "Triển khai nhanh chóng, tiết kiệm thời gian.",
+          "Triển khai nhanh chóng, tiết kiệm thởi gian.",
           "Chi phí thấp, cước gọi siêu tiết kiệm.",
           "Không bị giới hạn vùng địa lý.",
           "Chất lượng cuộc gọi cao, ổn định.",
           "Không bị giới hạn cuộc gọi.",
           "Dễ dàng mở rộng năng lực.",
           "Kết nối cuộc gọi tại bất kỳ đâu từ Smartphone, Tablet.",
-          "Không cần cấu hình phức tạp, thời gian triển khai nhanh."
+          "Không cần cấu hình phức tạp, thởi gian triển khai nhanh."
         ],
         "pricing": [
           {
@@ -248,14 +248,14 @@
         "title": "Kênh thuê riêng",
         "category": "telecom",
         "image": "/images/solutions/kenhthue.png",
-        "description": "Dịch vụ Kênh thuê riêng là dịch vụ cung cấp đường kết nối vật lý dành riêng cho khách hàng sử dụng cáp quang để truyền thông tin giữa các điểm cố định trong nước theo phương thức kết nối điểm – điểm. Khách hàng sẽ không bị chia sẻ băng thông tại mọi thời điểm.",
+        "description": "Dịch vụ Kênh thuê riêng là dịch vụ cung cấp đường kết nối vật lý dành riêng cho khách hàng sử dụng cáp quang để truyền thông tin giữa các điểm cố định trong nước theo phương thức kết nối điểm – điểm. Khách hàng sẽ không bị chia sẻ băng thông tại mọi thởi điểm.",
         "features": [
           "Mô hình kết nối: Kết nối điểm - điểm hoặc điểm - đa điểm",
           "Hạ tầng kết nối: Dịch vụ kênh thuê riêng triển khai trên hạ tầng SDH"
         ],
         "advantage": [
           "TÙY BIẾN THEO NHU CẦU: Khách hàng có thể thuê kênh với tốc độ thấp nhất từ 64Kb/s tới không giới hạn với các giao tiếp mạng chuẩn.",
-          "HỖ TRỢ VÀ XỬ LÝ SỰ CỐ NHANH: Thời gian tiếp nhận sự cố <0.5h, thời gian xử lý sự cố 2h-6h, thời gian hỗ trợ 24/7/365.",
+          "HỖ TRỢ VÀ XỬ LÝ SỰ CỐ NHANH: Thời gian tiếp nhận sự cố <0.5h, thởi gian xử lý sự cố 2h-6h, thởi gian hỗ trợ 24/7/365.",
           "CHẤT LƯỢNG TỐT NHẤT: Với mạng lưới cáp quang phủ khắp tất cả các huyện trên toàn quốc với cấu trúc đảm bảo tính dự phòng cao, các khách hàng sử dụng kênh thuê riêng trong nước hoặc quốc tế sẽ được đảm bảo chất lượng và mức độ dự phòng tốt nhất.",
           "ĐỘ ỔN ĐỊNH CAO NHẤT: Do triển khai trên mạng lưới viễn thông quốc tế hiện đại, được bố trí dự phòng ở mức cao nhất. Độ khả dụng dịch vụ đạt 99.99%, cam kết tỉ lệ lỗi là nhỏ nhất 10⁻⁴%.",
           "ĐỘ LINH HOẠT: Dễ dàng nâng cấp dung lượng/tốc độ, cung cấp nhiều loại giao tiếp khác nhau: FE, V.35, G.703, BNC, LC…",
@@ -278,7 +278,7 @@
         ],
         "advantage": [
           "TIẾT KIỆM CHI PHÍ: Dịch vụ Metrowan giúp khách hàng thiết lập mạng riêng với chi phí thấp do chỉ tạo kết nối ảo. Tất cả các điểm có thể liên hệ trực tiếp với nhau với chỉ một kết nối vật lý duy nhất tại mỗi địa điểm",
-          "TÍNH LINH HOẠT: Sử dụng dịch vụ này khách hàng dễ dàng mở rộng mô hình, tăng thêm điểm kết nối, tăng băng thông, tốc độ trong thời gian sử dụng mà không cần phải thay đổi mô hình hay kiến trúc mạng",
+          "TÍNH LINH HOẠT: Sử dụng dịch vụ này khách hàng dễ dàng mở rộng mô hình, tăng thêm điểm kết nối, tăng băng thông, tốc độ trong thởi gian sử dụng mà không cần phải thay đổi mô hình hay kiến trúc mạng",
           "TÍNH BẢO MẬT CAO: Kết nối giữa các điểm được mã hóa, gán nhãn và thiết lập đường hầm (tunnel) riêng trên hệ thống mạng lõi của Viettel."
         ]
       },
@@ -296,7 +296,7 @@
         ],
         "advantage": [
           "TIẾT KIỆM CHI PHÍ: Dịch vụ Office Wan giúp khách hàng thiết lập mạng riêng với chi phí thấp do chỉ tạo kết nối ảo. Tất cả các điểm có thể liên hệ trực tiếp với nhau với chỉ một kết nối vật lý duy nhất tại mỗi địa điểm.",
-          "TÍNH LINH HOẠT: Sử dụng dịch vụ này khách hàng dễ dàng mở rộng mô hình, tăng thêm điểm kết nối, tăng băng thông, tốc độ trong thời gian sử dụng mà không cần phải thay đổi mô hình hay kiến trúc mạng.",
+          "TÍNH LINH HOẠT: Sử dụng dịch vụ này khách hàng dễ dàng mở rộng mô hình, tăng thêm điểm kết nối, tăng băng thông, tốc độ trong thởi gian sử dụng mà không cần phải thay đổi mô hình hay kiến trúc mạng.",
           "TÍNH BẢO MẬT CAO: Kết nối giữa các điểm được mã hóa, gán nhãn và thiết lập đường hầm (tunnel) riêng trên hệ thống mạng lõi của Viettel."
         ]
       },
@@ -305,7 +305,7 @@
         "title": "GIẢI PHÁP HỘI NGHỊ TRUYỀN HÌNH",
         "category": "telecom",
         "image": "/images/solutions/hnth.jpg",
-        "description": "Hội nghị truyền hình (HNTH) là dịch vụ truyền tải âm thanh, hình ảnh, chia sẻ dữ liệu, nội dung giữa 2 hay nhiều địa điểm từ xa qua đường truyền mạng, giúp các điểm cùng đồng thời liên lạc hai chiều như đang trong cùng một phòng họp. Dịch vụ HNTH thường được sử dụng để kết nối cho các cuộc họp, thảo luận, đào tạo trực tuyến,… giữa các điểm với nhau.",
+        "description": "Hội nghị truyền hình (HNTH) là dịch vụ truyền tải âm thanh, hình ảnh, chia sẻ dữ liệu, nội dung giữa 2 hay nhiều địa điểm từ xa qua đường truyền mạng, giúp các điểm cùng đồng thởi liên lạc hai chiều như đang trong cùng một phòng họp. Dịch vụ HNTH thường được sử dụng để kết nối cho các cuộc họp, thảo luận, đào tạo trực tuyến,… giữa các điểm với nhau.",
         "features": [
           "TỔ CHỨC HỌP:\n- Tổ chức họp vào bất kỳ thởi gian nào.\n- Hình ảnh sắc nét đạt chuẩn HD/FullHD",
           "CHẤT LƯỢNG:\n- Âm thanh đa hướng, trung thực.",
@@ -510,7 +510,7 @@
         "image": "/images/solutions/quantrivanhanh.jpg",
         "description": "Dịch vụ quản trị (Managed Service) là dịch vụ quản trị, điều hành hệ thống máy chủ doanh nghiệp đồng thởi hỗ trợ người sử dụng trong việc sử dụng máy tính hàng ngày",
         "features": [
-          "HỆ THỐNG GIÁM SÁT: Các thiết bị, máy chủ được giám sát 24/24 bằng cách thiết lập quy trình tự động SMS, cảnh báo màu, tiếng động đến các kỹ sư chuyên trách của Viettel Solutions để can thiệp ngay lập tức nếu có sự cố. Viettel Solutions cũng sẽ gửi báo cáo thống kê mức sử dụng tài nguyên đến khách hàng, đề xuất tinh chỉnh tối ưu hóa khi cần thiết.",
+          "HỆ THỐNG GIÁM SÁT: Các thiết bị, máy chủ được giám sát 24/24 bằng cách thiết lập quy trình tự động SMS, cảnh báo màu, tiếng động đến các kỹ sư chuyên trách của Viettel để can thiệp ngay lập tức nếu có sự cố. Viettel Solutions cũng sẽ gửi báo cáo thống kê mức sử dụng tài nguyên đến khách hàng, đề xuất tinh chỉnh tối ưu hóa khi cần thiết.",
           "CẬP NHẬT HỆ THỐNG ĐỊNH KỲ: Kiểm tra và cập nhật các bản vá lỗi định kỳ, cập nhật hệ điều hành và phiên bản mới của các phần mềm dịch vụ, phát hiện và xử lý ngay lập tức các trường hợp thiết bị, máy chủ bị quá tải, lỗi phần cứng, dịch vụ bị treo, lỗi hệ thống,...",
           "XỬ LÝ LỖ HỔNG BẢO MẬT: Viettel Solutions sẽ tích hợp trong hệ thống quản trị công cụ tự động kiểm tra các lỗi bảo mật có khả năng phân tích mức độ bảo mật của mã nguồn sử dụng, phân tích các phương thức khi có dấu hiệu bị tấn công phá hoại, từ đó Viettel Solutions sẽ chủ động triển khai các biện pháp phòng chống thích hợp kịp thởi.",
           "HỖ TRỢ CÁC VẤN ĐỀ LIÊN QUAN ĐẾN THIẾT BỊ, MÁY CHỦ: Ngoài quản trị hệ thống, Viettel Solutions sẽ hỗ trợ khách hàng một số vấn đề liên quan như xác định cấu hình máy chủ nhằm đáp ứng yêu cầu của mã nguồn Website, xác định nguyên nhân lỗi truy cập của Website trên máy chủ, phân tích hiệu năng và tư vấn, đề xuất các cấu hình thiết bị, máy chủ phù hợp với nhu cầu của khách hàng."
@@ -626,7 +626,7 @@
         "advantage": [
           "GIÁM SÁT ĐA NGUỒN: Thu thập dữ liệu theo từ khóa hoặc nguồn tin. Dễ dàng theo dõi thông tin đến từ hơn 100 triệu nguồn tin mỗi ngày bao gồm mạng xã hội Facebook, Youtube, Báo chí và Trang tin điện tử, Forums và các website khác.",
           "THẤU HIỂU KHÁCH HÀNG: Phân tích đa chiều dữ liệu mạng xã hội liên quan đến thông tin sản phẩm, thương hiệu, hành vi người dùng. Cung cấp các biểu đồ thống kê trực quan dựa trên các chỉ số đánh giá hiệu quả hoạt động truyền thông, marketing và khắc họa chân dung khách hàng.",
-          "CẢNH BÁO LINH HOẠT: Hệ thống cảnh báo được tùy chỉnh linh hoạt theo nhu cầu. Khách hàng dễ dàng tiếp nhận thông tin cảnh báo tức thởi thông qua hệ thống Mobile App, Web, Email... Hệ thống báo cáo tự động giúp khách hàng giám sát hoạt động hiệu quả, tiết kiệm thởi gian."
+          "CẢNH BÁO LINH HOẠT: Hệ thống cảnh báo được tùy chỉnh linh hoạt theo nhu cầu. Khách hàng dễ dàng tiếp nhận thông tin cảnh báo tức thời thông qua hệ thống Mobile App, Web, Email... Hệ thống báo cáo tự động giúp khách hàng giám sát hoạt động hiệu quả, tiết kiệm thởi gian."
         ],
         "benefits": [
           "ĐỐI VỚI DOANH NGHIỆP:\n\n - Theo dõi thông tin nói về doanh nghiệp trên báo chí và mạng xã hội, từ đó phát hiện nhanh những thông tin bất lợi để đưa ra những giải pháp xử lý phù hợp, tránh khủng hoảng truyền thông ảnh hưởng xấu tới hình ảnh doanh nghiệp.\n - Có thể theo dõi thông tin về các đối thủ, từ đó đưa ra phương hướng kinh doanh phù hợp với các sản phẩm dịch vụ đối thủ cung cấp.\n - Chủ động chăm sóc những khách hàng phàn nàn về dịch vụ của doanh nghiệp cung cấp, từ đó tăng độ hài lòng và đem lại giá trị lớn hơn cho doanh nghiệp.",
@@ -945,6 +945,21 @@
   },
   "news": {
     "title": "TIN NỔI BẬT",
+    "mostViewed": "TIN XEM NHIỀU NHẤT",
+    "tabs": {
+      "viettelDX": "ViettelDX Talks",
+      "press": "Thông cáo báo chí",
+      "events": "Tin tức - Sự kiện"
+    },
+    "categories": {
+      "all": "Tất cả",
+      "company": "Tin công ty",
+      "technology": "Tin công nghệ",
+      "social": "Tin xã hội",
+      "charity": "Hoạt động từ thiện"
+    },
+    "loadMore": "Tải thêm",
+    "readMore": "Xem thêm",
     "items": [
       {
         "id": 1,
@@ -958,7 +973,7 @@
         "image": "/images/news/ver1.jpg",
         "title": "Mạng 5G Viettel có hơn 5,5 triệu người dùng",
         "description": "Ngày 28/2, Viettel Telecom công bố đạt 5,5 triệu người dùng mạng 5G tính đến đầu tháng 2. Nhà mạng cho biết số lượng phân bố ở cả 63 tỉnh thành, nhưng tập trung chủ yếu ở Hà Nội và TP HCM với 2,4 triệu, chiếm hơn 40% tổng số người dùng cả nước. Ba địa phương còn lại trong top 5 là Đà Nẵng, Bình Dương và Cần Thơ.",
-        "date": "Thứ bảy, 1/3/2025, 06:15 (GMT+7)"
+        "date": "Thứ sáu, 1/3/2025, 06:15 (GMT+7)"
       },
       {
         "id": 3,
@@ -1012,6 +1027,55 @@
         "description": "Ngay sau khi công bố trên trang chia sẻ công nghệ của NVIDIA, bộ dữ liệu mở dành riêng cho Tiếng Việt đã được cung cấp miễn phí cho cộng đồng nghiên cứu phát triển AI tại Việt Nam. Đây là bộ dữ liệu Tiếng Việt chất lượng cao, quy mô lớn, tạo nền tảng cho sự phát triển mạnh mẽ hơn nữa của các mô hình ngôn ngữ lớn (Large Language Models – LLM) Tiếng Việt.",
         "date": "Thứ sáu, 21/12/2024 - 15:12 (GMT + 7)",
         "type": "compact"
+      },
+      {
+        "id": 10,
+        "category": "viettelDX",
+        "image": "/images/news/viettelDX1.jpg",
+        "title": "VIETTELDX TALKS #7 - 'AI trong Y tế: Hiện tại và Tương lai'",
+        "description": "Trí tuệ nhân tạo đang mang lại những đột phá trong lĩnh vực y tế, từ chẩn đoán bệnh đến hỗ trợ phẫu thuật và quản lý hồ sơ bệnh án.",
+        "date": "Thứ sáu, 20/12/2024 - 14:30 (GMT + 7)"
+      },
+      {
+        "id": 11,
+        "category": "press",
+        "image": "/images/news/press1.jpg",
+        "title": "Viettel công bố chiến lược chuyển đổi số giai đoạn 2025-2030",
+        "description": "Tập đoàn Viettel vừa công bố chiến lược chuyển đổi số toàn diện, với mục tiêu trở thành doanh nghiệp tiên phong trong cuộc Cách mạng công nghiệp 4.0 tại Việt Nam.",
+        "date": "Thứ ba, 24/12/2024 - 09:00 (GMT + 7)"
+      },
+      {
+        "id": 12,
+        "category": "press",
+        "image": "/images/news/press2.jpg",
+        "title": "Viettel đạt giải thưởng Chuyển đổi số Xuất sắc Châu Á 2024",
+        "description": "Với những thành tựu nổi bật trong lĩnh vực chuyển đổi số, Viettel đã được vinh danh tại giải thưởng Digital Transformation Asia Awards 2024.",
+        "date": "Thứ năm, 26/12/2024 - 15:45 (GMT + 7)"
+      },
+      {
+        "id": 13,
+        "category": "events",
+        "image": "/images/news/event1.jpg",
+        "title": "Viettel tổ chức Ngày hội Sáng tạo và Công nghệ 2025",
+        "description": "Sự kiện quy tụ hơn 1000 chuyên gia công nghệ, nhà nghiên cứu và sinh viên, trưng bày các sản phẩm công nghệ mới nhất của Viettel.",
+        "date": "Thứ bảy, 28/12/2024 - 08:30 (GMT + 7)"
+      },
+      {
+        "id": 14,
+        "category": "events",
+        "image": "/images/news/event2.jpg",
+        "title": "Viettel khởi động Chương trình Tăng tốc Khởi nghiệp 2025",
+        "description": "Chương trình nhằm tìm kiếm và hỗ trợ các startup công nghệ tiềm năng, với tổng giá trị giải thưởng lên đến 1 triệu USD.",
+        "date": "Chủ nhật, 29/12/2024 - 10:00 (GMT + 7)"
+      },
+      {
+        "id": 15,
+        "category": "events",
+        "type": "featured",
+        "image": "/images/news/featured1.jpg",
+        "title": "Viettel AI Summit 2025: Định hình tương lai với trí tuệ nhân tạo",
+        "description": "Hội nghị thường niên về AI lớn nhất của Viettel, với sự tham gia của các chuyên gia hàng đầu trong và ngoài nước.",
+        "date": "Thứ hai, 30/12/2024 - 09:00 (GMT + 7)"
       }
     ]
   },

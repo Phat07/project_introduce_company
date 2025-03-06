@@ -14,7 +14,7 @@ const FeaturedNewsCard = ({ image, title, date, description, link }) => {
       transition={{ type: "spring", stiffness: 300 }}
       className="mt-12 md:ml-12 md:mr-12"
     >
-      <Link to={link} className="block">
+      <Link to={`/news/${link}`} className="block">
         <Card className="w-full">
           <div className="flex flex-col md:flex-row md:items-center md:space-x-6">
             <div className="flex-1 order-2 md:order-1">

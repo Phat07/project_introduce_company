@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import FeaturedNewsCard from '../../components/news/FeaturedNewsCard';
 import CompactNewsCard from '../../components/news/CompactNewsCard';
 import NewsCard from '../../components/news/NewsCard';
@@ -13,19 +14,19 @@ const NewsPage = () => {
   const tabs = [
     { 
       id: 'viettelDX', 
-      label: 'ViettelDX Talks', 
+      label: t('news.tabs.viettelDX'), 
       color: 'text-red-600 border-red-600',
       category: 'viettelDX'
     },
     { 
       id: 'press', 
-      label: 'Thông cáo báo chí', 
+      label: t('news.tabs.press'), 
       color: 'text-red-600 border-red-600',
       category: 'press'
     },
     { 
       id: 'events', 
-      label: 'Tin tức - Sự kiện', 
+      label: t('news.tabs.events'), 
       color: 'text-red-600 border-red-600',
       category: 'events'
     },
@@ -41,7 +42,7 @@ const NewsPage = () => {
     };
 
     if (news.type === 'featured') {
-      return <FeaturedNewsCard key={news.title} {...newsProps} />;
+      return <FeaturedNewsCard key={news.title} {...newsProps} link={news.id}/>;
     }
     if (news.type === 'compact') {
       return <CompactNewsCard key={news.title} {...newsProps} />;
@@ -130,7 +131,7 @@ const NewsPage = () => {
         <div className="lg:w-1/3 mt-8 lg:mt-0">
           <div className="bg-white rounded-lg">
             <h2 className="text-lg font-bold p-4 border-b border-gray-200">
-              TIN XEM NHIỀU NHẤT
+              {t('news.mostViewed')}
             </h2>
             <div className="divide-y divide-gray-100">
               {regularNews.slice(0, 5).map(renderNewsCard)}
