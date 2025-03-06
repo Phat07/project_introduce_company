@@ -148,7 +148,7 @@
       "bank_label": "Ngân hàng",
       "bank_name": "Ngân hàng Á Châu ACB - CN Gò Mây"
     },
-    "copyright": "© 2021 - 2025 Thanh Cong Solutions. All rights reserved."
+    "copyright": " 2021 - 2025 Thanh Cong Solutions. All rights reserved."
   },
   "solutions": {
     "title": "Giải pháp",
@@ -307,7 +307,7 @@
         "image": "/images/solutions/hnth.jpg",
         "description": "Hội nghị truyền hình (HNTH) là dịch vụ truyền tải âm thanh, hình ảnh, chia sẻ dữ liệu, nội dung giữa 2 hay nhiều địa điểm từ xa qua đường truyền mạng, giúp các điểm cùng đồng thời liên lạc hai chiều như đang trong cùng một phòng họp. Dịch vụ HNTH thường được sử dụng để kết nối cho các cuộc họp, thảo luận, đào tạo trực tuyến,… giữa các điểm với nhau.",
         "features": [
-          "TỔ CHỨC HỌP:\n- Tổ chức họp vào bất kỳ thời gian nào.\n- Hình ảnh sắc nét đạt chuẩn HD/FullHD",
+          "TỔ CHỨC HỌP:\n- Tổ chức họp vào bất kỳ thởi gian nào.\n- Hình ảnh sắc nét đạt chuẩn HD/FullHD",
           "CHẤT LƯỢNG:\n- Âm thanh đa hướng, trung thực.",
           "TÍCH HỢP TÍNH NĂNG:\n- Tích hợp với hệ thống trang âm của Phòng họp.\n- Chia sẻ slide, dữ liệu trình chiếu dễ dàng.\n- Ghi lại nội dung cuộc họp.\n- Đơn giản trong sử dụng, vận hành"
         ],
@@ -316,7 +316,7 @@
           "KHẢ NĂNG CUNG CẤP: Có thể cung cấp các giải pháp của nhiều hãng cung cấp trên thế giới như: Polycom, Avaya - Radvision, Cisco, Aver, Cypresscom Veda,… để đáp ứng theo yêu cầu của khách hàng"
         ],
         "benefits": [
-          "GIẢM THỜI GIAN: Giảm thời gian, rủi ro di chuyển",
+          "GIẢM THỜI GIAN: Giảm thởi gian, rủi ro di chuyển",
           "TIẾT KIỆM CHI PHÍ: Tiết kiệm chi phí tổ chức",
           "THỰC HIỆN KẾT NỐI: Thực hiện kết nối được nhiều địa điểm khác nhau",
           "NHANH CHÓNG: Nhanh chóng tổ chức các cuộc họp;…"
@@ -351,12 +351,12 @@
           "MỞ RỘNG NĂNG LỰC: Dễ dàng mở rộng năng lực",
           "INTERNET: Tất cả chỉ cần 1 đường Internet",
           "KẾT NỐI CUỘC GỌI: Kết nối cuộc gọi tại bất kỳ đâu từ Smartphone, Tablet",
-          "TRIỂN KHAI NHANH: Không cần cấu hình phức tạp, thời gian triển khai nhanh."
+          "TRIỂN KHAI NHANH: Không cần cấu hình phức tạp, thởi gian triển khai nhanh."
         ],
         "benefits": [
           "VẬN HÀNH: Toàn bộ hệ thống tổng đài được Viettel vận hành một cách chuyên nghiệp và bảo mật cao.",
           "MỞ RỘNG: Dễ dàng trong việc mở rộng máy nhánh.",
-          "TIẾT KIỆM THỜI GIAN: Triển khai nhanh chóng, tiết kiệm thời gian."
+          "TIẾT KIỆM THỜI GIAN: Triển khai nhanh chóng, tiết kiệm thởi gian."
         ]
       },
       "e1": {
@@ -364,12 +364,12 @@
         "title": "DỊCH VỤ TRUNG KẾ SỐ (E1)",
         "category": "telecom",
         "image": "/images/solutions/e1.png",
-        "description": "Dịch vụ Trung kế số (E1) là dịch vụ cung cấp đường truyền kết nối giữa tổng đài của các đơn vị cung cấp dịch vụ viễn thông đến tổng đài nội bộ của khách hàng. Mỗi đường trung kế cho phép thiết lập 30 cuộc gọi đồng thời cùng lúc.",
+        "description": "Dịch vụ Trung kế số (E1) là dịch vụ cung cấp đường truyền kết nối giữa tổng đài của các đơn vị cung cấp dịch vụ viễn thông đến tổng đài nội bộ của khách hàng. Mỗi đường trung kế cho phép thiết lập 30 cuộc gọi đồng thởi cùng lúc.",
         "advantage": [
           "HẠ TẦNG: Triển khai trên hạ tầng cáp quang",
           "BĂNG THÔNG: Mỗi luồng trung kế E1 có băng thông 2Mbps",
           "SỐ THOẠI: Không giới hạn các số thoại khai trên 01 luồng Trung kế E1",
-          "KÊNH THOẠI: Thực hiện đồng thời 30 kênh thoại, mỗi kênh tốc độ 64 kbps (2048 kbps = 32 x 64 kbps) và 02 kênh báo hiệu.",
+          "KÊNH THOẠI: Thực hiện đồng thởi 30 kênh thoại, mỗi kênh tốc độ 64 kbps (2048 kbps = 32 x 64 kbps) và 02 kênh báo hiệu.",
           "TRIỂN KHAI: Điều kiện để triển khai dịch vụ: Tổng đài của khách hàng phải có cổng giao tiếp E1, sử dụng báo hiệu SS7 hoặc R2."
         ],
         "benefits": [
@@ -402,14 +402,14 @@
         "title": "DỊCH VỤ ĐẦU SỐ 1900",
         "category": "telecom",
         "image": "/images/solutions/1900.jpg",
-        "description": "Dịch vụ đầu số 1900 của Viettel là dịch vụ tổng đài chăm sóc khách hàng cho doanh nghiệp, cho phép tiếp nhận 1 hoặc nhiều cuộc gọi đến đồng thời thông qua một số điện thoại duy nhất trên toàn quốc mang đầu số 1900.",
+        "description": "Dịch vụ đầu số 1900 của Viettel là dịch vụ tổng đài chăm sóc khách hàng cho doanh nghiệp, cho phép tiếp nhận 1 hoặc nhiều cuộc gọi đến đồng thởi thông qua một số điện thoại duy nhất trên toàn quốc mang đầu số 1900.",
         "advantage": [
           "TÍNH PHÍ: Tính phí người gọi theo đơn giá cước của đầu số 1900.",
           "ĐIỀU KIỆN SỬ DỤNG: Khách hàng phải có sẵn một trong các loại dịch vụ của Viettel để tiếp nhận cuộc gọi của 1900 là: PSTN, IPPHONE, Trung kế E1, SIP Trunking, Di động hoặc Homephone."
         ],
         "benefits": [
           "LỢI ÍCH ĐỐI VỚI KHÁCH HÀNG THỰC HIỆN CUỘC GỌI/NHẮN TIN:\n\n - Có thể gọi tại bất kỳ nơi nào; Khách hàng gọi tới các chi nhánh của doanh nghiệp không cần phải sử dụng mã vùng.\n - Đầu số duy nhất trên toàn quốc và dễ nhớ.",
-          "ĐỐI VỚI DOANH NGHIỆP VÀ TỔ CHỨC THUÊ ĐẦU SỐ 1900:\n\n - Khẳng định thương hiệu, tính chuyên nghiệp của doanh nghiệp.\n - Là loại hình kinh doanh hiệu quả qua mạng điện thoại thông qua các dịch vụ tư vấn hoặc giải trí, chăm sóc khách hàng.\n - Dễ dàng quảng bá với một số điện thoại duy nhất truy nhập cho tất cả các chi nhánh trên toàn quốc.\n - Tiếp nhận đồng thời nhiều cuộc gọi cùng 1 lúc."
+          "ĐỐI VỚI DOANH NGHIỆP VÀ TỔ CHỨC THUÊ ĐẦU SỐ 1900:\n\n - Khẳng định thương hiệu, tính chuyên nghiệp của doanh nghiệp.\n - Là loại hình kinh doanh hiệu quả qua mạng điện thoại thông qua các dịch vụ tư vấn hoặc giải trí, chăm sóc khách hàng.\n - Dễ dàng quảng bá với một số điện thoại duy nhất truy nhập cho tất cả các chi nhánh trên toàn quốc.\n - Tiếp nhận đồng thởi nhiều cuộc gọi cùng 1 lúc."
         ]
       },
       "leasedline_internet": {
@@ -423,7 +423,7 @@
           "ĐA DỊCH VỤ: Với 8 IP tĩnh được cung cấp miễn phí, khách hàng có thể triển khai các ứng dụng chất lượng cao như: Mạng riêng ảo (VPN), hội nghị truyền hình (Video Conference), thiết lập và quản lý hệ thống Mail Server và Web Server....",
           "TỐC ĐỘ KẾT NỐI: Thực hiện nâng hạ tốc độ dễ dàng không cần thay đổi đầu cuối và mô hình kết nối của Khách hàng.",
           "HỖ TRỢ KỸ THUẬT: Hỗ trợ kỹ thuật trực tiếp 24/24.",
-          "CHẤT LƯỢNG BĂNG THÔNG: Băng thông cung cấp cho khách hàng luôn đạt 100% tại mọi thời điểm.",
+          "CHẤT LƯỢNG BĂNG THÔNG: Băng thông cung cấp cho khách hàng luôn đạt 100% tại mọi thởi điểm.",
           "TRANG BỊ THIẾT BỊ: Công ty trang bị thiết bị cho khách hàng trong quá trình sử dụng dịch vụ."
         ]
       },
@@ -480,7 +480,7 @@
           "TỐI ƯU MẠNG LƯỚI: Định tuyến linh hoạt dựa trên các SLA hệ thống (jitter, latency, packet loss...), có thể đưa ra các chính sách định tuyến tới mức ứng dụng giúp tối ưu được mạng lưới.",
           "HIỆU SUẤT ỨNG DỤNG CAO: Nhận biết trên 2000 ứng dụng, từ đó đưa ra các chính sách QoS đảm bảo các ứng dụng sản xuất kinh doanh luôn được ưu tiên.",
           "BẢO MẬT CAO: Tích hợp sẵn các tính năng Firewall như App Control, IPS/IDS, Anti Virus, URL filtering, sandbox, SSL Inspection.",
-          "TRIỂN KHAI NHANH VÀ LINH HOẠT: Toàn bộ cấu hình được thực hiện từ xa và tính năng Zero touch provisioning giúp giảm thời gian tích hợp. Hỗ trợ triển khai đồng thời nhiều đường truyền khác nhau của các nhà mạng",
+          "TRIỂN KHAI NHANH VÀ LINH HOẠT: Toàn bộ cấu hình được thực hiện từ xa và tính năng Zero touch provisioning giúp giảm thởi gian tích hợp. Hỗ trợ triển khai đồng thởi nhiều đường truyền khác nhau của các nhà mạng",
           "KHẢ DỤNG CAO: Hỗ trợ share tải trên nhiều đường truyền (LTE/5G/MPLS/FTTx) giúp tăng độ khả dụng của hệ thống."
         ]
       },
@@ -489,7 +489,7 @@
         "title": "THOẠI QUỐC TẾ",
         "category": "telecom",
         "image": "/images/solutions/international-call.jpg",
-        "description": "TRA CỨU GIÁ CƯỚC Quý khách có thể tra cứu giá cước Thoại Quốc tế theo tên Quốc gia và mã Quốc gia tại đây Giá đăng ký : Theo đầu số Cước thuê bao tháng: Theo đầu số Phương thức tính cước dịch vụ: 6 giây +1 (6s+1): Cuộc gọi chưa đến 6 giây đầu tính cước bằng 6 giây. Phần lẻ thời gian cuối cùng của 1 cuộc liên lạc chưa đến 01 giây làm tròn thành 01 giây. 60 giây + 60 giây (60s+60s): Cuộc gọi chưa đến 60 giây tính bằng cuộc gọi 60 giây. Phần lẻ thời gian cuối cùng của 1 cuộc liên lạc chưa đến 01 giây làm tròn thành 60 giây. Cước gọi quốc đến các quốc gia và vùng lãnh thổ trên thế giới (*) Lưu ý: Các quốc gia áp dụng block tính cước đặc biệt 60s+60s bao gồm: American Samoa, Western Samoa, Cook Islands, French Polynesia, Gambia, Haiti, Kiribati, Lesotho, Mexico, Nauru, New Caledonia, Niue Island, Papua New Guinea, Solomon Islands, Suriname, Togo, Tokelau, Tonga, Tuvalu, Vanuatu và các đầu số vệ tinh",
+        "description": "TRA CỨU GIÁ CƯỚC Quý khách có thể tra cứu giá cước Thoại Quốc tế theo tên Quốc gia và mã Quốc gia tại đây Giá đăng ký : Theo đầu số Cước thuê bao tháng: Theo đầu số Phương thức tính cước dịch vụ: 6 giây +1 (6s+1): Cuộc gọi chưa đến 6 giây đầu tính cước bằng 6 giây. Phần lẻ thởi gian cuối cùng của 1 cuộc liên lạc chưa đến 01 giây làm tròn thành 01 giây. 60 giây + 60 giây (60s+60s): Cuộc gọi chưa đến 60 giây tính bằng cuộc gọi 60 giây. Phần lẻ thởi gian cuối cùng của 1 cuộc liên lạc chưa đến 01 giây làm tròn thành 60 giây. Cước gọi quốc đến các quốc gia và vùng lãnh thổ trên thế giới (*) Lưu ý: Các quốc gia áp dụng block tính cước đặc biệt 60s+60s bao gồm: American Samoa, Western Samoa, Cook Islands, French Polynesia, Gambia, Haiti, Kiribati, Lesotho, Mexico, Nauru, New Caledonia, Niue Island, Papua New Guinea, Solomon Islands, Suriname, Togo, Tokelau, Tonga, Tuvalu, Vanuatu và các đầu số vệ tinh",
         "features": [
           "Cước phí cạnh tranh",
           "Kết nối toàn cầu",
@@ -508,11 +508,11 @@
         "title": "Quản Trị Vận Hành",
         "category": "it",
         "image": "/images/solutions/quantrivanhanh.jpg",
-        "description": "Dịch vụ quản trị (Managed Service) là dịch vụ quản trị, điều hành hệ thống máy chủ doanh nghiệp đồng thời hỗ trợ người sử dụng trong việc sử dụng máy tính hàng ngày",
+        "description": "Dịch vụ quản trị (Managed Service) là dịch vụ quản trị, điều hành hệ thống máy chủ doanh nghiệp đồng thởi hỗ trợ người sử dụng trong việc sử dụng máy tính hàng ngày",
         "features": [
           "HỆ THỐNG GIÁM SÁT: Các thiết bị, máy chủ được giám sát 24/24 bằng cách thiết lập quy trình tự động SMS, cảnh báo màu, tiếng động đến các kỹ sư chuyên trách của Viettel Solutions để can thiệp ngay lập tức nếu có sự cố. Viettel Solutions cũng sẽ gửi báo cáo thống kê mức sử dụng tài nguyên đến khách hàng, đề xuất tinh chỉnh tối ưu hóa khi cần thiết.",
           "CẬP NHẬT HỆ THỐNG ĐỊNH KỲ: Kiểm tra và cập nhật các bản vá lỗi định kỳ, cập nhật hệ điều hành và phiên bản mới của các phần mềm dịch vụ, phát hiện và xử lý ngay lập tức các trường hợp thiết bị, máy chủ bị quá tải, lỗi phần cứng, dịch vụ bị treo, lỗi hệ thống,...",
-          "XỬ LÝ LỖ HỔNG BẢO MẬT: Viettel Solutions sẽ tích hợp trong hệ thống quản trị công cụ tự động kiểm tra các lỗi bảo mật có khả năng phân tích mức độ bảo mật của mã nguồn sử dụng, phân tích các phương thức khi có dấu hiệu bị tấn công phá hoại, từ đó Viettel Solutions sẽ chủ động triển khai các biện pháp phòng chống thích hợp kịp thời.",
+          "XỬ LÝ LỖ HỔNG BẢO MẬT: Viettel Solutions sẽ tích hợp trong hệ thống quản trị công cụ tự động kiểm tra các lỗi bảo mật có khả năng phân tích mức độ bảo mật của mã nguồn sử dụng, phân tích các phương thức khi có dấu hiệu bị tấn công phá hoại, từ đó Viettel Solutions sẽ chủ động triển khai các biện pháp phòng chống thích hợp kịp thởi.",
           "HỖ TRỢ CÁC VẤN ĐỀ LIÊN QUAN ĐẾN THIẾT BỊ, MÁY CHỦ: Ngoài quản trị hệ thống, Viettel Solutions sẽ hỗ trợ khách hàng một số vấn đề liên quan như xác định cấu hình máy chủ nhằm đáp ứng yêu cầu của mã nguồn Website, xác định nguyên nhân lỗi truy cập của Website trên máy chủ, phân tích hiệu năng và tư vấn, đề xuất các cấu hình thiết bị, máy chủ phù hợp với nhu cầu của khách hàng."
         ],
         "advantage": [
@@ -536,8 +536,8 @@
         "image": "/images/solutions/dms.png",
         "description": "Là giải pháp quản lý hệ thống bán hàng trực tuyến cho các doanh nghiệp từ trụ sở công ty đến các giám sát, các nhân viên bán hàng trên thị trường",
         "features": [
-          "Giám sát lộ trình:\n\n - Định vị vị trí nhân viên mọi lúc, mọi nơi\n - Quản lý chặt chẽ lộ trình dịch chuyển, thời gian làm việc của nhân viên bán hàng.",
-          "Quản lý bán hàng:\n\n - Đặt hàng trực tuyến qua internet, 3G hoặc 4G…\n - Quản lý doanh số từng nhân viên một cách tức thời\n - Quản lý và chăm sóc Khách hàng hiệu quả\n - Quản lý sản phẩm không giới hạn\n - Thiết lập KPI/ Kế hoạch bán hàng\n - Chủ động xây dựng chương trình khuyến mãi hợp lý tại từng thời điểm\n - Quản lý kho hàng, đơn hàng một cách khoa học",
+          "Giám sát lộ trình:\n\n - Định vị vị trí nhân viên mọi lúc, mọi nơi\n - Quản lý chặt chẽ lộ trình dịch chuyển, thởi gian làm việc của nhân viên bán hàng.",
+          "Quản lý bán hàng:\n\n - Đặt hàng trực tuyến qua internet, 3G hoặc 4G…\n - Quản lý doanh số từng nhân viên một cách tức thời\n - Quản lý và chăm sóc Khách hàng hiệu quả\n - Quản lý sản phẩm không giới hạn\n - Thiết lập KPI/ Kế hoạch bán hàng\n - Chủ động xây dựng chương trình khuyến mãi hợp lý tại từng thởi điểm\n - Quản lý kho hàng, đơn hàng một cách khoa học",
           "Báo cáo điều hành:\n\n - Báo cáo giám sát\n - Báo cáo doanh số\n - Báo cáo kho",
           "Bám sát thị trường:\n\n - Cập nhật thông tin tức thời\n - Nhận phản ánh từ khách hàng một cách nhanh chóng\n - Tiếp nhận hình ảnh thực tế từ thị trường"
         ],
@@ -550,8 +550,8 @@
           "CHĂM SÓC KHÁCH HÀNG: Hệ thống chăm sóc khách hàng tốt nhất, tư vấn, hỗ trợ 24/7 qua tổng đài."
         ],
         "benefits": [
-          "Đối với nhà quản lý:\n\n - Nắm bắt thông tin thị trường một cách tức thời\n - Chủ động xây dựng chương trình khuyến mãi hợp lý tại từng thời điểm.\n - Quản lý kho hàng, đơn hàng một cách khoa học.\n - Quản lý chặt chẽ lộ trình dịch chuyển, thời gian làm việc cũng như doanh số từng nhân viên một cách tức thời.\n - Hệ thống báo cáo đầy đủ, bao quát toàn bộ hoạt động của hệ thống kinh doanh",
-          "Đối với nhân viên:\n\n - Đặt hàng trực tuyến qua internet, 3G hoặc 4G…\n - Tự động thống kê doanh số, chỉ tiêu hàng ngày và lũy kế.\n - Cập nhật tức thời các thông tin từ người Quản lý về sản phẩm mới cũng như các chương trình hỗ trợ thương mại.\n - Giảm thiểu thời gian tổng hợp viết báo cáo, nâng cao hiệu quả công việc."
+          "Đối với nhà quản lý:\n\n - Nắm bắt thông tin thị trường một cách tức thời\n - Chủ động xây dựng chương trình khuyến mãi hợp lý tại từng thởi điểm.\n - Quản lý kho hàng, đơn hàng một cách khoa học.\n - Quản lý chặt chẽ lộ trình dịch chuyển, thởi gian làm việc cũng như doanh số từng nhân viên một cách tức thời.\n - Hệ thống báo cáo đầy đủ, bao quát toàn bộ hoạt động của hệ thống kinh doanh",
+          "Đối với nhân viên:\n\n - Đặt hàng trực tuyến qua internet, 3G hoặc 4G…\n - Tự động thống kê doanh số, chỉ tiêu hàng ngày và lũy kế.\n - Cập nhật tức thời các thông tin từ người Quản lý về sản phẩm mới cũng như các chương trình hỗ trợ thương mại.\n - Giảm thiểu thởi gian tổng hợp viết báo cáo, nâng cao hiệu quả công việc."
         ]
       },
       "dms_one": {
@@ -559,11 +559,11 @@
         "title": "QUẢN LÝ HỆ THỐNG PHÂN PHỐI (DMS.ONE)",
         "category": "it",
         "image": "/images/solutions/dmsOne.jpg",
-        "description": "DMS.ONE là giải pháp phần mềm quản lý hệ thống phân phối hàng hóa trực tuyến có thể áp dụng cho: Nhà sản xuất - Nhà phân phối - Đại lý - Điểm bán lẻ. Thông qua hệ thống DMS.ONE, nhà phân phối cung cấp thông tin khách hàng, sản phẩm, khuyến mãi, thực hiện xuất nhập kho cho từng nhân viên bán hàng cung cấp hàng hóa đến các nhà bán lẻ như siêu thị, cửa hàng tiện lợi, đại lý, tạp hóa…để đến tay người tiêu dùng dưới sự quản lý của giám sát bán hàng. Các đơn hàng, hình ảnh và vấn đề phát sinh của khách hàng luôn được cập nhật theo thời gian thực. Mô hình phân phối này sẽ giúp hoạt động bán hàng nhanh chóng, chính xác, hiệu quả và dễ quản lý hơn.",
+        "description": "DMS.ONE là giải pháp phần mềm quản lý hệ thống phân phối hàng hóa trực tuyến có thể áp dụng cho: Nhà sản xuất - Nhà phân phối - Đại lý - Điểm bán lẻ. Thông qua hệ thống DMS.ONE, nhà phân phối cung cấp thông tin khách hàng, sản phẩm, khuyến mãi, thực hiện xuất nhập kho cho từng nhân viên bán hàng cung cấp hàng hóa đến các nhà bán lẻ như siêu thị, cửa hàng tiện lợi, đại lý, tạp hóa…để đến tay người tiêu dùng dưới sự quản lý của giám sát bán hàng. Các đơn hàng, hình ảnh và vấn đề phát sinh của khách hàng luôn được cập nhật theo thởi gian thực. Mô hình phân phối này sẽ giúp hoạt động bán hàng nhanh chóng, chính xác, hiệu quả và dễ quản lý hơn.",
         "features": [
           "QUẢN LÝ VÀ CHĂM SÓC KHÁCH HÀNG: Hệ thống cập nhật dữ liệu nhanh chóng, xác định vị trí khách hàng trên bản đồ để quản lý và chăm sóc. Phần mềm DMS.ONE của Viettel với các tính năng ưu việt phân chia và quản lý khách hàng theo từng nhóm thuộc tính riêng đặc trưng giúp cho việc tìm kiếm thông tin khách hàng vô cùng đơn giản.",
           "QUẢN LÝ SẢN PHẨM: DMS.ONE sẽ mang đến cho Doanh nghiệp giải pháp quản lý hàng hoá một cách có hệ thống thông qua các việc phân chia theo ngành hàng, nhãn hàng, khối lượng. Ngoài ra còn có thêm một số tính năng nâng cao trong việc quản lý theo các tiêu chuẩn của riêng Doanh nghiệp như: thành phần, hương vị...",
-          "QUẢN LÝ KHO HÀNG HÓA: Hỗ trợ chủ Doanh nghiệp và kế toán nắm bắt hàng tồn, bổ sung hàng hóa kịp thời, cảnh báo khi số lượng hàng nhập/ xuất vượt mức cho phép của từng mặt hàng. Bên cạnh đó việc điều chỉnh hàng tồn kho giữa các nhà phân phối vô cùng đơn giản và nhanh chóng.",
+          "QUẢN LÝ KHO HÀNG HÓA: Hỗ trợ chủ Doanh nghiệp và kế toán nắm bắt hàng tồn, bổ sung hàng hóa kịp thởi, cảnh báo khi số lượng hàng nhập/ xuất vượt mức cho phép của từng mặt hàng. Bên cạnh đó việc điều chỉnh hàng tồn kho giữa các nhà phân phối vô cùng đơn giản và nhanh chóng.",
           "ĐỐI TƯỢNG SỬ DỤNG: Lĩnh vực Áp dụng DMS.ONE là những doanh nghiệp bán hàng, phân phối như: Thực phẩm, tiêu dùng, Dược phẩm, y tế, Nông nghiệp, Đồ uống, nước giải khát, Điện tử, điện lạnh, Thiết bị vệ sinh"
         ]
       },
@@ -581,12 +581,12 @@
         "advantage": [
           "KHẢ NĂNG TÍCH HỢP: Tích hợp dễ dàng với các thiết bị số và nhiều hệ thống phần mềm của đơn vị.",
           "KHẢ NĂNG PHÂN QUYỀN: Phân quyền linh động, tính bảo mật cao.",
-          "TRAO ĐỔI THÔNG TIN: Trao đổi thông tin nhanh chóng, chính xác, rút ngắn thời gian xử lý công việc"
+          "TRAO ĐỔI THÔNG TIN: Trao đổi thông tin nhanh chóng, chính xác, rút ngắn thởi gian xử lý công việc"
         ],
         "benefits": [
           "HIỆU QUẢ: Tăng hiệu quả sử dụng tài nguyên văn phòng.",
           "TIẾT KIỆM CHI PHÍ: Giảm chi phí mua giấy tờ, in ấn.",
-          "TIẾT KIỆM THỜI GIAN: Giảm thời gian lưu trữ, vận chuyển công văn.",
+          "TIẾT KIỆM THỜI GIAN: Giảm thởi gian lưu trữ, vận chuyển công văn.",
           "KHẢ NĂNG ĐÁP ỨNG: Có khả năng đáp ứng được các quy trình quản lý phức tạp bằng công nghệ workflow."
         ]
       },
@@ -598,7 +598,7 @@
         "description": "Chứng thực chữ ký số là dịch vụ được sử dụng trong các giao dịch điện tử nhằm xác định danh tính của người ký, đảm bảo tính toàn vẹn và giá trị pháp lý giúp cho việc thực hiện các giao dịch điện tử từ xa qua Internet trở nên dễ dàng, đơn giản và bảo mật.",
         "features": [
           "ĐA THIẾT BỊ: Ký trên mọi loại thiết bị (Desktop PC, Laptop, Mobile, Tablet)",
-          "KÝ MỌI LÚC MỌI NƠI: Ngay cả khi đi công tác nước ngoài. Chỉ cần điện thoại kết nối Internet (Wifi, 2G/3G/4G). Xóa nhòa khoảng cách không gian, thời gian."
+          "KÝ MỌI LÚC MỌI NƠI: Ngay cả khi đi công tác nước ngoài. Chỉ cần điện thoại kết nối Internet (Wifi, 2G/3G/4G). Xóa nhòa khoảng cách không gian, thởi gian."
         ],
         "advantage": [
           "TÍNH DUY NHẤT: Là nhà cung cấp duy nhất có giải pháp ký trên sim di động.",
@@ -617,7 +617,7 @@
         "image": "/images/solutions/reputa.png",
         "description": "Reputa là Hệ thống Giám sát và Phân tích thông tin trên môi trường mạng (báo điện tử, diễn đàn, blog, mạng xã hội: Facebook, Instagram, các kênh video Youtube... v.v…) ứng dụng các công nghệ trí tuệ nhân tạo tiên tiến nhất nhằm nắm bắt đến từng cá thể người dùng Internet.",
         "features": [
-          "PHÂN TÍCH THEO SẮC THÁI CẢM XÚC: Nhờ phân tích các nội dung thảo luận dựa trên sắc thái cảm xúc của người viết (Tích cực, Tiêu cực, Trung lập), Doanh nghiệp có thể hiểu rõ hơn thái độ của khách hàng với sản phẩm, dịch vụ. Từ đó phát hiện kịp thời các vấn đề cần quan tâm, xử lý.",
+          "PHÂN TÍCH THEO SẮC THÁI CẢM XÚC: Nhờ phân tích các nội dung thảo luận dựa trên sắc thái cảm xúc của người viết (Tích cực, Tiêu cực, Trung lập), Doanh nghiệp có thể hiểu rõ hơn thái độ của khách hàng với sản phẩm, dịch vụ. Từ đó phát hiện kịp thởi các vấn đề cần quan tâm, xử lý.",
           "PHÂN TÍCH TOÀN DIỆN, TRỰC QUAN: Phân tích và so sánh hiệu quả bằng cách theo dõi các chỉ số chính, được hiển thị trực quan qua hệ thống biểu đồ thống kê. Nắm bắt sắc thái các thảo luận. Khám phá các chủ đề, xu hướng truyền thông nổi bật trên mạng xã hội.",
           "PHÂN LOẠI KHÁCH HÀNG: Tự động phân loại và hệ thống hóa chân dung các nhóm đối tượng thảo luận về sản phẩm, thương hiệu theo nhân khẩu học và địa lý. Hỗ trợ doanh nghiệp hiểu rõ về khán giả của mình trên mạng xã hội.",
           "XỬ LÝ THÔNG TIN: Xử lý ngôn ngữ tự nhiên kết hợp công nghệ máy học cùng “black keyword” có sẵn",
@@ -626,11 +626,11 @@
         "advantage": [
           "GIÁM SÁT ĐA NGUỒN: Thu thập dữ liệu theo từ khóa hoặc nguồn tin. Dễ dàng theo dõi thông tin đến từ hơn 100 triệu nguồn tin mỗi ngày bao gồm mạng xã hội Facebook, Youtube, Báo chí và Trang tin điện tử, Forums và các website khác.",
           "THẤU HIỂU KHÁCH HÀNG: Phân tích đa chiều dữ liệu mạng xã hội liên quan đến thông tin sản phẩm, thương hiệu, hành vi người dùng. Cung cấp các biểu đồ thống kê trực quan dựa trên các chỉ số đánh giá hiệu quả hoạt động truyền thông, marketing và khắc họa chân dung khách hàng.",
-          "CẢNH BÁO LINH HOẠT: Hệ thống cảnh báo được tùy chỉnh linh hoạt theo nhu cầu. Khách hàng dễ dàng tiếp nhận thông tin cảnh báo tức thời thông qua hệ thống Mobile App, Web, Email... Hệ thống báo cáo tự động giúp khách hàng giám sát hoạt động hiệu quả, tiết kiệm thời gian."
+          "CẢNH BÁO LINH HOẠT: Hệ thống cảnh báo được tùy chỉnh linh hoạt theo nhu cầu. Khách hàng dễ dàng tiếp nhận thông tin cảnh báo tức thởi thông qua hệ thống Mobile App, Web, Email... Hệ thống báo cáo tự động giúp khách hàng giám sát hoạt động hiệu quả, tiết kiệm thởi gian."
         ],
         "benefits": [
           "ĐỐI VỚI DOANH NGHIỆP:\n\n - Theo dõi thông tin nói về doanh nghiệp trên báo chí và mạng xã hội, từ đó phát hiện nhanh những thông tin bất lợi để đưa ra những giải pháp xử lý phù hợp, tránh khủng hoảng truyền thông ảnh hưởng xấu tới hình ảnh doanh nghiệp.\n - Có thể theo dõi thông tin về các đối thủ, từ đó đưa ra phương hướng kinh doanh phù hợp với các sản phẩm dịch vụ đối thủ cung cấp.\n - Chủ động chăm sóc những khách hàng phàn nàn về dịch vụ của doanh nghiệp cung cấp, từ đó tăng độ hài lòng và đem lại giá trị lớn hơn cho doanh nghiệp.",
-          "ĐỐI VỚI CƠ QUAN NHÀ NƯỚC: \n\n - Thông tin được đồng bộ hóa và hiển thị theo thời gian thực.\n - Chính quyền giám sát thông tin trực tuyến về trật tự xã hội thông qua mạng xã hội.\n - Chính quyền giám sát thông tin về biểu tình, chống phá nhà nước."
+          "ĐỐI VỚI CƠ QUAN NHÀ NƯỚC: \n\n - Thông tin được đồng bộ hóa và hiển thị theo thởi gian thực.\n - Chính quyền giám sát thông tin trực tuyến về trật tự xã hội thông qua mạng xã hội.\n - Chính quyền giám sát thông tin về biểu tình, chống phá nhà nước."
         ]
       },
       "vwifi": {
@@ -644,7 +644,7 @@
           "HỖ TRỢ THU THẬP THÔNG TIN: Thu thập thông tin: đăng nhập bằng tài khoản mạng xã hội, nhập thông tin cá nhân, khảo sát ý kiến.",
           "DỮ LIỆU: Quản lý, phân tích dữ liệu có được.",
           "THỰC HIỆN RE-MARKETING: Re-marketing trên tập khách hàng tiếp cận Wifi.",
-          "QUẢN LÝ TRUY CẬP: Quản lý thời gian, băng thông và dung lượng truy cập đến từng người dùng."
+          "QUẢN LÝ TRUY CẬP: Quản lý thởi gian, băng thông và dung lượng truy cập đến từng người dùng."
         ],
         "advantage": [
           "NỀN TẢNG CLOUD: Dịch vụ triển khai trên nền Cloud nên doanh nghiệp không cần phải đầu tư thêm hạ tầng server, lưu trữ.",
@@ -658,7 +658,7 @@
         "image": "/images/solutions/wifiver2.jpg",
         "description": "Thành Công Solutions cung cấp giải pháp wifi toàn diện, đảm bảo phủ sóng toàn bộ với độ bảo mật cao, tốc độ truy cập ổn định, và tích hợp nhiều tính năng theo yêu cầu.",
         "features": [
-          "TRUY CẬP: Tăng số người truy cập đồng thời.",
+          "TRUY CẬP: Tăng số người truy cập đồng thởi.",
           "PHỦ SÓNG: Mở rộng vùng phủ sóng, giảm nhiễu giữa các mạng wifi.",
           "BẢO MẬT: Phân quyền truy cập và tăng độ bảo mật.",
           "TIỆN LỢI: Dễ dàng truy cập với 1 tên truy cập (SSID), người dùng có thể di chuyển giữa các bộ phát sóng (AP) mà không cần đăng nhập lại.",
@@ -681,7 +681,7 @@
           "CHỦ ĐỘNG KIỂM SOÁT: Doanh nghiệp có thể sử dụng Private Cloud cho các công việc đặc thù, có tính nhạy cảm cao hoặc các công việc yêu cầu độ trễ thấp.",
           "TÍNH LINH HOẠT CAO: Doanh nghiệp có thể tận dụng nguồn tài nguyên khác từ Public Cloud khi cần thiết.",
           "TỐI ƯU CHI PHÍ: Cùng với khả năng mở rộng không giới hạn từ hạ tầng Public Cloud, doanh nghiệp chỉ cần chi trả cho năng lực điện toán bổ sung khi cần sử dụng",
-          "DỄ DÀNG CHUYỂN ĐỔI: Doanh nghiệp có thể chuyển đổi công việc theo từng phần nhỏ lên môi trường đám mây, việc chuyển đổi không tốn quá nhiều công sức. Qua đó, khối lượng công việc sẽ giảm dần theo thời gian."
+          "DỄ DÀNG CHUYỂN ĐỔI: Doanh nghiệp có thể chuyển đổi công việc theo từng phần nhỏ lên môi trường đám mây, việc chuyển đổi không tốn quá nhiều công sức. Qua đó, khối lượng công việc sẽ giảm dần theo thởi gian."
         ],
         "benefits": [
           "ĐA DẠNG MỤC ĐÍCH SỬ DỤNG: Công nghệ đám mây lai cho phép doanh nghiệp kết hợp mô hình đám mây riêng Private Cloud để lưu trữ các dữ liệu có tính bảo mật cao, và đám mây công cộng Public Cloud để lưu trữ các tài nguyên ít quan trọng và mang tính thử nghiệm.",
@@ -697,7 +697,7 @@
         "advantage": [
           "KẾT NỐI ĐƠN GIẢN: Truy cập hệ thống qua S3, HTTP/HTTPS/API kết nối cho phép người dùng phát triển ứng dụng một cách đơn giản, nhanh chóng.",
           "DUNG LƯỢNG KHÔNG GIỚI HẠN: Mở rộng lưu trữ lên tới Petabyte khi có nhu cầu. Không gián đoạn dịch vụ, không thay đổi cấu hình khi mở rộng. Lưu trữ càng lớn, giá thuê càng rẻ.",
-          "TỐC ĐỘ TỐI ĐA: Không giới hạn tốc độ đường truyền, rút ngắn thời gian tải dữ liệu. Tận dụng tối đa băng thông đầu cuối của khách hàng, không lo vấn đề cáp quang biển.",
+          "TỐC ĐỘ TỐI ĐA: Không giới hạn tốc độ đường truyền, rút ngắn thởi gian tải dữ liệu. Tận dụng tối đa băng thông đầu cuối của khách hàng, không lo vấn đề cáp quang biển.",
           "TIẾT KIỆM CHI PHÍ: Tiết kiệm chi phí đầu tư, nâng cấp hệ thống, chi phí vận hành bảo dưỡng thiết bị, không lãng phí tài nguyên, không chi phí hỗ trợ sau bán hàng."
         ]
       },
@@ -732,7 +732,7 @@
         "description": "Dịch vụ Đám mây công cộng - Public Cloud của Viettel sử dụng công nghệ điện toán đám mây để tạo ra các tài nguyên CNTT như máy ảo, ứng dụng, bộ lưu trữ - luôn sẵn sàng cho người dùng thông qua kết nối internet. Public Cloud là một giải pháp tiên tiến thay thế cho kiến trúc hạ tầng CNTT truyền thống.",
         "advantage": [
           "TRIỂN KHAI NHANH CHÓNG: Public Cloud cho phép triển khai môi trường dịch vụ hạ tầng nhanh chóng chỉ sau vài thao tác đơn giản. Việc xây dựng hạ tầng trước đây có thể mất tới vài tuần, giờ đây có thể xử lý chỉ trong vài phút.",
-          "TRUY XUẤT TỪ MỌI NƠI: Lưu trữ dữ liệu trên Public Cloud cho phép người dùng truy xuất từ bất cứ đâu và vào bất kỳ thời điểm nào qua Internet.",
+          "TRUY XUẤT TỪ MỌI NƠI: Lưu trữ dữ liệu trên Public Cloud cho phép người dùng truy xuất từ bất cứ đâu và vào bất kỳ thởi điểm nào qua Internet.",
           "KHẢ NĂNG SAO LƯU VÀ KHÔI PHỤC DỮ LIỆU: Với Public Cloud, việc sao lưu và khôi phục dữ liệu trở nên nhanh chóng hơn rất nhiều so với hạ tầng vật lý nhờ vào đặc tính của điện toán đám mây và hệ thống hạ tầng rất lớn từ Viettel.",
           "GIẢM RỦI RO, LỖI HẠ TẦNG: Nhà cung cấp chịu trách nhiệm quản lý, cập nhật, bảo trì hạ tầng phần cứng và cam kết tính liên tục với các dịch vụ.",
           "CO GIÃN TÀI NGUYÊN THEO NHU CẦU: Public Cloud có khả năng tự động mở rộng hoặc thu gọn tài nguyên vô cùng linh hoạt theo đúng nhu cầu người sử dụng."
@@ -742,7 +742,7 @@
           "ĐẢM BẢO KẾT NỐI VÀ KHAI THÁC CÁC NGUỒN LỰC: Kết nối, chia sẻ dữ liệu và làm việc cộng tác mọi lúc mọi nơi thông qua Internet.",
           "ĐẢM BẢO CHẤT LƯỢNG DỊCH VỤ CAM KẾT THEO SLA UPTIME 99,99%: Sản phẩm tuân thủ theo các tiêu chuẩn an ninh, an toàn quốc tế cùng với kênh hỗ trợ: 24/7/365.",
           "SẴN SÀN THÍCH ỨNG: Public Cloud có tính linh hoạt cao, với cơ chế mở rộng và tùy biến theo nhu cầu thực tế sử dụng, có cơ chế “ON/OFF” dịch vụ nhằm đảm bảo khả năng thích nghi cao nhất & tiết giảm chi phí.",
-          "CẠNH TRANH TRONG KINH DOANH: Doanh nghiệp tiết kiệm được chi phí, thời gian quản lý hạ tầng Công nghệ thông tin."
+          "CẠNH TRANH TRONG KINH DOANH: Doanh nghiệp tiết kiệm được chi phí, thởi gian quản lý hạ tầng Công nghệ thông tin."
         ]
       },
       "private_cloud": {
@@ -752,8 +752,8 @@
         "image": "/images/solutions/cloudPrivate.jpg",
         "description": "Dịch vụ Đám mây riêng - Private Cloud của Viettel được phát triển trên nền tảng mã nguồn mở OpenStack và VMware. Private Cloud cung cấp hệ thống máy chủ ảo dành riêng cho từng tổ chức, doanh nghiệp. Điều này giúp đảm bảo an toàn bảo mật, độc lập về tài nguyên và tối ưu trong việc quản trị hệ thống. Private Cloud có thể triển khai tại hạ tầng CNTT của khách hàng hoặc tại trung tâm dữ liệu của Viettel.",
         "advantage": [
-          "KHỞI TẠO NHANH, NÂNG CẤP DỄ DÀNG: Việc khởi tạo máy chủ ảo, chia nhỏ tài nguyên và cấp phát tự động đến người dùng theo nhu cầu thực tế giúp doanh nghiệp tiết kiệm thời gian vận hành. Điều này giúp giảm thiểu tài nguyên dư thừa và tối ưu hệ thống. Ngoài ra, việc triển khai tự động bằng các công cụ giúp đẩy nhanh quá trình nâng cấp và mở rộng hệ thống dịch vụ hạ tầng nhanh chóng chỉ sau vài thao tác đơn giản. Việc xây dựng hạ tầng trước đây có thể mất tới vài tuần, giờ đây có thể xử lý chỉ trong vài phút.",
-          "KHẢ NĂNG MỞ RỘNG LINH HOẠT: Tính năng mở rộng (scale-out) hay thu nhỏ (scale-in) tài nguyên ngay lập tức theo nhu cầu của ứng dụng đáp ứng nhanh dịch vụ, tiết kiệm cho doanh nghiệp nhiều chi phí, thời gian và nhân lực.",
+          "KHỞI TẠO NHANH, NÂNG CẤP DỄ DÀNG: Việc khởi tạo máy chủ ảo, chia nhỏ tài nguyên và cấp phát tự động đến người dùng theo nhu cầu thực tế giúp doanh nghiệp tiết kiệm thởi gian vận hành. Điều này giúp giảm thiểu tài nguyên dư thừa và tối ưu hệ thống. Ngoài ra, việc triển khai tự động bằng các công cụ giúp đẩy nhanh quá trình nâng cấp và mở rộng hệ thống dịch vụ hạ tầng nhanh chóng chỉ sau vài thao tác đơn giản. Việc xây dựng hạ tầng trước đây có thể mất tới vài tuần, giờ đây có thể xử lý chỉ trong vài phút.",
+          "KHẢ NĂNG MỞ RỘNG LINH HOẠT: Tính năng mở rộng (scale-out) hay thu nhỏ (scale-in) tài nguyên ngay lập tức theo nhu cầu của ứng dụng đáp ứng nhanh dịch vụ, tiết kiệm cho doanh nghiệp nhiều chi phí, thởi gian và nhân lực.",
           "TÍNH SẴN SÀNG CAO: Hệ thống luôn hoạt động ổn định và có khả năng khôi phục cao nhờ được thiết lập sẵn phương án dự phòng, và tự động thay thế khi bị hỏng, đảm bảo an toàn và có tính sẵn sàng 24/7."
         ],
         "benefits": [
@@ -819,7 +819,7 @@
         "advantage": [
           "TĂNG ĐỘ SẴN SÀNG: Nội dung website được lưu nhiều bản sao trên nhiều máy chủ, đảm bảo phục vụ người dùng ngay cả khi có một vài máy chủ gặp sự cố",
           "TĂNG TỐC ĐỘ ĐÁP ỨNG: Nhiều máy chủ CDN cùng phục vụ khách hàng sẽ làm giảm tối đa số request đợi, phục vụ khách hàng nhanh nhất",
-          "GIẢM THỜI GIAN TR�ễ: Người dùng truy cập website sẽ được phục vụ bởi máy chủ chứa nội dung ở gần mình nhất, giúp giảm tối đa thời gian chờ tải.",
+          "GIẢM THỜI GIAN TR�ễ: Người dùng truy cập website sẽ được phục vụ bởi máy chủ chứa nội dung ở gần mình nhất, giúp giảm tối đa thởi gian chờ tải.",
           "TIẾT KIỆM CHI PHÍ: Tiết kiệm chi phí đầu tư ban đầu cho hệ thống máy chủ và công nghệ streaming. Tối ưu chi phí vận hành hệ thống"
         ]
       },
@@ -831,11 +831,11 @@
         "description": "Dịch vụ tên miền (Domain) là định danh của website trên internet. Tên miền thường gắn liền với tên công ty và thương hiệu của doanh nghiệp. Tên miền là duy nhất và được ưu tiên cấp phát cho chủ thể thực hiện đăng ký trước.",
         "features": [
           "KHỞI TẠO NHANH CHÓNG: Tên miền chuyên nghiệp với đa dạng các đuôi tên miền khác nhau, tùy theo mục đích sử dụng và nhu cầu của khách hàng",
-          "QUẢN TRỊ THÔNG MINH: Không bị giới hạn về mặt địa lý hay thời gian, có thể truy cập mọi lúc mọi nơi.",
-          "ĐẢM BẢO TÍNH SỞ HỮU: Đảm bảo tên miền là độc nhất, chính thức và sở hữu riêng của người đăng ký"
+          "QUẢN TRỊ THÔNG MINH: Không bị giới hạn về mặt địa lý hay thởi gian, có thể truy cập mọi lúc mọi nơi.",
+          "ĐẢM BẢO TÍNH SỞ HỮU: Đảm bảo tên miền là độc nhất, chính thức và sở hữ riêng của người đăng ký"
         ],
         "benefits": [
-          "SỞ HỮU RIÊNG: Sở hữu riêng cho doanh nghiệp, cá nhân một định danh chính thức và độc nhất cho website của mình",
+          "SỞ HỮU RIÊNG: Sở hữ riêng cho doanh nghiệp, cá nhân một định danh chính thức và độc nhất cho website của mình",
           "KHẲNG ĐỊNH THƯƠNG HIỆU VÀ NHÃN HIỆU: Khẳng định thương hiệu và nhãn hiệu hàng hóa thông qua website có tên miền chính thức và được bảo vệ",
           "MỞ RỘNG PHẠM VI KHÁCH HÀNG: Mở rộng phạm vi khách hàng trên mọi khu vực, lứa tuổi",
           "NÂNG CAO UY TÍN: Nâng cao uy tín, gia tăng độ phủ thương hiệu",
@@ -886,7 +886,7 @@
           "Hỗ trợ toàn bộ các ứng dụng cần thiết của khách hàng: thoại, fax, video conference, truyền tải dữ liệu."
         ],
         "advantage": [
-          "Cam kết thời gian sử dụng dich vụ : 99.9%",
+          "Cam kết thởi gian sử dụng dich vụ : 99.9%",
           "Bàn giao kênh truyền sau 4-10 tuần (tùy địa điểm tại nước ngoài)",
           "Đảm bảo hỗ trợ giám sát đường truyền và xử lý sự cố  24/7"
         ],
@@ -908,7 +908,7 @@
           "Hỗ trợ tất cả các ứng dụng nền IP như VoIP, video conference, Internet.."
         ],
         "advantage": [
-          "Cam kết thời gian sử dụng dịch vụ cao: 99.85%",
+          "Cam kết thởi gian sử dụng dịch vụ cao: 99.85%",
           "Cam kết bàn giao dịch vụ sau 4-10 tuần (tùy theo vị trí tại nước ngoài)",
           "Đảm bảo hỗ trợ giám sát đường truyền và xử lý sự cố  24/7"
         ],
@@ -931,7 +931,7 @@
           "Hỗ trợ cả 2 giao thức IP: IPv4 và IPv6."
         ],
         "advantage": [
-          "Cam kết thời gian sử dụng dịch vụ cao: 99.99%",
+          "Cam kết thởi gian sử dụng dịch vụ cao: 99.99%",
           "Cam kết bàn giao dịch vụ sau 4-10 tuần (tùy theo vị trí tại nước ngoài)",
           "Đảm bảo hỗ trợ giám sát đường truyền và xử lý sự cố  24/7"
         ],
@@ -1001,7 +1001,7 @@
         "id": 8,
         "image": "/images/news/combo2.jpg",
         "title": "VIETTELDX TALKS #6 - '5G – HẠ TẦNG SỐ CỐT LÕI CỦA CHUYỂN ĐỔI SỐ'",
-        "description": "Mạng 5G đang trở thành nền tảng quan trọng cho sự phát triển của xã hội số trên toàn cầu, với khả năng cung cấp tốc độ truyền tải dữ liệu nhanh hơn, độ trễ thấp hơn và kết nối đồng thời hàng triệu thiết bị.",
+        "description": "Mạng 5G đang trở thành nền tảng quan trọng cho sự phát triển của xã hội số trên toàn cầu, với khả năng cung cấp tốc độ truyền tải dữ liệu nhanh hơn, độ trễ thấp hơn và kết nối đồng thởi hàng triệu thiết bị.",
         "date": "Thứ hai, 23/12/2024 - 10:12 (GMT + 7)",
         "type": "compact"
       },
@@ -1010,14 +1010,48 @@
         "image": "/images/news/combo3.jpg",
         "title": "Viettel Solutions và NVIDIA công bố thành quả hợp tác, thúc đẩy huấn luyện trợ lý AI Tiếng Việt",
         "description": "Ngay sau khi công bố trên trang chia sẻ công nghệ của NVIDIA, bộ dữ liệu mở dành riêng cho Tiếng Việt đã được cung cấp miễn phí cho cộng đồng nghiên cứu phát triển AI tại Việt Nam. Đây là bộ dữ liệu Tiếng Việt chất lượng cao, quy mô lớn, tạo nền tảng cho sự phát triển mạnh mẽ hơn nữa của các mô hình ngôn ngữ lớn (Large Language Models – LLM) Tiếng Việt.",
-        "date": "Thứ bảy, 21/12/2024 - 15:12 (GMT + 7)",
+        "date": "Thứ sáu, 21/12/2024 - 15:12 (GMT + 7)",
         "type": "compact"
       }
     ]
   },
   "introPage": {
-    "title": "Giới thiệu",
-    "description": "Đây là trang giới thiệu",
-    "content": "Đây là nội dung"
+    "title": "Giới thiệu",
+    "mission": "Là một doanh nghiệp hoạt động trong đa lĩnh vực: Cung cấp giải pháp dịch vụ viễn thông, thiết kế Website; cung cấp các dịch vụ gia tăng trên Internet và Điện thoại; cung cấp các giải pháp thương mại điện tử; ... Với các chuyên gia hàng đầu, quy trình làm việc chuyên nghiệp, khép kín. Con người TCS luôn được trau dồi, tu dưỡng và ý thức được sứ mệnh phục vụ khách hàng của mình. “Chăm sóc khách hàng là để tồn tại và phát triển” đã là câu nói cửa miệng của mỗi con người TCS.",
+    "description": "Trong thời gian sắp tới, Việt Nam tiếp tục tham gia và hội nhập mạnh mẽ với thế giới trên mọi phương diện. Rất nhiều cơ hội, thách thức đang chờ đón chúng ta ở phía trước. TCS cũng sẽ không ngừng lắng nghe những ý kiến góp ý đầy thiện chí, cũng như những phê bình nghiêm túc để phấn đấu nâng cao chất lượng phục vụ, nâng cao năng lực cạnh tranh, cải tiến quy trình quản lý, và cải thiện chất lượng phục vụ theo phương châm: “không ngừng học hỏi, sáng tạo”.",
+    "stats": {
+      "projects": "Dự án triển khai",
+      "customers": "Khách hàng tin dùng",
+      "countries": "Thị trường quốc tế",
+      "revenue": "Doanh thu (tỷ)",
+      "infrastructure": "Hạ tầng số 1 Việt Nam(2G, 3G, 4G, 5G)",
+      "dataCenters": "Trung tâm dữ liệu đạt chuẩn rated 3- TIA 942 và ...",
+      "fiberOptic": "Hạ tầng cáp quang truyền dẫn lớn nhất",
+      "payment": "Giao dịch hạ tầng thanh toán",
+      "monitoring": "Điều hành giảm sát mạng lưới 11 quốc gia",
+      "logistics": "Giao nhận hạ tầng logistic gồm 1.000 bưu cục trên toàn quốc"
+    },
+    "team": {
+      "title": "ĐỘI NGŨ NHÂN SỰ",
+      "description": "Nhân sự Quân lý, Kinh doanh và Kỹ sư Công nghệ thông tin trình độ cao (100% đại học, 92% trình độ đại học và trên đại học), có trình độ khoa học và kiến thức, kỹ năng về công nghệ thông tin, hạ tầng viễn thông, tích hợp hệ thống, giải pháp công nghệ thông tin.",
+      "stats": {
+        "engineers": "Kỹ sư CNTT",
+        "experts": "Chuyên gia",
+        "universities": "Đại học và trên đại học",
+        "experience": "Năm kinh nghiệm TB"
+      }
+    },
+    "contact": {
+      "title": "LIÊN HỆ VỚI CHÚNG TÔI",
+      "companyName": "TỔNG CÔNG TY GIẢI PHÁP DOANH NGHIỆP VIETTEL",
+      "address": "Số 1, Đường Trần Hữu Dực, Phường Mỹ Đình 2, Quận Nam Từ Liêm, Thành phố Hà Nội",
+      "email": "vds@viettel.com.vn",
+      "website": "https://solutions.viettel.vn",
+      "customerCare": {
+        "title": "CHĂM SÓC KHÁCH HÀNG",
+        "hotline": "1900 9269",
+        "description": "24/7 tại 63 tỉnh thành Việt Nam và 10 thị trường nước ngoài"
+      }
+    }
   }
 }

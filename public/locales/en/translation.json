@@ -1001,5 +1001,38 @@
         "date": "Friday, February 21, 2025, 07:55 (GMT+7)"
       }
     ]
+  },
+  "introPage": {
+    "title": "Introduction",
+    "mission": "As a member of the Military Industry and Telecommunications Group, established with the mission \"Accompanying the Government, Businesses, and Community in applying digital technology to bring efficiency to organizations and happiness to people\".",
+    "description": "The Corporation is Viettel's pioneer in digital transformation, playing a key role in implementing the Group's pioneering mission of creating a digital society. With the goal of becoming Vietnam's number one enterprise in digital transformation consulting and implementation, we cooperate with organizations, businesses, and people to bring a better life for everyone.",
+    "stats": {
+      "projects": "Projects Implemented",
+      "customers": "Trusted Customers",
+      "countries": "International Markets",
+      "revenue": "Revenue (Billion)"
+    },
+    "team": {
+      "title": "OUR TEAM",
+      "description": "Management, Business, and IT Engineers with high qualifications (100% university graduates, 92% with university degrees and above), possessing scientific knowledge and skills in information technology, telecommunications infrastructure, system integration, and IT solutions.",
+      "stats": {
+        "engineers": "IT Engineers",
+        "experts": "Experts",
+        "universities": "University and Above",
+        "experience": "Years Avg. Experience"
+      }
+    },
+    "contact": {
+      "title": "CONTACT US",
+      "companyName": "VIETTEL ENTERPRISE SOLUTIONS CORPORATION",
+      "address": "No. 1, Tran Huu Duc Street, My Dinh 2 Ward, Nam Tu Liem District, Hanoi City",
+      "email": "vds@viettel.com.vn",
+      "website": "https://solutions.viettel.vn",
+      "customerCare": {
+        "title": "CUSTOMER CARE",
+        "hotline": "1900 9269",
+        "description": "24/7 in 63 provinces of Vietnam and 10 international markets"
+      }
+    }
   }
 }
