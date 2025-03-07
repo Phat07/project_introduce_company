@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { format } from 'date-fns';
 import { vi } from 'date-fns/locale';
@@ -13,6 +13,7 @@ const ITEMS_PER_LOAD = 3;
 const NewsDetails = () => {
   const { id } = useParams();
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const newsData = t('news.items', { returnObjects: true });
   const currentNews = newsData.find(news => news.id === parseInt(id));
   
@@ -20,6 +21,31 @@ const NewsDetails = () => {
   const otherNews = newsData.filter(news => news.id !== parseInt(id));
   const [visibleItems, setVisibleItems] = useState(ITEMS_PER_LOAD);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    console.log('useEffect triggered for id:', id);
+    console.log('Before scroll - scrollY:', window.scrollY);
+    const scrollToTop = () => {
+      const scrollOptions = {
+        top: 0,
+        behavior: 'smooth'
+      };
+      
+      // Try scrolling both body and documentElement
+      document.body.scrollTo(scrollOptions);
+      document.documentElement.scrollTo(scrollOptions);
+      window.scrollTo(scrollOptions);
+    };
+
+    scrollToTop();
+    setTimeout(() => {
+      console.log('After scroll - scrollY:', window.scrollY);
+    }, 500); // Kiểm tra sau khi cuộn hoàn tất
+  }, [id]);
+
+  const handleNewsClick = (newsId) => {
+    navigate(`/news/${newsId}`); // Chỉ điều hướng, không cần scroll ở đây
+  };
 
   const handleLoadMore = () => {
     setLoading(true);
@@ -29,6 +55,7 @@ const NewsDetails = () => {
       setLoading(false);
     }, 500);
   };
+
 
   if (!currentNews) {
     return (
@@ -64,7 +91,7 @@ const NewsDetails = () => {
               <img 
                 src={currentNews.image} 
                 alt={currentNews.title}
-                className="w-full h-[400px] object-cover rounded"
+                className="w-full md:h-[400px] h-[200px] object-contain md:object-cover rounded"
               />
             </div>
             <Paragraph className="text-lg">
@@ -101,17 +128,17 @@ const NewsDetails = () => {
           >
             <Space direction="vertical" size="large" style={{ width: '100%' }}>
               {otherNews.slice(0, visibleItems).map((news) => (
-                <Link 
+                <div 
                   key={news.id} 
-                  to={`/news/${news.id}`}
-                  className="block hover:bg-gray-50 transition-colors"
+                  onClick={() => handleNewsClick(news.id)}
+                  className="cursor-pointer block hover:bg-gray-50 transition-colors"
                 >
                   <Card bordered={false} bodyStyle={{ padding: 0 }}>
                     <div className="flex gap-4">
                       <img 
                         src={news.image} 
                         alt={news.title}
-                        className="w-24 h-24 object-cover rounded"
+                        className="w-24 h-24 object-cover rounded md:object-contain"
                       />
                       <div>
                         <Text strong className="hover:text-blue-600 transition-colors line-clamp-2">
@@ -123,7 +150,7 @@ const NewsDetails = () => {
                       </div>
                     </div>
                   </Card>
-                </Link>
+                </div>
               ))}
             </Space>
           </Card>

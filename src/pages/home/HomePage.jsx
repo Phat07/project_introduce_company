@@ -879,7 +879,7 @@ const HomePage = () => {
               </div>
             </div>
           </Section>
-          <Pointer>
+          {/* <Pointer>
             <svg
               width="32"
               height="32"
@@ -896,7 +896,7 @@ const HomePage = () => {
                 strokeLinecap="round"
               />
             </svg>
-          </Pointer>
+          </Pointer> */}
 
           {/* Clients Section */}
           <ClientsSection />
