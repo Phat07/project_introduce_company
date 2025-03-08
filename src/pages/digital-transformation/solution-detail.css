@@ -1,0 +1,129 @@
+/* Solution Detail Page Styles */
+
+/* Breadcrumb styles */
+.breadcrumb-custom .ant-breadcrumb-link a {
+  transition: color 0.3s;
+  font-size: 14px;
+}
+
+.breadcrumb-custom .ant-breadcrumb-link a:hover {
+  color: #ff6d00;
+}
+
+/* Tab styles */
+.solution-detail-tabs .ant-tabs-nav {
+  margin-bottom: 2rem;
+}
+
+.solution-detail-tabs .ant-tabs-tab {
+  padding: 12px 24px;
+  transition: all 0.3s;
+}
+
+.solution-detail-tabs .ant-tabs-tab:hover {
+  color: #ff6d00;
+}
+
+.solution-detail-tabs .ant-tabs-tab-active {
+  background-color: #fff8f3;
+  border-radius: 8px 8px 0 0;
+}
+
+.solution-detail-tabs .tab-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Carousel styles */
+.feature-slide-card {
+  min-height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  transition: all 0.3s;
+}
+
+.feature-slide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 109, 0, 0.15);
+}
+
+.carousel-control-btn {
+  background-color: #fff;
+  border-color: #ff6d00;
+  color: #ff6d00;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.carousel-control-btn:hover {
+  background-color: #ff6d00;
+  color: white;
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carousel-indicator.active {
+  background-color: #ff6d00;
+  width: 12px;
+  height: 12px;
+}
+
+/* Feature card styles */
+.feature-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 109, 0, 0.1);
+  border-color: #ffece0;
+}
+
+/* Related product styles */
+.related-product-card {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.related-product-card:hover h4 {
+  color: #ff6d00;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .solution-detail-tabs .tab-title {
+    font-size: 14px;
+  }
+  
+  .feature-slide-card {
+    min-height: 200px;
+    padding: 16px;
+  }
+  
+  .carousel-control-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
