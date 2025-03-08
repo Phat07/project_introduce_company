@@ -535,9 +535,9 @@ const SolutionDetail = () => {
 
         {/* Main Content with Image */}
         <motion.div ref={imageRef} className="mb-8 bg-green-50 p-6 rounded-lg" variants={fadeInUp} initial="initial" animate="animate">
-          <Title level={3} className="text-[#ff6d00] mb-6">
+          {/* <Title level={3} className="text-[#ff6d00] mb-6">
             {t('solutions.mainContent')}
-          </Title>
+          </Title> */}
           <Row gutter={[16, 16]}>
             <Col xs={24} md={16}>
               <AnimatePresence mode="wait">
