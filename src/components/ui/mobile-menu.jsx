@@ -45,7 +45,7 @@ const MenuItem = ({ item, selectedKey, onSelect, level = 0 }) => {
     <>
       <div
         className={`px-4 py-3 cursor-pointer hover:bg-gray-50 flex items-center justify-between ${
-          selectedKey === item.key ? 'text-red-600' : ''
+          selectedKey === item.key ? 'text-[#FF6D00]' : ''
         }`}
         style={{ paddingLeft: `${level * 16 + 16}px` }}
         onClick={handleClick}

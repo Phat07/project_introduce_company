@@ -11,7 +11,14 @@ import './App.css';
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
-      <ConfigProvider>
+      <ConfigProvider
+        theme={{
+          token: {
+            fontFamily: `'Inter', sans-serif`, // Sử dụng font chữ đẹp hơn
+            fontSize: 16, // Kích thước chữ mặc định
+          },
+        }}
+      >
         <Router>
           <div className="app">
             <Header />

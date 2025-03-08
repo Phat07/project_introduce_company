@@ -68,8 +68,8 @@ const IntroPage = () => {
         <h1 className="text-3xl font-bold mb-8">{t('introPage.title')}</h1>
 
         <div className="text-gray-700 mb-12">
-          <p className="mb-4">{t('introPage.mission')}</p>
-          <p>{t('introPage.description')}</p>
+          <p className="mb-4 text-lg">{t('introPage.mission')}</p>
+          <p className='text-lg'>{t('introPage.description')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
