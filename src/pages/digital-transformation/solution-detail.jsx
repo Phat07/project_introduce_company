@@ -129,6 +129,29 @@ const SolutionDetail = () => {
 
   useEffect(() => {
     if (!loading && solutionKey) {
+      // Auto-select the first available tab
+      const hasAdvantages = Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) && 
+                            t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 0;
+      
+      const hasFeatures = Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) && 
+                          t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 0;
+      
+      const hasBenefits = Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) && 
+                          t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 0;
+      
+      // Set the current slide to the first available tab
+      if (hasAdvantages) {
+        setCurrentSlide(0);
+      } else if (hasFeatures) {
+        setCurrentSlide(1);
+      } else if (hasBenefits) {
+        setCurrentSlide(2);
+      }
+    }
+  }, [loading, solutionKey, t]);
+
+  useEffect(() => {
+    if (!loading && solutionKey) {
       gsap.from(mainRef.current, {
         opacity: 0,
         y: 30,
