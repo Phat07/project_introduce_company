@@ -130,15 +130,15 @@ const SolutionDetail = () => {
   useEffect(() => {
     if (!loading && solutionKey) {
       // Auto-select the first available tab
-      const hasAdvantages = Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) && 
-                            t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 0;
-      
-      const hasFeatures = Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) && 
-                          t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 0;
-      
-      const hasBenefits = Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) && 
-                          t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 0;
-      
+      const hasAdvantages = Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) &&
+        t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 0;
+
+      const hasFeatures = Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) &&
+        t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 0;
+
+      const hasBenefits = Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) &&
+        t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 0;
+
       // Set the current slide to the first available tab
       if (hasAdvantages) {
         setCurrentSlide(0);
@@ -266,278 +266,8 @@ const SolutionDetail = () => {
             {t(`solutions.items.${solutionKey}.title`)}
           </Title>
         </motion.div>
-
-        {/* Tab Navigation */}
-        <div className="mb-8 bg-white p-2 rounded-lg shadow-sm">
-          <div className="flex justify-center border-b">
-            {Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) && 
-             t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 0 && (
-              <div 
-                className={`px-6 py-3 cursor-pointer ${currentSlide === 0 ? 'border-b-2 border-[#ff6d00] text-[#ff6d00]' : 'text-gray-600'}`}
-                onClick={() => setCurrentSlide(0)}
-              >
-                {t('solutions.advantages')}
-              </div>
-            )}
-            {Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) && 
-             t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 0 && (
-              <div 
-                className={`px-6 py-3 cursor-pointer ${currentSlide === 1 ? 'border-b-2 border-[#ff6d00] text-[#ff6d00]' : 'text-gray-600'}`}
-                onClick={() => setCurrentSlide(1)}
-              >
-                {t('solutions.features')}
-              </div>
-            )}
-            {Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) && 
-             t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 0 && (
-              <div 
-                className={`px-6 py-3 cursor-pointer ${currentSlide === 2 ? 'border-b-2 border-[#ff6d00] text-[#ff6d00]' : 'text-gray-600'}`}
-                onClick={() => setCurrentSlide(2)}
-              >
-                {t('solutions.benefits')}
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Characteristics and Features Section */}
-        {(
-          (currentSlide === 0 && Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 0) ||
-          (currentSlide === 1 && Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 0) ||
-          (currentSlide === 2 && Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 0)
-        ) && (
-          <motion.div ref={mainRef} className="mb-8 bg-blue-50 p-6 rounded-lg" variants={fadeInUp} initial="initial" animate="animate">
-            <Title level={3} className="text-[#ff6d00] mb-6 text-center">
-              {currentSlide === 0 && t('solutions.advantages')}
-              {currentSlide === 1 && t('solutions.features')}
-              {currentSlide === 2 && t('solutions.benefits')}
-            </Title>
-            <div className="relative overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`${currentSlide}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {currentSlide === 0 && (
-                    <div className="relative">
-                      <div className="flex flex-wrap justify-center gap-4">
-                        {Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) && 
-                         (() => {
-                           const advantages = t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true });
-                           if (!advantages || advantages.length === 0) return null;
-                           
-                           const totalGroups = Math.ceil(advantages.length / 3);
-                           const normalizedGroup = advantageGroup % totalGroups;
-                           const startIdx = normalizedGroup * 3;
-                           const currentAdvantages = advantages.slice(startIdx, startIdx + 3);
-                           
-                           return currentAdvantages.map((advantage, index) => (
-                             <div key={`advantage-${startIdx + index}`} className="w-full sm:w-[30%]">
-                               <Card className="h-full bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                                 <div className="flex items-start">
-                                   <span className="text-[#ff6d00] mr-3 text-xl">❖</span>
-                                   <div>
-                                     <p className="font-medium">{advantage}</p>
-                                   </div>
-                                 </div>
-                               </Card>
-                             </div>
-                           ));
-                         })()
-                        }
-                      </div>
-                      
-                      {/* Navigation buttons for advantages */}
-                      {Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) && 
-                       t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 3 && (
-                        <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-2 pointer-events-none">
-                          <button 
-                            onClick={(e) => {
-                              e.preventDefault();
-                              const advantages = t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true });
-                              const totalGroups = Math.ceil(advantages.length / 3);
-                              setAdvantageGroup(prev => (prev - 1 + totalGroups) % totalGroups);
-                            }}
-                            className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto"
-                          >
-                            <span className="text-xl">&lt;</span>
-                          </button>
-                          <button 
-                            onClick={(e) => {
-                              e.preventDefault();
-                              const advantages = t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true });
-                              const totalGroups = Math.ceil(advantages.length / 3);
-                              setAdvantageGroup(prev => (prev + 1) % totalGroups);
-                            }}
-                            className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto"
-                          >
-                            <span className="text-xl">&gt;</span>
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  
-                  {currentSlide === 1 && (
-                    <div className="relative">
-                      <div className="flex flex-wrap justify-center gap-4">
-                        {Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) && 
-                         (() => {
-                           const features = t(`solutions.items.${solutionKey}.features`, { returnObjects: true });
-                           if (!features || features.length === 0) return null;
-                           
-                           const totalGroups = Math.ceil(features.length / 3);
-                           const normalizedGroup = featureGroup % totalGroups;
-                           const startIdx = normalizedGroup * 3;
-                           const currentFeatures = features.slice(startIdx, startIdx + 3);
-                           
-                           return currentFeatures.map((feature, index) => (
-                             <div key={`feature-${startIdx + index}`} className="w-full sm:w-[30%]">
-                               <Card className="h-full bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                                 <div className="flex items-start">
-                                   <span className="text-[#ff6d00] mr-3 text-xl">❖</span>
-                                   <div>
-                                     <p className="font-medium">{feature}</p>
-                                   </div>
-                                 </div>
-                               </Card>
-                             </div>
-                           ));
-                         })()
-                        }
-                      </div>
-                      
-                      {/* Navigation buttons for features */}
-                      {Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) && 
-                       t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 3 && (
-                        <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-2 pointer-events-none">
-                          <button 
-                            onClick={(e) => {
-                              e.preventDefault();
-                              const features = t(`solutions.items.${solutionKey}.features`, { returnObjects: true });
-                              const totalGroups = Math.ceil(features.length / 3);
-                              setFeatureGroup(prev => (prev - 1 + totalGroups) % totalGroups);
-                            }}
-                            className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto"
-                          >
-                            <span className="text-xl">&lt;</span>
-                          </button>
-                          <button 
-                            onClick={(e) => {
-                              e.preventDefault();
-                              const features = t(`solutions.items.${solutionKey}.features`, { returnObjects: true });
-                              const totalGroups = Math.ceil(features.length / 3);
-                              setFeatureGroup(prev => (prev + 1) % totalGroups);
-                            }}
-                            className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto"
-                          >
-                            <span className="text-xl">&gt;</span>
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  
-                  {currentSlide === 2 && (
-                    <div className="relative">
-                      <div className="flex flex-wrap justify-center gap-4">
-                        {Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) && 
-                         (() => {
-                           const benefits = t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true });
-                           if (!benefits || benefits.length === 0) return null;
-                           
-                           const totalGroups = Math.ceil(benefits.length / 3);
-                           const normalizedGroup = benefitGroup % totalGroups;
-                           const startIdx = normalizedGroup * 3;
-                           const currentBenefits = benefits.slice(startIdx, startIdx + 3);
-                           
-                           return currentBenefits.map((benefit, index) => (
-                             <div key={`benefit-${startIdx + index}`} className="w-full sm:w-[30%]">
-                               <Card className="h-full bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                                 <div className="flex items-start">
-                                   <span className="text-[#ff6d00] mr-3 text-xl">❖</span>
-                                   <div>
-                                     <p className="font-medium">{benefit}</p>
-                                   </div>
-                                 </div>
-                               </Card>
-                             </div>
-                           ));
-                         })()
-                        }
-                      </div>
-                      
-                      {/* Navigation buttons for benefits */}
-                      {Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) && 
-                       t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 3 && (
-                        <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-2 pointer-events-none">
-                          <button 
-                            onClick={(e) => {
-                              e.preventDefault();
-                              const benefits = t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true });
-                              const totalGroups = Math.ceil(benefits.length / 3);
-                              setBenefitGroup(prev => (prev - 1 + totalGroups) % totalGroups);
-                            }}
-                            className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto"
-                          >
-                            <span className="text-xl">&lt;</span>
-                          </button>
-                          <button 
-                            onClick={(e) => {
-                              e.preventDefault();
-                              const benefits = t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true });
-                              const totalGroups = Math.ceil(benefits.length / 3);
-                              setBenefitGroup(prev => (prev + 1) % totalGroups);
-                            }}
-                            className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto"
-                          >
-                            <span className="text-xl">&gt;</span>
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </motion.div>
-              </AnimatePresence>
-            </div>
-            
-            {/* Pagination Indicators */}
-            {/* <div className="flex justify-center mt-6">
-              <div className="flex gap-2">
-                {Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) && 
-                 t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 0 && (
-                  <div 
-                    className={`w-3 h-3 rounded-full cursor-pointer ${currentSlide === 0 ? 'bg-[#ff6d00]' : 'bg-gray-300'}`}
-                    onClick={() => setCurrentSlide(0)}
-                  ></div>
-                )}
-                {Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) && 
-                 t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 0 && (
-                  <div 
-                    className={`w-3 h-3 rounded-full cursor-pointer ${currentSlide === 1 ? 'bg-[#ff6d00]' : 'bg-gray-300'}`}
-                    onClick={() => setCurrentSlide(1)}
-                  ></div>
-                )}
-                {Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) && 
-                 t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 0 && (
-                  <div 
-                    className={`w-3 h-3 rounded-full cursor-pointer ${currentSlide === 2 ? 'bg-[#ff6d00]' : 'bg-gray-300'}`}
-                    onClick={() => setCurrentSlide(2)}
-                  ></div>
-                )}
-              </div>
-            </div> */}
-          </motion.div>
-        )}
-
         {/* Main Content with Image */}
         <motion.div ref={imageRef} className="mb-8 bg-green-50 p-6 rounded-lg" variants={fadeInUp} initial="initial" animate="animate">
-          {/* <Title level={3} className="text-[#ff6d00] mb-6">
-            {t('solutions.mainContent')}
-          </Title> */}
           <Row gutter={[16, 16]}>
             <Col xs={24} md={16}>
               <AnimatePresence mode="wait">
@@ -552,14 +282,11 @@ const SolutionDetail = () => {
                   <Paragraph className="text-gray-600 text-sm">
                     {showFullDescription
                       ? t(`solutions.items.${solutionKey}.description`)
-                      : t(`solutions.items.${solutionKey}.description`).slice(0, 120) + '...' // Giữ 120 ký tự
+                      : t(`solutions.items.${solutionKey}.description`).slice(0, 200) + '...' // Giữ 120 ký tự
                     }
                   </Paragraph>
                 </motion.div>
               </AnimatePresence>
-              {/* <Button type="primary" onClick={() => navigate(`/solutions/${solutionKey}/full`)}>
-                {showFullDescription ? t('common.readLess') : t('common.readMore')}
-              </Button> */}
               <motion.div variants={fadeInUp}>
                 {t(`solutions.items.${solutionKey}.description`).length > 120 && (
                   <div className="flex justify-center mb-4">
@@ -615,6 +342,327 @@ const SolutionDetail = () => {
           </Row>
         </motion.div>
 
+        {/* Tab Navigation */}
+        <div className="mb-8 bg-white p-2 rounded-lg shadow-sm">
+          <div className="flex justify-center border-b">
+            {Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) &&
+              t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 0 && (
+                <div
+                  className={`px-6 py-3 cursor-pointer ${currentSlide === 0 ? 'border-b-2 border-[#ff6d00] text-[#ff6d00]' : 'text-gray-600'}`}
+                  onClick={() => setCurrentSlide(0)}
+                >
+                  {t('solutions.advantages')}
+                </div>
+              )}
+            {Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) &&
+              t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 0 && (
+                <div
+                  className={`px-6 py-3 cursor-pointer ${currentSlide === 1 ? 'border-b-2 border-[#ff6d00] text-[#ff6d00]' : 'text-gray-600'}`}
+                  onClick={() => setCurrentSlide(1)}
+                >
+                  {t('solutions.features')}
+                </div>
+              )}
+            {Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) &&
+              t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 0 && (
+                <div
+                  className={`px-6 py-3 cursor-pointer ${currentSlide === 2 ? 'border-b-2 border-[#ff6d00] text-[#ff6d00]' : 'text-gray-600'}`}
+                  onClick={() => setCurrentSlide(2)}
+                >
+                  {t('solutions.benefits')}
+                </div>
+              )}
+          </div>
+        </div>
+
+        {/* Characteristics and Features Section */}
+        {(
+          (currentSlide === 0 && Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 0) ||
+          (currentSlide === 1 && Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 0) ||
+          (currentSlide === 2 && Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) && t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 0)
+        ) && (
+            <motion.div ref={mainRef} className="mb-8 bg-blue-50 p-6 rounded-lg" variants={fadeInUp} initial="initial" animate="animate">
+              <Title level={3} className="text-[#ff6d00] mb-6 text-center">
+                {currentSlide === 0 && t('solutions.advantages')}
+                {currentSlide === 1 && t('solutions.features')}
+                {currentSlide === 2 && t('solutions.benefits')}
+              </Title>
+              <div className="relative overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`${currentSlide}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {currentSlide === 0 && (
+                      <div className="relative">
+                        <div className="flex flex-wrap justify-center gap-4">
+                          {Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) &&
+                            (() => {
+                              const advantages = t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true });
+                              if (!advantages || advantages.length === 0) return null;
+
+                              const totalGroups = Math.ceil(advantages.length / 3);
+                              const normalizedGroup = advantageGroup % totalGroups;
+                              const startIdx = normalizedGroup * 3;
+                              const currentAdvantages = advantages.slice(startIdx, startIdx + 3);
+
+                              return currentAdvantages.map((advantage, index) => (
+                                <div key={`advantage-${startIdx + index}`} className="w-full sm:w-[30%]">
+                                  <Card className="h-full bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                    <div className="flex items-start">
+                                      <span className="text-[#ff6d00] mr-3 text-xl">❖</span>
+                                      <div>
+                                        <p className="font-medium">{advantage}</p>
+                                      </div>
+                                    </div>
+                                  </Card>
+                                </div>
+                              ));
+                            })()
+                          }
+                        </div>
+
+                        {/* Navigation buttons for advantages */}
+                        {Array.isArray(t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true })) &&
+                          t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true }).length > 3 && (
+                            <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-2 pointer-events-none z-20">
+                              <button
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  const advantages = t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true });
+                                  const totalGroups = Math.ceil(advantages.length / 3);
+                                  setAdvantageGroup(prev => (prev - 1 + totalGroups) % totalGroups);
+                                }}
+                                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto relative"
+                                aria-label="Previous advantages"
+                              >
+                                <LeftOutlined className="text-sm sm:text-base" />
+                              </button>
+                              <button
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  const advantages = t(`solutions.items.${solutionKey}.advantage`, { returnObjects: true });
+                                  const totalGroups = Math.ceil(advantages.length / 3);
+                                  setAdvantageGroup(prev => (prev + 1) % totalGroups);
+                                }}
+                                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto relative"
+                                aria-label="Next advantages"
+                              >
+                                <RightOutlined className="text-sm sm:text-base" />
+                              </button>
+                            </div>
+                          )}
+                      </div>
+                    )}
+
+                    {currentSlide === 1 && (
+                      <div className="relative">
+                        <div className="flex flex-wrap justify-center gap-4">
+                          {Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) &&
+                            (() => {
+                              const features = t(`solutions.items.${solutionKey}.features`, { returnObjects: true });
+                              if (!features || features.length === 0) return null;
+
+                              const totalGroups = Math.ceil(features.length / 3);
+                              const normalizedGroup = featureGroup % totalGroups;
+                              const startIdx = normalizedGroup * 3;
+                              const currentFeatures = features.slice(startIdx, startIdx + 3);
+
+                              return currentFeatures.map((feature, index) => (
+                                <div key={`feature-${startIdx + index}`} className="w-full sm:w-[30%]">
+                                  <Card className="h-full bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                    <div className="flex items-start">
+                                      <span className="text-[#ff6d00] mr-3 text-xl">❖</span>
+                                      <div>
+                                        <p className="font-medium">{feature}</p>
+                                      </div>
+                                    </div>
+                                  </Card>
+                                </div>
+                              ));
+                            })()
+                          }
+                        </div>
+
+                        {/* Navigation buttons for features */}
+                        {Array.isArray(t(`solutions.items.${solutionKey}.features`, { returnObjects: true })) &&
+                          t(`solutions.items.${solutionKey}.features`, { returnObjects: true }).length > 3 && (
+                            <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-2 pointer-events-none z-20">
+                              <button
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  const features = t(`solutions.items.${solutionKey}.features`, { returnObjects: true });
+                                  const totalGroups = Math.ceil(features.length / 3);
+                                  setFeatureGroup(prev => (prev - 1 + totalGroups) % totalGroups);
+                                }}
+                                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto relative"
+                                aria-label="Previous features"
+                              >
+                                <LeftOutlined className="text-sm sm:text-base" />
+                              </button>
+                              <button
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  const features = t(`solutions.items.${solutionKey}.features`, { returnObjects: true });
+                                  const totalGroups = Math.ceil(features.length / 3);
+                                  setFeatureGroup(prev => (prev + 1) % totalGroups);
+                                }}
+                                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto relative"
+                                aria-label="Next features"
+                              >
+                                <RightOutlined className="text-sm sm:text-base" />
+                              </button>
+                            </div>
+                          )}
+                      </div>
+                    )}
+
+                    {currentSlide === 2 && (
+                      <div className="relative">
+                        <div className="flex flex-wrap justify-center gap-4">
+                          {Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) &&
+                            (() => {
+                              const benefits = t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true });
+                              if (!benefits || benefits.length === 0) return null;
+
+                              const totalGroups = Math.ceil(benefits.length / 3);
+                              const normalizedGroup = benefitGroup % totalGroups;
+                              const startIdx = normalizedGroup * 3;
+                              const currentBenefits = benefits.slice(startIdx, startIdx + 3);
+
+                              return currentBenefits.map((benefit, index) => (
+                                <div key={`benefit-${startIdx + index}`} className="w-full sm:w-[30%]">
+                                  <Card className="h-full bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                    <div className="flex items-start">
+                                      <span className="text-[#ff6d00] mr-3 text-xl">❖</span>
+                                      <div>
+                                        <p className="font-medium">{benefit}</p>
+                                      </div>
+                                    </div>
+                                  </Card>
+                                </div>
+                              ));
+                            })()
+                          }
+                        </div>
+
+                        {/* Navigation buttons for benefits */}
+                        {Array.isArray(t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true })) &&
+                          t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true }).length > 3 && (
+                            <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-2 pointer-events-none z-20">
+                              <button
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  const benefits = t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true });
+                                  const totalGroups = Math.ceil(benefits.length / 3);
+                                  setBenefitGroup(prev => (prev - 1 + totalGroups) % totalGroups);
+                                }}
+                                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto relative"
+                                aria-label="Previous benefits"
+                              >
+                                <LeftOutlined className="text-sm sm:text-base" />
+                              </button>
+                              <button
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  const benefits = t(`solutions.items.${solutionKey}.benefits`, { returnObjects: true });
+                                  const totalGroups = Math.ceil(benefits.length / 3);
+                                  setBenefitGroup(prev => (prev + 1) % totalGroups);
+                                }}
+                                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#ff6d00] hover:bg-gray-100 pointer-events-auto relative"
+                                aria-label="Next benefits"
+                              >
+                                <RightOutlined className="text-sm sm:text-base" />
+                              </button>
+                            </div>
+                          )}
+                      </div>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </motion.div>
+          )}
+
+        {/* Main Content with Image */}
+        {/* <motion.div ref={imageRef} className="mb-8 bg-green-50 p-6 rounded-lg" variants={fadeInUp} initial="initial" animate="animate">
+          <Row gutter={[16, 16]}>
+            <Col xs={24} md={16}>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={showFullDescription ? 'full' : 'truncated'}
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mb-6 text-center"
+                >
+                  <Paragraph className="text-gray-600 text-sm">
+                    {showFullDescription
+                      ? t(`solutions.items.${solutionKey}.description`)
+                      : t(`solutions.items.${solutionKey}.description`).slice(0, 200) + '...' // Giữ 120 ký tự
+                    }
+                  </Paragraph>
+                </motion.div>
+              </AnimatePresence>
+              <motion.div variants={fadeInUp}>
+                {t(`solutions.items.${solutionKey}.description`).length > 120 && (
+                  <div className="flex justify-center mb-4">
+                    <motion.button
+                      whileHover={{ scale: 1.05, boxShadow: "0 4px 15px rgba(255, 109, 0, 0.2)" }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => setShowFullDescription(!showFullDescription)}
+                      className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-[#ff6d00] text-white hover:bg-[#ff8f40] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff6d00] transition-all duration-300 ease-out"
+                    >
+                      <span className="font-medium text-sm">
+                        {showFullDescription ? t('common.showLess') : t('common.readMore')}
+                      </span>
+                      <AnimatePresence mode="wait">
+                        <motion.span
+                          key={showFullDescription ? 'up' : 'down'}
+                          initial={{ opacity: 0, y: showFullDescription ? 10 : -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: showFullDescription ? -10 : 10 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {showFullDescription ? (
+                            <ArrowUpOutlined className="text-xs" />
+                          ) : (
+                            <ArrowDownOutlined className="text-xs" />
+                          )}
+                        </motion.span>
+                      </AnimatePresence>
+                    </motion.button>
+                  </div>
+                )}
+              </motion.div>
+            </Col>
+            <Col xs={24} md={8}>
+              {solutionData.image && (
+                <motion.div
+                  className="overflow-hidden rounded-lg shadow-md"
+                  variants={imageAnimation}
+                  initial="initial"
+                  animate="animate"
+                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                >
+                  <Lens zoomFactor={1.2} lensSize={200}>
+                    <img
+                      src={solutionData.image}
+                      alt={t(`solutions.items.${solutionKey}.title`)}
+                      className="w-full h-auto object-cover"
+                      style={{ maxHeight: '250px' }}
+                    />
+                  </Lens>
+                </motion.div>
+              )}
+            </Col>
+          </Row>
+        </motion.div> */}
+
         {/* Related Products */}
         <motion.div className="mb-8 bg-yellow-50 p-6 rounded-lg" variants={fadeInUp} initial="initial" animate="animate">
           {/* <Title level={3} className="text-[#ff6d00] mb-6 text-center">
@@ -664,10 +712,11 @@ const SolutionDetail = () => {
                 </Title>
                 <div className="relative">
                   <Button
-                    icon={<LeftOutlined />}
+                    icon={<LeftOutlined className="text-sm sm:text-base" />}
                     onClick={handlePrev}
-                    className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#ff6d00] hover:bg-[#ff8f40] text-white rounded-full p-2"
-                    style={{ zIndex: 10 }}
+                    className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#ff6d00] hover:bg-[#ff8f40] text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shadow-md"
+                    style={{ zIndex: 20 }}
+                    aria-label="Previous similar solutions"
                   />
                   <Row gutter={[16, 16]} justify="center" className="flex flex-row">
                     <AnimatePresence mode="wait">
@@ -715,10 +764,11 @@ const SolutionDetail = () => {
                     </AnimatePresence>
                   </Row>
                   <Button
-                    icon={<RightOutlined />}
+                    icon={<RightOutlined className="text-sm sm:text-base" />}
                     onClick={handleNext}
-                    className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#ff6d00] hover:bg-[#ff8f40] hover:text-black text-white rounded-full p-2"
-                    style={{ zIndex: 10 }}
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#ff6d00] hover:bg-[#ff8f40] hover:text-black text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shadow-md"
+                    style={{ zIndex: 20 }}
+                    aria-label="Next similar solutions"
                   />
                 </div>
               </Card>
