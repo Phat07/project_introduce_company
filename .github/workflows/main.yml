@@ -1,0 +1,20 @@
+name: React Introduce Company and Docker
+
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  docker-compose:
+    runs-on: self-hosted
+    environment: docker
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Docker Compose Up
+        run: docker compose up --build -d
